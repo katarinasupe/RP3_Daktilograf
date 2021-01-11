@@ -11,6 +11,15 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
 
+        public string getTextToType()
+        {
+            return this.textToType.Text;
+        }
+        public void setTextToType(string value)
+        {
+            this.textToType.Text = value;
+        }
+
         private char[] lettersInText;
         private int currentLetter = 0; //pamtimo na kojem se slovu nalazimo
 
@@ -19,6 +28,7 @@ namespace WindowsFormsApp1 {
             createTextArray();
             this.typedText.Enabled = false;
             this.startBtn.Enabled = true;
+        
 
         }
 
@@ -33,10 +43,10 @@ namespace WindowsFormsApp1 {
 
         private void removeCurrentLetterOnKeyboard() {
 
-            var keybord = this.panel1.Controls;
+            var keyboard = this.panel1.Controls;
             String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
             try {
-                var currentKey = keybord.Find(letter, true); //vraca kolekciju elemenata (ali uvijek ce biti samo 1 element)
+                var currentKey = keyboard.Find(letter, true); //vraca kolekciju elemenata (ali uvijek ce biti samo 1 element)
                 currentKey[0].BackColor = Color.White;
 
             } catch (Exception ex) {
@@ -50,10 +60,10 @@ namespace WindowsFormsApp1 {
         private void showNextLetterOnKeyboard() {
 
             if (currentLetter < lettersInText.Length) {
-                var keybord = this.panel1.Controls;
+                var keyboard = this.panel1.Controls;
                 String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
                 try {
-                    var nextKey = keybord.Find(letter, true); 
+                    var nextKey = keyboard.Find(letter, true); 
                     nextKey[0].BackColor = Color.LightGreen;
 
                 } catch (Exception ex) {
@@ -103,9 +113,9 @@ namespace WindowsFormsApp1 {
 
             } else {
                 var letter = "" + typedChar + "";
-                var keybord = this.panel1.Controls;
+                var keyboard = this.panel1.Controls;
                 try {
-                    var key = keybord.Find(letter, true); 
+                    var key = keyboard.Find(letter, true); 
                     key[0].BackColor = Color.Red;
 
                 } catch (Exception ex) {
@@ -124,6 +134,44 @@ namespace WindowsFormsApp1 {
 
             showNextLetterOnKeyboard();
 
+        }
+
+        private void loadNewEx_Click(object sender, EventArgs e)
+        {
+            var level = groupBoxLevel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
+            var exercise = groupBoxEx.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
+
+            Console.WriteLine(level);
+            Console.WriteLine(exercise);
+
+            var fileName = level + "_" + exercise + ".txt";
+            //cita iz Debug foldera 
+            string text = System.IO.File.ReadAllText(
+                System.IO.Path.Combine(Environment.CurrentDirectory, fileName));
+            Console.WriteLine(text);
+            this.textToType.Text = text;
+
+            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu 
+            resetKeyboard();
+            createTextArray();
+        }
+
+        private void resetKeyboard()
+        {
+            var keyboard = this.panel1.Controls;
+            foreach (Label key in keyboard)
+            {
+                key.BackColor = Color.White;
+            }
+            this.typedText.Enabled = false;
+            this.startBtn.Enabled = true;
+        }
+
+        private void createNewEx_Click(object sender, EventArgs e)
+        {
+            Form2 createEx = new Form2();
+            //samo .Show() dozvoljava rad na Form1, a mi zelimo samo na Form2 pa koristimo ShowDialog()
+            createEx.ShowDialog(this);
         }
 
 

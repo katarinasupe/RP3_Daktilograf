@@ -59,7 +59,23 @@
             this.typedText = new System.Windows.Forms.TextBox();
             this.textToType = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
+            this.chooseLevel = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxLevel = new System.Windows.Forms.GroupBox();
+            this.hard = new System.Windows.Forms.RadioButton();
+            this.medium = new System.Windows.Forms.RadioButton();
+            this.easy = new System.Windows.Forms.RadioButton();
+            this.groupBoxEx = new System.Windows.Forms.GroupBox();
+            this.ex_5 = new System.Windows.Forms.RadioButton();
+            this.ex_4 = new System.Windows.Forms.RadioButton();
+            this.ex_3 = new System.Windows.Forms.RadioButton();
+            this.ex_2 = new System.Windows.Forms.RadioButton();
+            this.ex_1 = new System.Windows.Forms.RadioButton();
+            this.loadNewEx = new System.Windows.Forms.Button();
+            this.createNewEx = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.chooseLevel.SuspendLayout();
+            this.groupBoxLevel.SuspendLayout();
+            this.groupBoxEx.SuspendLayout();
             this.SuspendLayout();
             // 
             // Q
@@ -186,7 +202,7 @@
             this.panel1.Controls.Add(this.U);
             this.panel1.Controls.Add(this.I);
             this.panel1.Controls.Add(this.Q);
-            this.panel1.Location = new System.Drawing.Point(219, 222);
+            this.panel1.Location = new System.Drawing.Point(219, 264);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 169);
             this.panel1.TabIndex = 0;
@@ -482,20 +498,170 @@
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
+            // chooseLevel
+            // 
+            this.chooseLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.chooseLevel.Controls.Add(this.groupBoxLevel);
+            this.chooseLevel.Controls.Add(this.groupBoxEx);
+            this.chooseLevel.Controls.Add(this.loadNewEx);
+            this.chooseLevel.Controls.Add(this.createNewEx);
+            this.chooseLevel.Location = new System.Drawing.Point(3, 8);
+            this.chooseLevel.Name = "chooseLevel";
+            this.chooseLevel.Size = new System.Drawing.Size(182, 507);
+            this.chooseLevel.TabIndex = 4;
+            // 
+            // groupBoxLevel
+            // 
+            this.groupBoxLevel.Controls.Add(this.hard);
+            this.groupBoxLevel.Controls.Add(this.medium);
+            this.groupBoxLevel.Controls.Add(this.easy);
+            this.groupBoxLevel.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxLevel.Name = "groupBoxLevel";
+            this.groupBoxLevel.Size = new System.Drawing.Size(130, 108);
+            this.groupBoxLevel.TabIndex = 0;
+            this.groupBoxLevel.TabStop = false;
+            this.groupBoxLevel.Text = "Odabir nivoa:";
+            // 
+            // hard
+            // 
+            this.hard.AutoSize = true;
+            this.hard.Location = new System.Drawing.Point(7, 75);
+            this.hard.Name = "hard";
+            this.hard.Size = new System.Drawing.Size(68, 21);
+            this.hard.TabIndex = 2;
+            this.hard.Text = "Teško";
+            this.hard.UseVisualStyleBackColor = true;
+            // 
+            // medium
+            // 
+            this.medium.AutoSize = true;
+            this.medium.Location = new System.Drawing.Point(6, 48);
+            this.medium.Name = "medium";
+            this.medium.Size = new System.Drawing.Size(82, 21);
+            this.medium.TabIndex = 1;
+            this.medium.Text = "Srednje ";
+            this.medium.UseVisualStyleBackColor = true;
+            // 
+            // easy
+            // 
+            this.easy.AutoSize = true;
+            this.easy.Checked = true;
+            this.easy.Location = new System.Drawing.Point(7, 21);
+            this.easy.Name = "easy";
+            this.easy.Size = new System.Drawing.Size(60, 21);
+            this.easy.TabIndex = 0;
+            this.easy.TabStop = true;
+            this.easy.Text = "Lako";
+            this.easy.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxEx
+            // 
+            this.groupBoxEx.Controls.Add(this.ex_5);
+            this.groupBoxEx.Controls.Add(this.ex_4);
+            this.groupBoxEx.Controls.Add(this.ex_3);
+            this.groupBoxEx.Controls.Add(this.ex_2);
+            this.groupBoxEx.Controls.Add(this.ex_1);
+            this.groupBoxEx.Location = new System.Drawing.Point(3, 117);
+            this.groupBoxEx.Name = "groupBoxEx";
+            this.groupBoxEx.Size = new System.Drawing.Size(168, 161);
+            this.groupBoxEx.TabIndex = 1;
+            this.groupBoxEx.TabStop = false;
+            this.groupBoxEx.Text = "Odabir vježbe:";
+            // 
+            // ex_5
+            // 
+            this.ex_5.AutoSize = true;
+            this.ex_5.Location = new System.Drawing.Point(7, 129);
+            this.ex_5.Name = "ex_5";
+            this.ex_5.Size = new System.Drawing.Size(84, 21);
+            this.ex_5.TabIndex = 4;
+            this.ex_5.Text = "Vježba 5";
+            this.ex_5.UseVisualStyleBackColor = true;
+            // 
+            // ex_4
+            // 
+            this.ex_4.AutoSize = true;
+            this.ex_4.Location = new System.Drawing.Point(7, 102);
+            this.ex_4.Name = "ex_4";
+            this.ex_4.Size = new System.Drawing.Size(84, 21);
+            this.ex_4.TabIndex = 3;
+            this.ex_4.Text = "Vježba 4";
+            this.ex_4.UseVisualStyleBackColor = true;
+            // 
+            // ex_3
+            // 
+            this.ex_3.AutoSize = true;
+            this.ex_3.Location = new System.Drawing.Point(7, 76);
+            this.ex_3.Name = "ex_3";
+            this.ex_3.Size = new System.Drawing.Size(84, 21);
+            this.ex_3.TabIndex = 2;
+            this.ex_3.Text = "Vježba 3";
+            this.ex_3.UseVisualStyleBackColor = true;
+            // 
+            // ex_2
+            // 
+            this.ex_2.AutoSize = true;
+            this.ex_2.Location = new System.Drawing.Point(7, 49);
+            this.ex_2.Name = "ex_2";
+            this.ex_2.Size = new System.Drawing.Size(84, 21);
+            this.ex_2.TabIndex = 1;
+            this.ex_2.Text = "Vježba 2";
+            this.ex_2.UseVisualStyleBackColor = true;
+            // 
+            // ex_1
+            // 
+            this.ex_1.AutoSize = true;
+            this.ex_1.Checked = true;
+            this.ex_1.Location = new System.Drawing.Point(7, 22);
+            this.ex_1.Name = "ex_1";
+            this.ex_1.Size = new System.Drawing.Size(84, 21);
+            this.ex_1.TabIndex = 0;
+            this.ex_1.TabStop = true;
+            this.ex_1.Text = "Vježba 1";
+            this.ex_1.UseVisualStyleBackColor = true;
+            // 
+            // loadNewEx
+            // 
+            this.loadNewEx.Location = new System.Drawing.Point(3, 284);
+            this.loadNewEx.Name = "loadNewEx";
+            this.loadNewEx.Size = new System.Drawing.Size(168, 34);
+            this.loadNewEx.TabIndex = 4;
+            this.loadNewEx.Text = "Učitaj vježbu";
+            this.loadNewEx.UseVisualStyleBackColor = true;
+            this.loadNewEx.Click += new System.EventHandler(this.loadNewEx_Click);
+            // 
+            // createNewEx
+            // 
+            this.createNewEx.Location = new System.Drawing.Point(3, 324);
+            this.createNewEx.Name = "createNewEx";
+            this.createNewEx.Size = new System.Drawing.Size(168, 34);
+            this.createNewEx.TabIndex = 5;
+            this.createNewEx.Text = "Kreiraj svoju vježbu";
+            this.createNewEx.UseVisualStyleBackColor = true;
+            this.createNewEx.Click += new System.EventHandler(this.createNewEx_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 485);
+            this.ClientSize = new System.Drawing.Size(939, 527);
+            this.Controls.Add(this.chooseLevel);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.textToType);
             this.Controls.Add(this.typedText);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Daktilograf";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.chooseLevel.ResumeLayout(false);
+            this.groupBoxLevel.ResumeLayout(false);
+            this.groupBoxLevel.PerformLayout();
+            this.groupBoxEx.ResumeLayout(false);
+            this.groupBoxEx.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,6 +705,19 @@
         private System.Windows.Forms.TextBox typedText;
         private System.Windows.Forms.Label textToType;
         private System.Windows.Forms.Button startBtn;
+        private System.Windows.Forms.FlowLayoutPanel chooseLevel;
+        private System.Windows.Forms.GroupBox groupBoxLevel;
+        private System.Windows.Forms.RadioButton hard;
+        private System.Windows.Forms.RadioButton medium;
+        private System.Windows.Forms.RadioButton easy;
+        private System.Windows.Forms.GroupBox groupBoxEx;
+        private System.Windows.Forms.RadioButton ex_5;
+        private System.Windows.Forms.RadioButton ex_4;
+        private System.Windows.Forms.RadioButton ex_3;
+        private System.Windows.Forms.RadioButton ex_2;
+        private System.Windows.Forms.RadioButton ex_1;
+        private System.Windows.Forms.Button loadNewEx;
+        private System.Windows.Forms.Button createNewEx;
     }
 }
 

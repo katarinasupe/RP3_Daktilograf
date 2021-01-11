@@ -1,0 +1,15 @@
+kada se igra uspjesno zavrsi, tribalo bi se moci na start stisnuti ili ucitati nova vjezba td se obrise stari sadrzaj i zapocne na praznom textboxu za unos
+
+kada prelazimo na iduce slovo nakon sto smo tocno unijeli to trazeno slovo, pozadina se iz Green oboja u White, a pozadina inace nije White nego neka System.Control siva
+
+prilikom ucitavanja novih vjezbi, ne radi reset bojanja slova ok, triba srediti vjt current letter, nisan tila petljati, mozak mi vise ne radi hehe
+
+generiranje nove vjezbe ne radi jer tribamo viditi kako cemo kreirati nove vjezbe, ali san napravila novu formu za odabir parametara i povezala prvu i drugu formu
+
+sta se tice unosa čć itd, sta bi se desilo kad bi se na Properties of Form1 language prominija iz (default) u Croatian?
+
+ucitavam nove vjezbe iz Debug foldera jer je current, moran to jos vidit kako sredit da bude neovisno o tom i moramo se dog di spremati nove vjezbe (valjda isto tu) i na koji nacin ce se one onda otvarati
+ja predlazen da se one onda lokalno spreme kao .txt i da postoji button otvori vjezbu i da to odvede na folder di su kreirane nove vjezbe (ako postoje)
+
+i tako ima jos tih dosta caka koje san uocila, al tek smo pocele, td ce bit to dobro
+
