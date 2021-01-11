@@ -23,484 +23,522 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Q = new System.Windows.Forms.Label();
+            this.I = new System.Windows.Forms.Label();
+            this.U = new System.Windows.Forms.Label();
+            this.Z = new System.Windows.Forms.Label();
+            this.T = new System.Windows.Forms.Label();
+            this.R = new System.Windows.Forms.Label();
+            this.E = new System.Windows.Forms.Label();
+            this.W = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.SPACE = new System.Windows.Forms.Label();
+            this.X = new System.Windows.Forms.Label();
+            this.C = new System.Windows.Forms.Label();
+            this.V = new System.Windows.Forms.Label();
+            this.B = new System.Windows.Forms.Label();
+            this.N = new System.Windows.Forms.Label();
+            this.M = new System.Windows.Forms.Label();
+            this.Y = new System.Windows.Forms.Label();
+            this.Č = new System.Windows.Forms.Label();
+            this.Ć = new System.Windows.Forms.Label();
+            this.L = new System.Windows.Forms.Label();
+            this.Ž = new System.Windows.Forms.Label();
+            this.S = new System.Windows.Forms.Label();
+            this.D = new System.Windows.Forms.Label();
+            this.F = new System.Windows.Forms.Label();
+            this.G = new System.Windows.Forms.Label();
+            this.H = new System.Windows.Forms.Label();
+            this.J = new System.Windows.Forms.Label();
+            this.K = new System.Windows.Forms.Label();
+            this.A = new System.Windows.Forms.Label();
+            this.P = new System.Windows.Forms.Label();
+            this.Š = new System.Windows.Forms.Label();
+            this.O = new System.Windows.Forms.Label();
+            this.Đ = new System.Windows.Forms.Label();
+            this.typedText = new System.Windows.Forms.TextBox();
+            this.textToType = new System.Windows.Forms.Label();
+            this.startBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // Q
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(31, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Q";
+            this.Q.AutoSize = true;
+            this.Q.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Q.Location = new System.Drawing.Point(15, 10);
+            this.Q.Name = "Q";
+            this.Q.Padding = new System.Windows.Forms.Padding(5);
+            this.Q.Size = new System.Drawing.Size(31, 29);
+            this.Q.TabIndex = 0;
+            this.Q.Text = "Q";
             // 
-            // label2
+            // I
             // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(274, 10);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(5);
-            this.label2.Size = new System.Drawing.Size(23, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "I";
+            this.I.AutoSize = true;
+            this.I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.I.Location = new System.Drawing.Point(274, 10);
+            this.I.Name = "I";
+            this.I.Padding = new System.Windows.Forms.Padding(5);
+            this.I.Size = new System.Drawing.Size(23, 29);
+            this.I.TabIndex = 1;
+            this.I.Text = "I";
             // 
-            // label3
+            // U
             // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(237, 10);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5);
-            this.label3.Size = new System.Drawing.Size(30, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "U";
+            this.U.AutoSize = true;
+            this.U.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.U.Location = new System.Drawing.Point(237, 10);
+            this.U.Name = "U";
+            this.U.Padding = new System.Windows.Forms.Padding(5);
+            this.U.Size = new System.Drawing.Size(30, 29);
+            this.U.TabIndex = 2;
+            this.U.Text = "U";
             // 
-            // label4
+            // Z
             // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(200, 10);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(5);
-            this.label4.Size = new System.Drawing.Size(29, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Z";
+            this.Z.AutoSize = true;
+            this.Z.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Z.Location = new System.Drawing.Point(200, 10);
+            this.Z.Name = "Z";
+            this.Z.Padding = new System.Windows.Forms.Padding(5);
+            this.Z.Size = new System.Drawing.Size(29, 29);
+            this.Z.TabIndex = 3;
+            this.Z.Text = "Z";
             // 
-            // label5
+            // T
             // 
-            this.label5.AutoSize = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(163, 10);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(5);
-            this.label5.Size = new System.Drawing.Size(29, 29);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "T";
+            this.T.AutoSize = true;
+            this.T.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.T.Location = new System.Drawing.Point(163, 10);
+            this.T.Name = "T";
+            this.T.Padding = new System.Windows.Forms.Padding(5);
+            this.T.Size = new System.Drawing.Size(29, 29);
+            this.T.TabIndex = 4;
+            this.T.Text = "T";
             // 
-            // label6
+            // R
             // 
-            this.label6.AutoSize = true;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(126, 10);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(5);
-            this.label6.Size = new System.Drawing.Size(30, 29);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "R";
+            this.R.AutoSize = true;
+            this.R.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.R.Location = new System.Drawing.Point(126, 10);
+            this.R.Name = "R";
+            this.R.Padding = new System.Windows.Forms.Padding(5);
+            this.R.Size = new System.Drawing.Size(30, 29);
+            this.R.TabIndex = 5;
+            this.R.Text = "R";
             // 
-            // label7
+            // E
             // 
-            this.label7.AutoSize = true;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(89, 10);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(5);
-            this.label7.Size = new System.Drawing.Size(29, 29);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "E";
+            this.E.AutoSize = true;
+            this.E.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.E.Location = new System.Drawing.Point(91, 10);
+            this.E.Name = "E";
+            this.E.Padding = new System.Windows.Forms.Padding(5);
+            this.E.Size = new System.Drawing.Size(29, 29);
+            this.E.TabIndex = 6;
+            this.E.Text = "E";
             // 
-            // label8
+            // W
             // 
-            this.label8.AutoSize = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(52, 10);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(5);
-            this.label8.Size = new System.Drawing.Size(33, 29);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "W";
+            this.W.AutoSize = true;
+            this.W.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.W.Location = new System.Drawing.Point(52, 10);
+            this.W.Name = "W";
+            this.W.Padding = new System.Windows.Forms.Padding(5);
+            this.W.Size = new System.Drawing.Size(33, 29);
+            this.W.TabIndex = 7;
+            this.W.Text = "W";
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.label29);
-            this.panel1.Controls.Add(this.label30);
-            this.panel1.Controls.Add(this.label31);
-            this.panel1.Controls.Add(this.label32);
-            this.panel1.Controls.Add(this.label33);
-            this.panel1.Controls.Add(this.label34);
-            this.panel1.Controls.Add(this.label36);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.SPACE);
+            this.panel1.Controls.Add(this.X);
+            this.panel1.Controls.Add(this.C);
+            this.panel1.Controls.Add(this.V);
+            this.panel1.Controls.Add(this.B);
+            this.panel1.Controls.Add(this.N);
+            this.panel1.Controls.Add(this.M);
+            this.panel1.Controls.Add(this.Y);
+            this.panel1.Controls.Add(this.Č);
+            this.panel1.Controls.Add(this.Ć);
+            this.panel1.Controls.Add(this.L);
+            this.panel1.Controls.Add(this.Ž);
+            this.panel1.Controls.Add(this.S);
+            this.panel1.Controls.Add(this.D);
+            this.panel1.Controls.Add(this.F);
+            this.panel1.Controls.Add(this.G);
+            this.panel1.Controls.Add(this.H);
+            this.panel1.Controls.Add(this.J);
+            this.panel1.Controls.Add(this.K);
+            this.panel1.Controls.Add(this.A);
+            this.panel1.Controls.Add(this.P);
+            this.panel1.Controls.Add(this.Š);
+            this.panel1.Controls.Add(this.O);
+            this.panel1.Controls.Add(this.Đ);
+            this.panel1.Controls.Add(this.W);
+            this.panel1.Controls.Add(this.E);
+            this.panel1.Controls.Add(this.R);
+            this.panel1.Controls.Add(this.T);
+            this.panel1.Controls.Add(this.Z);
+            this.panel1.Controls.Add(this.U);
+            this.panel1.Controls.Add(this.I);
+            this.panel1.Controls.Add(this.Q);
             this.panel1.Location = new System.Drawing.Point(219, 222);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(475, 169);
             this.panel1.TabIndex = 0;
             // 
-            // label25
+            // SPACE
             // 
-            this.label25.AutoSize = true;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(126, 132);
-            this.label25.Name = "label25";
-            this.label25.Padding = new System.Windows.Forms.Padding(60, 5, 60, 5);
-            this.label25.Size = new System.Drawing.Size(175, 29);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "SPACE";
+            this.SPACE.AutoSize = true;
+            this.SPACE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SPACE.Location = new System.Drawing.Point(126, 132);
+            this.SPACE.Name = "SPACE";
+            this.SPACE.Padding = new System.Windows.Forms.Padding(60, 5, 60, 5);
+            this.SPACE.Size = new System.Drawing.Size(175, 29);
+            this.SPACE.TabIndex = 32;
+            this.SPACE.Text = "SPACE";
             // 
-            // label29
+            // X
             // 
-            this.label29.AutoSize = true;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label29.Location = new System.Drawing.Point(88, 89);
-            this.label29.Name = "label29";
-            this.label29.Padding = new System.Windows.Forms.Padding(5);
-            this.label29.Size = new System.Drawing.Size(29, 29);
-            this.label29.TabIndex = 31;
-            this.label29.Text = "X";
+            this.X.AutoSize = true;
+            this.X.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.X.Location = new System.Drawing.Point(88, 89);
+            this.X.Name = "X";
+            this.X.Padding = new System.Windows.Forms.Padding(5);
+            this.X.Size = new System.Drawing.Size(29, 29);
+            this.X.TabIndex = 31;
+            this.X.Text = "X";
             // 
-            // label30
+            // C
             // 
-            this.label30.AutoSize = true;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Location = new System.Drawing.Point(125, 89);
-            this.label30.Name = "label30";
-            this.label30.Padding = new System.Windows.Forms.Padding(5);
-            this.label30.Size = new System.Drawing.Size(29, 29);
-            this.label30.TabIndex = 30;
-            this.label30.Text = "C";
+            this.C.AutoSize = true;
+            this.C.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.C.Location = new System.Drawing.Point(125, 89);
+            this.C.Name = "C";
+            this.C.Padding = new System.Windows.Forms.Padding(5);
+            this.C.Size = new System.Drawing.Size(29, 29);
+            this.C.TabIndex = 30;
+            this.C.Text = "C";
             // 
-            // label31
+            // V
             // 
-            this.label31.AutoSize = true;
-            this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label31.Location = new System.Drawing.Point(162, 89);
-            this.label31.Name = "label31";
-            this.label31.Padding = new System.Windows.Forms.Padding(5);
-            this.label31.Size = new System.Drawing.Size(29, 29);
-            this.label31.TabIndex = 29;
-            this.label31.Text = "V";
+            this.V.AutoSize = true;
+            this.V.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.V.Location = new System.Drawing.Point(162, 89);
+            this.V.Name = "V";
+            this.V.Padding = new System.Windows.Forms.Padding(5);
+            this.V.Size = new System.Drawing.Size(29, 29);
+            this.V.TabIndex = 29;
+            this.V.Text = "V";
             // 
-            // label32
+            // B
             // 
-            this.label32.AutoSize = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Location = new System.Drawing.Point(199, 89);
-            this.label32.Name = "label32";
-            this.label32.Padding = new System.Windows.Forms.Padding(5);
-            this.label32.Size = new System.Drawing.Size(29, 29);
-            this.label32.TabIndex = 28;
-            this.label32.Text = "B";
+            this.B.AutoSize = true;
+            this.B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.B.Location = new System.Drawing.Point(199, 89);
+            this.B.Name = "B";
+            this.B.Padding = new System.Windows.Forms.Padding(5);
+            this.B.Size = new System.Drawing.Size(29, 29);
+            this.B.TabIndex = 28;
+            this.B.Text = "B";
             // 
-            // label33
+            // N
             // 
-            this.label33.AutoSize = true;
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Location = new System.Drawing.Point(236, 89);
-            this.label33.Name = "label33";
-            this.label33.Padding = new System.Windows.Forms.Padding(5);
-            this.label33.Size = new System.Drawing.Size(30, 29);
-            this.label33.TabIndex = 27;
-            this.label33.Text = "N";
+            this.N.AutoSize = true;
+            this.N.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.N.Location = new System.Drawing.Point(236, 89);
+            this.N.Name = "N";
+            this.N.Padding = new System.Windows.Forms.Padding(5);
+            this.N.Size = new System.Drawing.Size(30, 29);
+            this.N.TabIndex = 27;
+            this.N.Text = "N";
             // 
-            // label34
+            // M
             // 
-            this.label34.AutoSize = true;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.Location = new System.Drawing.Point(273, 89);
-            this.label34.Name = "label34";
-            this.label34.Padding = new System.Windows.Forms.Padding(5);
-            this.label34.Size = new System.Drawing.Size(31, 29);
-            this.label34.TabIndex = 26;
-            this.label34.Text = "M";
+            this.M.AutoSize = true;
+            this.M.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.M.Location = new System.Drawing.Point(273, 89);
+            this.M.Name = "M";
+            this.M.Padding = new System.Windows.Forms.Padding(5);
+            this.M.Size = new System.Drawing.Size(31, 29);
+            this.M.TabIndex = 26;
+            this.M.Text = "M";
             // 
-            // label36
+            // Y
             // 
-            this.label36.AutoSize = true;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Location = new System.Drawing.Point(51, 89);
-            this.label36.Name = "label36";
-            this.label36.Padding = new System.Windows.Forms.Padding(5);
-            this.label36.Size = new System.Drawing.Size(29, 29);
-            this.label36.TabIndex = 24;
-            this.label36.Text = "Y";
+            this.Y.AutoSize = true;
+            this.Y.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Y.Location = new System.Drawing.Point(51, 89);
+            this.Y.Name = "Y";
+            this.Y.Padding = new System.Windows.Forms.Padding(5);
+            this.Y.Size = new System.Drawing.Size(29, 29);
+            this.Y.TabIndex = 24;
+            this.Y.Text = "Y";
             // 
-            // label13
+            // Č
             // 
-            this.label13.AutoSize = true;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(357, 50);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(5);
-            this.label13.Size = new System.Drawing.Size(29, 29);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "Č";
+            this.Č.AutoSize = true;
+            this.Č.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Č.Location = new System.Drawing.Point(357, 50);
+            this.Č.Name = "Č";
+            this.Č.Padding = new System.Windows.Forms.Padding(5);
+            this.Č.Size = new System.Drawing.Size(29, 29);
+            this.Č.TabIndex = 23;
+            this.Č.Text = "Č";
             // 
-            // label14
+            // Ć
             // 
-            this.label14.AutoSize = true;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(392, 50);
-            this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(5);
-            this.label14.Size = new System.Drawing.Size(29, 29);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Ć";
+            this.Ć.AutoSize = true;
+            this.Ć.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Ć.Location = new System.Drawing.Point(392, 50);
+            this.Ć.Name = "Ć";
+            this.Ć.Padding = new System.Windows.Forms.Padding(5);
+            this.Ć.Size = new System.Drawing.Size(29, 29);
+            this.Ć.TabIndex = 22;
+            this.Ć.Text = "Ć";
             // 
-            // label15
+            // L
             // 
-            this.label15.AutoSize = true;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(322, 50);
-            this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(5);
-            this.label15.Size = new System.Drawing.Size(28, 29);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "L";
+            this.L.AutoSize = true;
+            this.L.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L.Location = new System.Drawing.Point(322, 50);
+            this.L.Name = "L";
+            this.L.Padding = new System.Windows.Forms.Padding(5);
+            this.L.Size = new System.Drawing.Size(28, 29);
+            this.L.TabIndex = 21;
+            this.L.Text = "L";
             // 
-            // label16
+            // Ž
             // 
-            this.label16.AutoSize = true;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(427, 50);
-            this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(5);
-            this.label16.Size = new System.Drawing.Size(29, 29);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Ž";
+            this.Ž.AutoSize = true;
+            this.Ž.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Ž.Location = new System.Drawing.Point(427, 50);
+            this.Ž.Name = "Ž";
+            this.Ž.Padding = new System.Windows.Forms.Padding(5);
+            this.Ž.Size = new System.Drawing.Size(29, 29);
+            this.Ž.TabIndex = 20;
+            this.Ž.Text = "Ž";
             // 
-            // label17
+            // S
             // 
-            this.label17.AutoSize = true;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(69, 50);
-            this.label17.Name = "label17";
-            this.label17.Padding = new System.Windows.Forms.Padding(5);
-            this.label17.Size = new System.Drawing.Size(29, 29);
-            this.label17.TabIndex = 19;
-            this.label17.Text = "S";
+            this.S.AutoSize = true;
+            this.S.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.S.Location = new System.Drawing.Point(69, 50);
+            this.S.Name = "S";
+            this.S.Padding = new System.Windows.Forms.Padding(5);
+            this.S.Size = new System.Drawing.Size(29, 29);
+            this.S.TabIndex = 19;
+            this.S.Text = "S";
             // 
-            // label18
+            // D
             // 
-            this.label18.AutoSize = true;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(106, 50);
-            this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(5);
-            this.label18.Size = new System.Drawing.Size(30, 29);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "D";
+            this.D.AutoSize = true;
+            this.D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.D.Location = new System.Drawing.Point(106, 50);
+            this.D.Name = "D";
+            this.D.Padding = new System.Windows.Forms.Padding(5);
+            this.D.Size = new System.Drawing.Size(30, 29);
+            this.D.TabIndex = 18;
+            this.D.Text = "D";
             // 
-            // label19
+            // F
             // 
-            this.label19.AutoSize = true;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(143, 50);
-            this.label19.Name = "label19";
-            this.label19.Padding = new System.Windows.Forms.Padding(5);
-            this.label19.Size = new System.Drawing.Size(28, 29);
-            this.label19.TabIndex = 17;
-            this.label19.Text = "F";
+            this.F.AutoSize = true;
+            this.F.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.F.Location = new System.Drawing.Point(143, 50);
+            this.F.Name = "F";
+            this.F.Padding = new System.Windows.Forms.Padding(5);
+            this.F.Size = new System.Drawing.Size(28, 29);
+            this.F.TabIndex = 17;
+            this.F.Text = "F";
             // 
-            // label20
+            // G
             // 
-            this.label20.AutoSize = true;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(180, 50);
-            this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(5);
-            this.label20.Size = new System.Drawing.Size(31, 29);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "G";
+            this.G.AutoSize = true;
+            this.G.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.G.Location = new System.Drawing.Point(180, 50);
+            this.G.Name = "G";
+            this.G.Padding = new System.Windows.Forms.Padding(5);
+            this.G.Size = new System.Drawing.Size(31, 29);
+            this.G.TabIndex = 16;
+            this.G.Text = "G";
             // 
-            // label21
+            // H
             // 
-            this.label21.AutoSize = true;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(217, 50);
-            this.label21.Name = "label21";
-            this.label21.Padding = new System.Windows.Forms.Padding(5);
-            this.label21.Size = new System.Drawing.Size(30, 29);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "H";
+            this.H.AutoSize = true;
+            this.H.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.H.Location = new System.Drawing.Point(217, 50);
+            this.H.Name = "H";
+            this.H.Padding = new System.Windows.Forms.Padding(5);
+            this.H.Size = new System.Drawing.Size(30, 29);
+            this.H.TabIndex = 15;
+            this.H.Text = "H";
             // 
-            // label22
+            // J
             // 
-            this.label22.AutoSize = true;
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Location = new System.Drawing.Point(254, 50);
-            this.label22.Name = "label22";
-            this.label22.Padding = new System.Windows.Forms.Padding(5);
-            this.label22.Size = new System.Drawing.Size(27, 29);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "J";
+            this.J.AutoSize = true;
+            this.J.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.J.Location = new System.Drawing.Point(254, 50);
+            this.J.Name = "J";
+            this.J.Padding = new System.Windows.Forms.Padding(5);
+            this.J.Size = new System.Drawing.Size(27, 29);
+            this.J.TabIndex = 14;
+            this.J.Text = "J";
             // 
-            // label23
+            // K
             // 
-            this.label23.AutoSize = true;
-            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(287, 50);
-            this.label23.Name = "label23";
-            this.label23.Padding = new System.Windows.Forms.Padding(5);
-            this.label23.Size = new System.Drawing.Size(29, 29);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "K";
+            this.K.AutoSize = true;
+            this.K.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.K.Location = new System.Drawing.Point(287, 50);
+            this.K.Name = "K";
+            this.K.Padding = new System.Windows.Forms.Padding(5);
+            this.K.Size = new System.Drawing.Size(29, 29);
+            this.K.TabIndex = 13;
+            this.K.Text = "K";
             // 
-            // label24
+            // A
             // 
-            this.label24.AutoSize = true;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Location = new System.Drawing.Point(32, 50);
-            this.label24.Name = "label24";
-            this.label24.Padding = new System.Windows.Forms.Padding(5);
-            this.label24.Size = new System.Drawing.Size(29, 29);
-            this.label24.TabIndex = 12;
-            this.label24.Text = "A";
+            this.A.AutoSize = true;
+            this.A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.A.Location = new System.Drawing.Point(32, 50);
+            this.A.Name = "A";
+            this.A.Padding = new System.Windows.Forms.Padding(5);
+            this.A.Size = new System.Drawing.Size(29, 29);
+            this.A.TabIndex = 12;
+            this.A.Text = "A";
             // 
-            // label12
+            // P
             // 
-            this.label12.AutoSize = true;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(340, 10);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(5);
-            this.label12.Size = new System.Drawing.Size(29, 29);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "P";
+            this.P.AutoSize = true;
+            this.P.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.P.Location = new System.Drawing.Point(340, 10);
+            this.P.Name = "P";
+            this.P.Padding = new System.Windows.Forms.Padding(5);
+            this.P.Size = new System.Drawing.Size(29, 29);
+            this.P.TabIndex = 11;
+            this.P.Text = "P";
             // 
-            // label11
+            // Š
             // 
-            this.label11.AutoSize = true;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(375, 10);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(5);
-            this.label11.Size = new System.Drawing.Size(29, 29);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Š";
+            this.Š.AutoSize = true;
+            this.Š.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Š.Location = new System.Drawing.Point(375, 10);
+            this.Š.Name = "Š";
+            this.Š.Padding = new System.Windows.Forms.Padding(5);
+            this.Š.Size = new System.Drawing.Size(29, 29);
+            this.Š.TabIndex = 10;
+            this.Š.Text = "Š";
             // 
-            // label10
+            // O
             // 
-            this.label10.AutoSize = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(303, 10);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(5);
-            this.label10.Size = new System.Drawing.Size(31, 29);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "O";
+            this.O.AutoSize = true;
+            this.O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.O.Location = new System.Drawing.Point(303, 10);
+            this.O.Name = "O";
+            this.O.Padding = new System.Windows.Forms.Padding(5);
+            this.O.Size = new System.Drawing.Size(31, 29);
+            this.O.TabIndex = 9;
+            this.O.Text = "O";
             // 
-            // label9
+            // Đ
             // 
-            this.label9.AutoSize = true;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(410, 10);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(5);
-            this.label9.Size = new System.Drawing.Size(30, 29);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Đ";
+            this.Đ.AutoSize = true;
+            this.Đ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Đ.Location = new System.Drawing.Point(410, 10);
+            this.Đ.Name = "Đ";
+            this.Đ.Padding = new System.Windows.Forms.Padding(5);
+            this.Đ.Size = new System.Drawing.Size(30, 29);
+            this.Đ.TabIndex = 8;
+            this.Đ.Text = "Đ";
+            // 
+            // typedText
+            // 
+            this.typedText.Location = new System.Drawing.Point(219, 137);
+            this.typedText.Name = "typedText";
+            this.typedText.Size = new System.Drawing.Size(473, 22);
+            this.typedText.TabIndex = 1;
+            this.typedText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // textToType
+            // 
+            this.textToType.AutoSize = true;
+            this.textToType.Location = new System.Drawing.Point(227, 89);
+            this.textToType.Name = "textToType";
+            this.textToType.Size = new System.Drawing.Size(58, 17);
+            this.textToType.TabIndex = 2;
+            this.textToType.Text = "Pokusaj";
+            // 
+            // startBtn
+            // 
+            this.startBtn.Location = new System.Drawing.Point(400, 177);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(75, 23);
+            this.startBtn.TabIndex = 3;
+            this.startBtn.Text = "Start";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 485);
+            this.Controls.Add(this.startBtn);
+            this.Controls.Add(this.textToType);
+            this.Controls.Add(this.typedText);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Q;
+        private System.Windows.Forms.Label I;
+        private System.Windows.Forms.Label U;
+        private System.Windows.Forms.Label Z;
+        private System.Windows.Forms.Label T;
+        private System.Windows.Forms.Label R;
+        private System.Windows.Forms.Label E;
+        private System.Windows.Forms.Label W;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label SPACE;
+        private System.Windows.Forms.Label X;
+        private System.Windows.Forms.Label C;
+        private System.Windows.Forms.Label V;
+        private System.Windows.Forms.Label B;
+        private System.Windows.Forms.Label N;
+        private System.Windows.Forms.Label M;
+        private System.Windows.Forms.Label Y;
+        private System.Windows.Forms.Label Č;
+        private System.Windows.Forms.Label Ć;
+        private System.Windows.Forms.Label L;
+        private System.Windows.Forms.Label Ž;
+        private System.Windows.Forms.Label S;
+        private System.Windows.Forms.Label D;
+        private System.Windows.Forms.Label F;
+        private System.Windows.Forms.Label G;
+        private System.Windows.Forms.Label H;
+        private System.Windows.Forms.Label J;
+        private System.Windows.Forms.Label K;
+        private System.Windows.Forms.Label A;
+        private System.Windows.Forms.Label P;
+        private System.Windows.Forms.Label Š;
+        private System.Windows.Forms.Label O;
+        private System.Windows.Forms.Label Đ;
+        private System.Windows.Forms.TextBox typedText;
+        private System.Windows.Forms.Label textToType;
+        private System.Windows.Forms.Button startBtn;
     }
 }
 
