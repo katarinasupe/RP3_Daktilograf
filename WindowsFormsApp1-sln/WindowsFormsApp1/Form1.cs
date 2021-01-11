@@ -6,10 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics; //stopwatch
+using System.Globalization; //localtime
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
+
+        private char[] lettersInText;
+        private int currentLetter = 0; //pamtimo na kojem se slovu nalazimo
+        private char wrongCharacter = '0';
+        Stopwatch timer = new Stopwatch();
 
         public string getTextToType()
         {
@@ -20,16 +27,13 @@ namespace WindowsFormsApp1 {
             this.textToType.Text = value;
         }
 
-        private char[] lettersInText;
-        private int currentLetter = 0; //pamtimo na kojem se slovu nalazimo
 
         public Form1() {
+
             InitializeComponent();
             createTextArray();
             this.typedText.Enabled = false;
             this.startBtn.Enabled = true;
-        
-
         }
 
         void createTextArray()
@@ -39,61 +43,31 @@ namespace WindowsFormsApp1 {
             {
                 Console.WriteLine(Char.ToUpper(ch));
             }
+            currentLetter = 0;
         }
 
-        private void removeCurrentLetterOnKeyboard() {
+        private void startBtn_Click(object sender, EventArgs e) {
 
-            var keyboard = this.panel1.Controls;
-            String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
-            try {
-                var currentKey = keyboard.Find(letter, true); //vraca kolekciju elemenata (ali uvijek ce biti samo 1 element)
-                currentKey[0].BackColor = Color.White;
+            this.startBtn.Enabled = false;
+            this.typedText.Enabled = true;
+            this.typedText.Text = "";
+            this.typedText.Focus();
 
-            } catch (Exception ex) {
-
-                Console.WriteLine("Nije nađeno slovo.");
-                //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
-            }
-          
+            startTyping(); 
         }
 
-        private void showNextLetterOnKeyboard() {
+        private void startTyping() {
 
-            if (currentLetter < lettersInText.Length) {
-                var keyboard = this.panel1.Controls;
-                String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
-                try {
-                    var nextKey = keyboard.Find(letter, true); 
-                    nextKey[0].BackColor = Color.LightGreen;
-
-                } catch (Exception ex) {
-
-                    Console.WriteLine("Nije nađeno slovo.");
-                    //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
-                }
-            } else {
-                this.typedText.Enabled = false;
-                MessageBox.Show("Ovdje mozemo ispisati rezultat! :)");
-            }
+            timer.Start();
+            createTextArray();
+            showNextLetterOnKeyboard();
         }
 
-        private char typedCharacter(int code) {
+        private void stopTyping() {
 
-            char letter;
-            if (code == 186) letter = 'Č';
-            else if (code == 219) letter = 'Š';
-            else if (code == 220) letter = 'Ž';
-            else if (code == 221) letter = 'Đ';
-            else if (code == 222) letter = 'Ć';
-            else if (code >= 65 && code <= 90) letter = (char)code;
-            else if (code == 32) letter = '-'; //razmak
-            else if (code == 8) letter = '.'; //todo backspace
-            else letter = '?'; // OVO TREBA SREDITI!
-
-
-            return letter;
+            timer.Stop();
+            MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed);
         }
-
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
 
@@ -106,35 +80,113 @@ namespace WindowsFormsApp1 {
 
             } else if (typedChar == Char.ToUpper(lettersInText[currentLetter])) {
 
-                removeCurrentLetterOnKeyboard();
+                removeCurrentLetterFromKeyboard();
+                if (wrongCharacter != '0') {
+                    //todo
+                    // removeWrongLetterFromKeyboard();
+                    //wrongCharacter = '0';
+                }
                 currentLetter += 1;
                 showNextLetterOnKeyboard();
              
-
             } else {
-                var letter = "" + typedChar + "";
+                wrongCharacter = typedChar;
+                showWrongLetterOnKeyboard();
+            }
+            //todo - slucaj kad je pritisnut backspace (srediti wrongCharacter)
+        }
+
+
+        private char typedCharacter(int code) {
+
+            char letter;
+            if (code == 186) letter = 'Č';
+            else if (code == 219) letter = 'Š';
+            else if (code == 220) letter = 'Ž';
+            else if (code == 221) letter = 'Đ';
+            else if (code == 222) letter = 'Ć';
+            else if (code >= 65 && code <= 90) letter = (char)code;
+            else if (code == 32) letter = '-'; //razmak
+            else if (code == 8) letter = '.'; //todo backspace
+            else letter = '?'; // mozda neki drugi znak????
+
+            return letter;
+        }
+
+
+        private void removeCurrentLetterFromKeyboard() {
+
+            var keyboard = this.panel1.Controls;
+            String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
+            try {
+                var currentKey = keyboard.Find(letter, true);
+                //vraca kolekciju elemenata (ovdje ce biti samo 1 element zbog jedinstvenog imena)
+                currentKey[0].BackColor = Color.White;
+
+            } catch (Exception ex) {
+
+                Console.WriteLine("Nije nađeno slovo.");
+                //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
+            }
+
+        }
+
+        private void showNextLetterOnKeyboard() {
+
+            if (currentLetter < lettersInText.Length) {
                 var keyboard = this.panel1.Controls;
+                String letter = "" + Char.ToUpper(lettersInText[currentLetter]) + "";
                 try {
-                    var key = keyboard.Find(letter, true); 
-                    key[0].BackColor = Color.Red;
+                    var nextKey = keyboard.Find(letter, true);
+                    nextKey[0].BackColor = Color.LightGreen;
 
                 } catch (Exception ex) {
 
                     Console.WriteLine("Nije nađeno slovo.");
+                    //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
                 }
+            } else {
+
+                this.typedText.Enabled = false;
+                this.startBtn.Enabled = true;
+
+                stopTyping();
+                
             }
         }
 
+        private void showWrongLetterOnKeyboard() {
+            
+            var keyboard = this.panel1.Controls;
+            String letter = "" + Char.ToUpper(wrongCharacter) + "";
 
-        private void startBtn_Click(object sender, EventArgs e) {
+            try {
+                var key = keyboard.Find(letter, true);
+                key[0].BackColor = Color.Red;
 
-            this.startBtn.Enabled = false;
-            this.typedText.Enabled = true;
-            this.typedText.Focus();
+            } catch (Exception ex) {
 
-            showNextLetterOnKeyboard();
+                Console.WriteLine("Nije nađeno slovo.");
+            }
 
         }
+
+        private void removeWrongLetterFromKeyboard() {
+
+            var keyboard = this.panel1.Controls;
+            String letter = "" + Char.ToUpper(wrongCharacter) + "";
+            try {
+                var currentKey = keyboard.Find(letter, true);
+                //vraca kolekciju elemenata (ovdje ce biti samo 1 element zbog jedinstvenog imena)
+                currentKey[0].BackColor = Color.White;
+
+            } catch (Exception ex) {
+
+                Console.WriteLine("Nije nađeno slovo.");
+                //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
+            }
+        }
+
 
         private void loadNewEx_Click(object sender, EventArgs e)
         {
