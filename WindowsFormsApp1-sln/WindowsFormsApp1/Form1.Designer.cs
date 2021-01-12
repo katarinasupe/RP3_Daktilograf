@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Q = new System.Windows.Forms.Label();
             this.I = new System.Windows.Forms.Label();
             this.U = new System.Windows.Forms.Label();
@@ -80,95 +81,64 @@
             // 
             // Q
             // 
-            this.Q.AutoSize = true;
+            this.Q.BackColor = System.Drawing.Color.White;
             this.Q.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Q.Location = new System.Drawing.Point(15, 10);
+            resources.ApplyResources(this.Q, "Q");
             this.Q.Name = "Q";
-            this.Q.Padding = new System.Windows.Forms.Padding(5);
-            this.Q.Size = new System.Drawing.Size(31, 29);
-            this.Q.TabIndex = 0;
-            this.Q.Text = "Q";
             // 
             // I
             // 
-            this.I.AutoSize = true;
+            this.I.BackColor = System.Drawing.Color.White;
             this.I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.I.Location = new System.Drawing.Point(274, 10);
+            resources.ApplyResources(this.I, "I");
             this.I.Name = "I";
-            this.I.Padding = new System.Windows.Forms.Padding(5);
-            this.I.Size = new System.Drawing.Size(23, 29);
-            this.I.TabIndex = 1;
-            this.I.Text = "I";
             // 
             // U
             // 
-            this.U.AutoSize = true;
+            this.U.BackColor = System.Drawing.Color.White;
             this.U.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.U.Location = new System.Drawing.Point(237, 10);
+            resources.ApplyResources(this.U, "U");
             this.U.Name = "U";
-            this.U.Padding = new System.Windows.Forms.Padding(5);
-            this.U.Size = new System.Drawing.Size(30, 29);
-            this.U.TabIndex = 2;
-            this.U.Text = "U";
             // 
             // Z
             // 
-            this.Z.AutoSize = true;
+            this.Z.BackColor = System.Drawing.Color.White;
             this.Z.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Z.Location = new System.Drawing.Point(200, 10);
+            resources.ApplyResources(this.Z, "Z");
             this.Z.Name = "Z";
-            this.Z.Padding = new System.Windows.Forms.Padding(5);
-            this.Z.Size = new System.Drawing.Size(29, 29);
-            this.Z.TabIndex = 3;
-            this.Z.Text = "Z";
             // 
             // T
             // 
-            this.T.AutoSize = true;
+            this.T.BackColor = System.Drawing.Color.White;
             this.T.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.T.Location = new System.Drawing.Point(163, 10);
+            resources.ApplyResources(this.T, "T");
             this.T.Name = "T";
-            this.T.Padding = new System.Windows.Forms.Padding(5);
-            this.T.Size = new System.Drawing.Size(29, 29);
-            this.T.TabIndex = 4;
-            this.T.Text = "T";
             // 
             // R
             // 
-            this.R.AutoSize = true;
+            this.R.BackColor = System.Drawing.Color.White;
             this.R.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.R.Location = new System.Drawing.Point(126, 10);
+            resources.ApplyResources(this.R, "R");
             this.R.Name = "R";
-            this.R.Padding = new System.Windows.Forms.Padding(5);
-            this.R.Size = new System.Drawing.Size(30, 29);
-            this.R.TabIndex = 5;
-            this.R.Text = "R";
             // 
             // E
             // 
-            this.E.AutoSize = true;
+            this.E.BackColor = System.Drawing.Color.White;
             this.E.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.E.Location = new System.Drawing.Point(91, 10);
+            resources.ApplyResources(this.E, "E");
             this.E.Name = "E";
-            this.E.Padding = new System.Windows.Forms.Padding(5);
-            this.E.Size = new System.Drawing.Size(29, 29);
-            this.E.TabIndex = 6;
-            this.E.Text = "E";
             // 
             // W
             // 
-            this.W.AutoSize = true;
+            this.W.BackColor = System.Drawing.Color.White;
             this.W.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.W.Location = new System.Drawing.Point(52, 10);
+            resources.ApplyResources(this.W, "W");
             this.W.Name = "W";
-            this.W.Padding = new System.Windows.Forms.Padding(5);
-            this.W.Size = new System.Drawing.Size(33, 29);
-            this.W.TabIndex = 7;
-            this.W.Text = "W";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.SPACE);
             this.panel1.Controls.Add(this.X);
@@ -202,357 +172,230 @@
             this.panel1.Controls.Add(this.U);
             this.panel1.Controls.Add(this.I);
             this.panel1.Controls.Add(this.Q);
-            this.panel1.Location = new System.Drawing.Point(219, 264);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(475, 169);
-            this.panel1.TabIndex = 0;
             // 
             // SPACE
             // 
-            this.SPACE.AutoSize = true;
+            this.SPACE.BackColor = System.Drawing.Color.White;
             this.SPACE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SPACE.Location = new System.Drawing.Point(126, 132);
+            resources.ApplyResources(this.SPACE, "SPACE");
             this.SPACE.Name = "SPACE";
-            this.SPACE.Padding = new System.Windows.Forms.Padding(60, 5, 60, 5);
-            this.SPACE.Size = new System.Drawing.Size(175, 29);
-            this.SPACE.TabIndex = 32;
-            this.SPACE.Text = "SPACE";
             // 
             // X
             // 
-            this.X.AutoSize = true;
+            this.X.BackColor = System.Drawing.Color.White;
             this.X.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.X.Location = new System.Drawing.Point(88, 89);
+            resources.ApplyResources(this.X, "X");
             this.X.Name = "X";
-            this.X.Padding = new System.Windows.Forms.Padding(5);
-            this.X.Size = new System.Drawing.Size(29, 29);
-            this.X.TabIndex = 31;
-            this.X.Text = "X";
             // 
             // C
             // 
-            this.C.AutoSize = true;
+            this.C.BackColor = System.Drawing.Color.White;
             this.C.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.C.Location = new System.Drawing.Point(125, 89);
+            resources.ApplyResources(this.C, "C");
             this.C.Name = "C";
-            this.C.Padding = new System.Windows.Forms.Padding(5);
-            this.C.Size = new System.Drawing.Size(29, 29);
-            this.C.TabIndex = 30;
-            this.C.Text = "C";
             // 
             // V
             // 
-            this.V.AutoSize = true;
+            this.V.BackColor = System.Drawing.Color.White;
             this.V.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.V.Location = new System.Drawing.Point(162, 89);
+            resources.ApplyResources(this.V, "V");
             this.V.Name = "V";
-            this.V.Padding = new System.Windows.Forms.Padding(5);
-            this.V.Size = new System.Drawing.Size(29, 29);
-            this.V.TabIndex = 29;
-            this.V.Text = "V";
             // 
             // B
             // 
-            this.B.AutoSize = true;
+            this.B.BackColor = System.Drawing.Color.White;
             this.B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.B.Location = new System.Drawing.Point(199, 89);
+            resources.ApplyResources(this.B, "B");
             this.B.Name = "B";
-            this.B.Padding = new System.Windows.Forms.Padding(5);
-            this.B.Size = new System.Drawing.Size(29, 29);
-            this.B.TabIndex = 28;
-            this.B.Text = "B";
             // 
             // N
             // 
-            this.N.AutoSize = true;
+            this.N.BackColor = System.Drawing.Color.White;
             this.N.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.N.Location = new System.Drawing.Point(236, 89);
+            resources.ApplyResources(this.N, "N");
             this.N.Name = "N";
-            this.N.Padding = new System.Windows.Forms.Padding(5);
-            this.N.Size = new System.Drawing.Size(30, 29);
-            this.N.TabIndex = 27;
-            this.N.Text = "N";
             // 
             // M
             // 
-            this.M.AutoSize = true;
+            this.M.BackColor = System.Drawing.Color.White;
             this.M.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.M.Location = new System.Drawing.Point(273, 89);
+            resources.ApplyResources(this.M, "M");
             this.M.Name = "M";
-            this.M.Padding = new System.Windows.Forms.Padding(5);
-            this.M.Size = new System.Drawing.Size(31, 29);
-            this.M.TabIndex = 26;
-            this.M.Text = "M";
             // 
             // Y
             // 
-            this.Y.AutoSize = true;
+            this.Y.BackColor = System.Drawing.Color.White;
             this.Y.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Y.Location = new System.Drawing.Point(51, 89);
+            resources.ApplyResources(this.Y, "Y");
             this.Y.Name = "Y";
-            this.Y.Padding = new System.Windows.Forms.Padding(5);
-            this.Y.Size = new System.Drawing.Size(29, 29);
-            this.Y.TabIndex = 24;
-            this.Y.Text = "Y";
             // 
             // Č
             // 
-            this.Č.AutoSize = true;
+            this.Č.BackColor = System.Drawing.Color.White;
             this.Č.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Č.Location = new System.Drawing.Point(357, 50);
+            resources.ApplyResources(this.Č, "Č");
             this.Č.Name = "Č";
-            this.Č.Padding = new System.Windows.Forms.Padding(5);
-            this.Č.Size = new System.Drawing.Size(29, 29);
-            this.Č.TabIndex = 23;
-            this.Č.Text = "Č";
             // 
             // Ć
             // 
-            this.Ć.AutoSize = true;
+            this.Ć.BackColor = System.Drawing.Color.White;
             this.Ć.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Ć.Location = new System.Drawing.Point(392, 50);
+            resources.ApplyResources(this.Ć, "Ć");
             this.Ć.Name = "Ć";
-            this.Ć.Padding = new System.Windows.Forms.Padding(5);
-            this.Ć.Size = new System.Drawing.Size(29, 29);
-            this.Ć.TabIndex = 22;
-            this.Ć.Text = "Ć";
             // 
             // L
             // 
-            this.L.AutoSize = true;
+            this.L.BackColor = System.Drawing.Color.White;
             this.L.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L.Location = new System.Drawing.Point(322, 50);
+            resources.ApplyResources(this.L, "L");
             this.L.Name = "L";
-            this.L.Padding = new System.Windows.Forms.Padding(5);
-            this.L.Size = new System.Drawing.Size(28, 29);
-            this.L.TabIndex = 21;
-            this.L.Text = "L";
             // 
             // Ž
             // 
-            this.Ž.AutoSize = true;
+            this.Ž.BackColor = System.Drawing.Color.White;
             this.Ž.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Ž.Location = new System.Drawing.Point(427, 50);
+            resources.ApplyResources(this.Ž, "Ž");
             this.Ž.Name = "Ž";
-            this.Ž.Padding = new System.Windows.Forms.Padding(5);
-            this.Ž.Size = new System.Drawing.Size(29, 29);
-            this.Ž.TabIndex = 20;
-            this.Ž.Text = "Ž";
             // 
             // S
             // 
-            this.S.AutoSize = true;
+            this.S.BackColor = System.Drawing.Color.White;
             this.S.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.S.Location = new System.Drawing.Point(69, 50);
+            resources.ApplyResources(this.S, "S");
             this.S.Name = "S";
-            this.S.Padding = new System.Windows.Forms.Padding(5);
-            this.S.Size = new System.Drawing.Size(29, 29);
-            this.S.TabIndex = 19;
-            this.S.Text = "S";
             // 
             // D
             // 
-            this.D.AutoSize = true;
+            this.D.BackColor = System.Drawing.Color.White;
             this.D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.D.Location = new System.Drawing.Point(106, 50);
+            resources.ApplyResources(this.D, "D");
             this.D.Name = "D";
-            this.D.Padding = new System.Windows.Forms.Padding(5);
-            this.D.Size = new System.Drawing.Size(30, 29);
-            this.D.TabIndex = 18;
-            this.D.Text = "D";
             // 
             // F
             // 
-            this.F.AutoSize = true;
+            this.F.BackColor = System.Drawing.Color.White;
             this.F.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.F.Location = new System.Drawing.Point(143, 50);
+            resources.ApplyResources(this.F, "F");
             this.F.Name = "F";
-            this.F.Padding = new System.Windows.Forms.Padding(5);
-            this.F.Size = new System.Drawing.Size(28, 29);
-            this.F.TabIndex = 17;
-            this.F.Text = "F";
             // 
             // G
             // 
-            this.G.AutoSize = true;
+            this.G.BackColor = System.Drawing.Color.White;
             this.G.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.G.Location = new System.Drawing.Point(180, 50);
+            resources.ApplyResources(this.G, "G");
             this.G.Name = "G";
-            this.G.Padding = new System.Windows.Forms.Padding(5);
-            this.G.Size = new System.Drawing.Size(31, 29);
-            this.G.TabIndex = 16;
-            this.G.Text = "G";
             // 
             // H
             // 
-            this.H.AutoSize = true;
+            this.H.BackColor = System.Drawing.Color.White;
             this.H.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.H.Location = new System.Drawing.Point(217, 50);
+            resources.ApplyResources(this.H, "H");
             this.H.Name = "H";
-            this.H.Padding = new System.Windows.Forms.Padding(5);
-            this.H.Size = new System.Drawing.Size(30, 29);
-            this.H.TabIndex = 15;
-            this.H.Text = "H";
             // 
             // J
             // 
-            this.J.AutoSize = true;
+            this.J.BackColor = System.Drawing.Color.White;
             this.J.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.J.Location = new System.Drawing.Point(254, 50);
+            resources.ApplyResources(this.J, "J");
             this.J.Name = "J";
-            this.J.Padding = new System.Windows.Forms.Padding(5);
-            this.J.Size = new System.Drawing.Size(27, 29);
-            this.J.TabIndex = 14;
-            this.J.Text = "J";
             // 
             // K
             // 
-            this.K.AutoSize = true;
+            this.K.BackColor = System.Drawing.Color.White;
             this.K.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.K.Location = new System.Drawing.Point(287, 50);
+            resources.ApplyResources(this.K, "K");
             this.K.Name = "K";
-            this.K.Padding = new System.Windows.Forms.Padding(5);
-            this.K.Size = new System.Drawing.Size(29, 29);
-            this.K.TabIndex = 13;
-            this.K.Text = "K";
             // 
             // A
             // 
-            this.A.AutoSize = true;
+            this.A.BackColor = System.Drawing.Color.White;
             this.A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.A.Location = new System.Drawing.Point(32, 50);
+            resources.ApplyResources(this.A, "A");
             this.A.Name = "A";
-            this.A.Padding = new System.Windows.Forms.Padding(5);
-            this.A.Size = new System.Drawing.Size(29, 29);
-            this.A.TabIndex = 12;
-            this.A.Text = "A";
             // 
             // P
             // 
-            this.P.AutoSize = true;
+            this.P.BackColor = System.Drawing.Color.White;
             this.P.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.P.Location = new System.Drawing.Point(340, 10);
+            resources.ApplyResources(this.P, "P");
             this.P.Name = "P";
-            this.P.Padding = new System.Windows.Forms.Padding(5);
-            this.P.Size = new System.Drawing.Size(29, 29);
-            this.P.TabIndex = 11;
-            this.P.Text = "P";
             // 
             // Š
             // 
-            this.Š.AutoSize = true;
+            this.Š.BackColor = System.Drawing.Color.White;
             this.Š.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Š.Location = new System.Drawing.Point(375, 10);
+            resources.ApplyResources(this.Š, "Š");
             this.Š.Name = "Š";
-            this.Š.Padding = new System.Windows.Forms.Padding(5);
-            this.Š.Size = new System.Drawing.Size(29, 29);
-            this.Š.TabIndex = 10;
-            this.Š.Text = "Š";
             // 
             // O
             // 
-            this.O.AutoSize = true;
+            this.O.BackColor = System.Drawing.Color.White;
             this.O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.O.Location = new System.Drawing.Point(303, 10);
+            resources.ApplyResources(this.O, "O");
             this.O.Name = "O";
-            this.O.Padding = new System.Windows.Forms.Padding(5);
-            this.O.Size = new System.Drawing.Size(31, 29);
-            this.O.TabIndex = 9;
-            this.O.Text = "O";
             // 
             // Đ
             // 
-            this.Đ.AutoSize = true;
+            this.Đ.BackColor = System.Drawing.Color.White;
             this.Đ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Đ.Location = new System.Drawing.Point(410, 10);
+            resources.ApplyResources(this.Đ, "Đ");
             this.Đ.Name = "Đ";
-            this.Đ.Padding = new System.Windows.Forms.Padding(5);
-            this.Đ.Size = new System.Drawing.Size(30, 29);
-            this.Đ.TabIndex = 8;
-            this.Đ.Text = "Đ";
             // 
             // typedText
             // 
-            this.typedText.Location = new System.Drawing.Point(219, 137);
+            resources.ApplyResources(this.typedText, "typedText");
             this.typedText.Name = "typedText";
-            this.typedText.Size = new System.Drawing.Size(473, 22);
-            this.typedText.TabIndex = 1;
             this.typedText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textToType
             // 
-            this.textToType.AutoSize = true;
-            this.textToType.Location = new System.Drawing.Point(227, 89);
+            resources.ApplyResources(this.textToType, "textToType");
             this.textToType.Name = "textToType";
-            this.textToType.Size = new System.Drawing.Size(58, 17);
-            this.textToType.TabIndex = 2;
-            this.textToType.Text = "Pokusaj";
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(400, 177);
+            resources.ApplyResources(this.startBtn, "startBtn");
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(75, 23);
-            this.startBtn.TabIndex = 3;
-            this.startBtn.Text = "Start";
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // chooseLevel
             // 
-            this.chooseLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.chooseLevel, "chooseLevel");
             this.chooseLevel.Controls.Add(this.groupBoxLevel);
             this.chooseLevel.Controls.Add(this.groupBoxEx);
             this.chooseLevel.Controls.Add(this.loadNewEx);
             this.chooseLevel.Controls.Add(this.createNewEx);
-            this.chooseLevel.Location = new System.Drawing.Point(3, 8);
             this.chooseLevel.Name = "chooseLevel";
-            this.chooseLevel.Size = new System.Drawing.Size(182, 507);
-            this.chooseLevel.TabIndex = 4;
             // 
             // groupBoxLevel
             // 
             this.groupBoxLevel.Controls.Add(this.hard);
             this.groupBoxLevel.Controls.Add(this.medium);
             this.groupBoxLevel.Controls.Add(this.easy);
-            this.groupBoxLevel.Location = new System.Drawing.Point(3, 3);
+            resources.ApplyResources(this.groupBoxLevel, "groupBoxLevel");
             this.groupBoxLevel.Name = "groupBoxLevel";
-            this.groupBoxLevel.Size = new System.Drawing.Size(130, 108);
-            this.groupBoxLevel.TabIndex = 0;
             this.groupBoxLevel.TabStop = false;
-            this.groupBoxLevel.Text = "Odabir nivoa:";
             // 
             // hard
             // 
-            this.hard.AutoSize = true;
-            this.hard.Location = new System.Drawing.Point(7, 75);
+            resources.ApplyResources(this.hard, "hard");
             this.hard.Name = "hard";
-            this.hard.Size = new System.Drawing.Size(68, 21);
-            this.hard.TabIndex = 2;
-            this.hard.Text = "Teško";
             this.hard.UseVisualStyleBackColor = true;
             // 
             // medium
             // 
-            this.medium.AutoSize = true;
-            this.medium.Location = new System.Drawing.Point(6, 48);
+            resources.ApplyResources(this.medium, "medium");
             this.medium.Name = "medium";
-            this.medium.Size = new System.Drawing.Size(82, 21);
-            this.medium.TabIndex = 1;
-            this.medium.Text = "Srednje ";
             this.medium.UseVisualStyleBackColor = true;
             // 
             // easy
             // 
-            this.easy.AutoSize = true;
+            resources.ApplyResources(this.easy, "easy");
             this.easy.Checked = true;
-            this.easy.Location = new System.Drawing.Point(7, 21);
             this.easy.Name = "easy";
-            this.easy.Size = new System.Drawing.Size(60, 21);
-            this.easy.TabIndex = 0;
             this.easy.TabStop = true;
-            this.easy.Text = "Lako";
             this.easy.UseVisualStyleBackColor = true;
             // 
             // groupBoxEx
@@ -562,90 +405,60 @@
             this.groupBoxEx.Controls.Add(this.ex_3);
             this.groupBoxEx.Controls.Add(this.ex_2);
             this.groupBoxEx.Controls.Add(this.ex_1);
-            this.groupBoxEx.Location = new System.Drawing.Point(3, 117);
+            resources.ApplyResources(this.groupBoxEx, "groupBoxEx");
             this.groupBoxEx.Name = "groupBoxEx";
-            this.groupBoxEx.Size = new System.Drawing.Size(168, 161);
-            this.groupBoxEx.TabIndex = 1;
             this.groupBoxEx.TabStop = false;
-            this.groupBoxEx.Text = "Odabir vježbe:";
             // 
             // ex_5
             // 
-            this.ex_5.AutoSize = true;
-            this.ex_5.Location = new System.Drawing.Point(7, 129);
+            resources.ApplyResources(this.ex_5, "ex_5");
             this.ex_5.Name = "ex_5";
-            this.ex_5.Size = new System.Drawing.Size(84, 21);
-            this.ex_5.TabIndex = 4;
-            this.ex_5.Text = "Vježba 5";
             this.ex_5.UseVisualStyleBackColor = true;
             // 
             // ex_4
             // 
-            this.ex_4.AutoSize = true;
-            this.ex_4.Location = new System.Drawing.Point(7, 102);
+            resources.ApplyResources(this.ex_4, "ex_4");
             this.ex_4.Name = "ex_4";
-            this.ex_4.Size = new System.Drawing.Size(84, 21);
-            this.ex_4.TabIndex = 3;
-            this.ex_4.Text = "Vježba 4";
             this.ex_4.UseVisualStyleBackColor = true;
             // 
             // ex_3
             // 
-            this.ex_3.AutoSize = true;
-            this.ex_3.Location = new System.Drawing.Point(7, 76);
+            resources.ApplyResources(this.ex_3, "ex_3");
             this.ex_3.Name = "ex_3";
-            this.ex_3.Size = new System.Drawing.Size(84, 21);
-            this.ex_3.TabIndex = 2;
-            this.ex_3.Text = "Vježba 3";
             this.ex_3.UseVisualStyleBackColor = true;
             // 
             // ex_2
             // 
-            this.ex_2.AutoSize = true;
-            this.ex_2.Location = new System.Drawing.Point(7, 49);
+            resources.ApplyResources(this.ex_2, "ex_2");
             this.ex_2.Name = "ex_2";
-            this.ex_2.Size = new System.Drawing.Size(84, 21);
-            this.ex_2.TabIndex = 1;
-            this.ex_2.Text = "Vježba 2";
             this.ex_2.UseVisualStyleBackColor = true;
             // 
             // ex_1
             // 
-            this.ex_1.AutoSize = true;
+            resources.ApplyResources(this.ex_1, "ex_1");
             this.ex_1.Checked = true;
-            this.ex_1.Location = new System.Drawing.Point(7, 22);
             this.ex_1.Name = "ex_1";
-            this.ex_1.Size = new System.Drawing.Size(84, 21);
-            this.ex_1.TabIndex = 0;
             this.ex_1.TabStop = true;
-            this.ex_1.Text = "Vježba 1";
             this.ex_1.UseVisualStyleBackColor = true;
             // 
             // loadNewEx
             // 
-            this.loadNewEx.Location = new System.Drawing.Point(3, 284);
+            resources.ApplyResources(this.loadNewEx, "loadNewEx");
             this.loadNewEx.Name = "loadNewEx";
-            this.loadNewEx.Size = new System.Drawing.Size(168, 34);
-            this.loadNewEx.TabIndex = 4;
-            this.loadNewEx.Text = "Učitaj vježbu";
             this.loadNewEx.UseVisualStyleBackColor = true;
             this.loadNewEx.Click += new System.EventHandler(this.loadNewEx_Click);
             // 
             // createNewEx
             // 
-            this.createNewEx.Location = new System.Drawing.Point(3, 324);
+            resources.ApplyResources(this.createNewEx, "createNewEx");
             this.createNewEx.Name = "createNewEx";
-            this.createNewEx.Size = new System.Drawing.Size(168, 34);
-            this.createNewEx.TabIndex = 5;
-            this.createNewEx.Text = "Kreiraj svoju vježbu";
             this.createNewEx.UseVisualStyleBackColor = true;
             this.createNewEx.Click += new System.EventHandler(this.createNewEx_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 527);
             this.Controls.Add(this.chooseLevel);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.textToType);
@@ -654,9 +467,7 @@
             this.KeyPreview = true;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.Text = "Daktilograf";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.chooseLevel.ResumeLayout(false);
             this.groupBoxLevel.ResumeLayout(false);
             this.groupBoxLevel.PerformLayout();
