@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
-
         private char[] lettersInText;
         private int currentLetter = 0; //pamtimo na kojem se slovu nalazimo
         private char wrongCharacter = '0';
@@ -34,6 +33,7 @@ namespace WindowsFormsApp1 {
             createTextArray();
             this.typedText.Enabled = false;
             this.startBtn.Enabled = true;
+            this.restartBtn.Enabled = false;
         }
 
         void createTextArray()
@@ -48,6 +48,8 @@ namespace WindowsFormsApp1 {
 
         private void startBtn_Click(object sender, EventArgs e) {
 
+            this.restartBtn.Enabled = true;
+            this.skipErrorCheckbox.Enabled = false;
             this.startBtn.Enabled = false;
             this.typedText.Enabled = true;
             this.typedText.Text = "";
@@ -190,6 +192,7 @@ namespace WindowsFormsApp1 {
 
         private void loadNewEx_Click(object sender, EventArgs e)
         {
+            this.skipErrorCheckbox.Enabled = true;
             var level = groupBoxLevel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
             var exercise = groupBoxEx.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
 
@@ -224,6 +227,31 @@ namespace WindowsFormsApp1 {
             Form2 createEx = new Form2();
             //samo .Show() dozvoljava rad na Form1, a mi zelimo samo na Form2 pa koristimo ShowDialog()
             createEx.ShowDialog(this);
+        }
+
+        private void skipError_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.skipErrorCheckbox.Checked)
+            {
+                this.skipErrorCheckbox.Text = "Upaljeno";
+                this.skipErrorCheckbox.BackColor = Color.LightBlue;
+            }
+            else
+            {
+                this.skipErrorCheckbox.Text = "Ugašeno";
+                this.skipErrorCheckbox.BackColor = Color.Silver;
+            }
+        }
+        
+        private void restartBtn_Click(object sender, EventArgs e)
+        {
+            resetKeyboard();
+            createTextArray();
+            this.startBtn.Enabled = false;
+            this.typedText.Enabled = true;
+            this.typedText.Text = "";
+            this.typedText.Focus();
+            startTyping();
         }
 
 

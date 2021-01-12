@@ -73,6 +73,9 @@
             this.ex_1 = new System.Windows.Forms.RadioButton();
             this.loadNewEx = new System.Windows.Forms.Button();
             this.createNewEx = new System.Windows.Forms.Button();
+            this.skipErrorCheckbox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.restartBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
@@ -355,9 +358,10 @@
             // 
             // startBtn
             // 
+            this.startBtn.BackColor = System.Drawing.Color.LightBlue;
             resources.ApplyResources(this.startBtn, "startBtn");
             this.startBtn.Name = "startBtn";
-            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // chooseLevel
@@ -443,22 +447,50 @@
             // 
             // loadNewEx
             // 
+            this.loadNewEx.BackColor = System.Drawing.Color.LightBlue;
             resources.ApplyResources(this.loadNewEx, "loadNewEx");
             this.loadNewEx.Name = "loadNewEx";
-            this.loadNewEx.UseVisualStyleBackColor = true;
+            this.loadNewEx.UseVisualStyleBackColor = false;
             this.loadNewEx.Click += new System.EventHandler(this.loadNewEx_Click);
             // 
             // createNewEx
             // 
+            this.createNewEx.BackColor = System.Drawing.Color.LightBlue;
             resources.ApplyResources(this.createNewEx, "createNewEx");
             this.createNewEx.Name = "createNewEx";
-            this.createNewEx.UseVisualStyleBackColor = true;
+            this.createNewEx.UseVisualStyleBackColor = false;
             this.createNewEx.Click += new System.EventHandler(this.createNewEx_Click);
+            // 
+            // skipErrorCheckbox
+            // 
+            resources.ApplyResources(this.skipErrorCheckbox, "skipErrorCheckbox");
+            this.skipErrorCheckbox.BackColor = System.Drawing.Color.LightBlue;
+            this.skipErrorCheckbox.Checked = true;
+            this.skipErrorCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.skipErrorCheckbox.Name = "skipErrorCheckbox";
+            this.skipErrorCheckbox.UseVisualStyleBackColor = false;
+            this.skipErrorCheckbox.CheckedChanged += new System.EventHandler(this.skipError_CheckedChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // restartBtn
+            // 
+            this.restartBtn.BackColor = System.Drawing.Color.LightBlue;
+            resources.ApplyResources(this.restartBtn, "restartBtn");
+            this.restartBtn.Name = "restartBtn";
+            this.restartBtn.UseVisualStyleBackColor = false;
+            this.restartBtn.Click += new System.EventHandler(this.restartBtn_Click);
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.restartBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.skipErrorCheckbox);
             this.Controls.Add(this.chooseLevel);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.textToType);
@@ -529,6 +561,9 @@
         private System.Windows.Forms.RadioButton ex_1;
         private System.Windows.Forms.Button loadNewEx;
         private System.Windows.Forms.Button createNewEx;
+        private System.Windows.Forms.CheckBox skipErrorCheckbox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button restartBtn;
     }
 }
 

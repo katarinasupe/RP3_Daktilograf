@@ -29,20 +29,11 @@ namespace WindowsFormsApp1
             var lengthOfExercise = this.lenOfEx.Value;
             var lengthOfWords = this.lenOfWords.Value;
             Console.WriteLine(lengthOfExercise);
-            Console.WriteLine(lengthOfWords);
-            generateNewExercise(letters, lengthOfExercise, lengthOfWords);
+            Console.WriteLine(lengthOfWords); 
+            Exercise ex = new Exercise(letters, lengthOfExercise, lengthOfWords);
+            string newEx = ex.generateExercise();
+            ((Form1)this.Owner).setTextToType(newEx);
             this.Close();
-        }
-
-        private void generateNewExercise(string[] letters, decimal lenOfEx, decimal lenOfWords)
-        {
-            //TODO
-            //generiraj vj, kreiraj txt file, sejvaj ga u trenutni i prikazi na Form1.typedText.Text
-
-            /*ovako bi se postavljao tekst u parent Form1, samo ne na letters[0], vec na novu generiranu vj
-            to je ok jer san napravila get i set za textToType, a Form2 san pozvala sa .ShowDialog(this)
-           sto govori da je Form1 parent od Form2*/
-            ((Form1)this.Owner).setTextToType(letters[0]);
         }
     }
 }
