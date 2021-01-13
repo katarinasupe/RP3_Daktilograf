@@ -40,15 +40,19 @@ namespace WindowsFormsApp1
             this.wrongCharacter = value;
         }
 
-        public Game(int mcurrentLetter, char mwrongCharacter)
+        public Game()
         {
-            this.currentLetter = mcurrentLetter;
-            this.wrongCharacter = mwrongCharacter;
+            this.currentLetter = 0;
+            this.wrongCharacter = '0';
         }
 
-        public void startGame(Control.ControlCollection keyboard, String letter)
+        public void startGame(Control.ControlCollection keyboard, char[] text)
         {
-            this.showNextLetterOnKeyboard(keyboard, letter);
+            this.lettersInText = text;
+            this.currentLetter = 0;
+            this.wrongCharacter = '0';
+            string firstLetter = "" + Char.ToUpper(lettersInText[0]) + "";
+            this.showNextLetterOnKeyboard(keyboard, firstLetter);
         }
 
 
@@ -88,7 +92,6 @@ namespace WindowsFormsApp1
             try
             {
                 var currentKey = keyboard.Find(letter, true);
-                //vraca kolekciju elemenata (ovdje ce biti samo 1 element zbog jedinstvenog imena)
                 currentKey[0].BackColor = Color.White;
 
             }

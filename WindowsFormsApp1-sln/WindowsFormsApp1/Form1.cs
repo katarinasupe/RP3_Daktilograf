@@ -7,18 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics; //stopwatch
-using System.Globalization; //localtime
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
-        //private char[] lettersInText;
-        //private int currentLetter = 0; //pamtimo na kojem se slovu nalazimo
-        //private char wrongCharacter = '0';
+      
         private Control.ControlCollection keyboard;
         private String letter;
 
         private Game newGame;
+        private bool skipError;
+        private bool isGameOn;
 
         Stopwatch timer = new Stopwatch();
 
@@ -40,44 +39,66 @@ namespace WindowsFormsApp1 {
         void initializeGame()
         {
             keyboard = this.panel1.Controls;
-            newGame = new Game(0, '0');
-            newGame.setLettersInText(this.textToType.Text.ToCharArray());
+            newGame = new Game();
+            isGameOn = false;
         }
 
-        void startFormAppearance()
-        {
-            //ne mozemo vise mijenjati opciju preskakanje greške
-            this.skipErrorCheckbox.Enabled = false;
-            //ne mozemo vise stisnuti start
-            this.startBtn.Enabled = false;
-            //mozemo tipkati
-            this.typedText.Enabled = true;
-            //resetiramo prostor za tipkanje
-            this.typedText.Text = "";
-            this.typedText.Focus();
-        }
         private void startBtn_Click(object sender, EventArgs e) {
-            timer.Start();
-            startFormAppearance();
-            //mozemo restartirati igru
-            this.restartBtn.Enabled = true;
 
-            if (newGame.getCurrentLetter() < newGame.getLettersInText().Length)
-            {
-                letter = "" + Char.ToUpper(newGame.getLettersInText()[newGame.getCurrentLetter()]) + "";
-                newGame.startGame(keyboard, letter);
+            isGameOn = true;
+            changeFormAppearance();
+            startNewGame(); 
+        }
+
+        private void restartBtn_Click(object sender, EventArgs e) {
+
+            isGameOn = true;
+            resetKeyboard();
+            changeFormAppearance();
+            startNewGame();
+        }
+
+        void changeFormAppearance() {
+
+            if (isGameOn) {
+                this.startBtn.Enabled = false;
+                this.restartBtn.Enabled = true;
+                this.typedText.Enabled = true;
+                this.typedText.Text = "";
+                this.typedText.Focus();
+            } else {
+                this.startBtn.Enabled = true;
+                this.restartBtn.Enabled = true;
+                this.typedText.Enabled = false;
+                this.typedText.Text = ""; //ispraznimo textbox ako je igra gotova
             }
-            else
-            {
+
+
+            /*//ne mozemo vise mijenjati opciju preskakanje greške
+            this.skipErrorCheckbox.Enabled = false; !!!!!!!!!!!!!!!!!
+            */
+        }
+
+        private void startNewGame() {
+
+            isGameOn = true;
+            timer.Restart();
+
+            var text = this.textToType.Text.ToCharArray();
+
+            if (text.Length > 0) {
+                newGame.startGame(keyboard, text);
+            } else {
                 stopTyping();
             }
         }
 
         private void stopTyping() {
-            this.typedText.Enabled = false;
-            this.startBtn.Enabled = true;
+            
+            isGameOn = false;
             timer.Stop();
             MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed);
+            changeFormAppearance();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
@@ -147,21 +168,18 @@ namespace WindowsFormsApp1 {
             Console.WriteLine(text);
             this.textToType.Text = text;
 
-            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu 
-
+            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
+            isGameOn = false;
             resetKeyboard();
+            changeFormAppearance();
         }
 
         private void resetKeyboard()
         {
-            initializeGame();
-            letter = "" + Char.ToUpper(newGame.getLettersInText()[newGame.getCurrentLetter()]) + "";
             foreach (Label key in keyboard)
             {
                 key.BackColor = Color.White;
             }
-            this.typedText.Enabled = false;
-            this.startBtn.Enabled = true;
         }
 
         private void createNewEx_Click(object sender, EventArgs e)
@@ -185,13 +203,7 @@ namespace WindowsFormsApp1 {
             }
         }
         
-        private void restartBtn_Click(object sender, EventArgs e)
-        {
-            resetKeyboard();
-            startFormAppearance();
-            initializeGame();
-            newGame.startGame(keyboard, letter);
-        }
+
 
 
 
