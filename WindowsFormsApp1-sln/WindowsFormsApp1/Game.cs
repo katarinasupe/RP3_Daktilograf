@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             } else {
 
                 wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(""+currentLetterInText); //sto ovdje treba biti?
+                showWrongLetterOnKeyboard(""+currentLetterInText); 
 
             }
         
@@ -105,8 +105,7 @@ namespace WindowsFormsApp1
             {
                 var nextKey = keyboard.Find(letter, true);
                 nextKey[0].BackColor = Color.LightGreen;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
                 isGameOver = true;
@@ -123,8 +122,7 @@ namespace WindowsFormsApp1
                 var key = keyboard.Find(letter, true);
                 key[0].BackColor = Color.Red;
 
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
                 isGameOver = true;
@@ -146,8 +144,7 @@ namespace WindowsFormsApp1
                 var currentKey = keyboard.Find(letter, true);
                 currentKey[0].BackColor = Color.White;
 
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
                 isGameOver = true;
