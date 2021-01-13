@@ -100,8 +100,7 @@ namespace WindowsFormsApp1
                 letter = "SPACE";
             }
              
-            try
-            {
+            try {
                 var nextKey = keyboard.Find(letter, true);
                 nextKey[0].BackColor = Color.LightGreen;
             } catch (Exception ex) {
@@ -115,8 +114,7 @@ namespace WindowsFormsApp1
             if (letter == " ") {
                 letter = "SPACE";
             }
-            try
-            {
+            try  {
                 var key = keyboard.Find(letter, true);
                 key[0].BackColor = Color.Red;
 
@@ -136,8 +134,7 @@ namespace WindowsFormsApp1
                 letter = "SPACE"; 
             }
 
-            try
-            {
+            try {
                 var currentKey = keyboard.Find(letter, true);
                 currentKey[0].BackColor = Color.White;
 
