@@ -65,7 +65,6 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine("Nije nađeno slovo.");
                 //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
             }  
@@ -81,7 +80,6 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine("Nije nađeno slovo.");
             }
 
@@ -97,7 +95,6 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine("Nije nađeno slovo.");
                 //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
             }

@@ -41,6 +41,7 @@ namespace WindowsFormsApp1 {
             keyboard = this.panel1.Controls;
             newGame = new Game();
             isGameOn = false;
+            skipError = true; //nije nuzno vracanje nakon greske
         }
 
         private void startBtn_Click(object sender, EventArgs e) {
@@ -66,17 +67,20 @@ namespace WindowsFormsApp1 {
                 this.typedText.Enabled = true;
                 this.typedText.Text = "";
                 this.typedText.Focus();
+                this.skipErrorCheckbox.Enabled = false;
             } else {
                 this.startBtn.Enabled = true;
                 this.restartBtn.Enabled = true;
                 this.typedText.Enabled = false;
                 this.typedText.Text = ""; //ispraznimo textbox ako je igra gotova
+                this.skipErrorCheckbox.Enabled = true;
             }
+        }
 
-
-            /*//ne mozemo vise mijenjati opciju preskakanje greške
-            this.skipErrorCheckbox.Enabled = false; !!!!!!!!!!!!!!!!!
-            */
+        private void resetKeyboard() {
+            foreach (Label key in keyboard) {
+                key.BackColor = Color.White;
+            }
         }
 
         private void startNewGame() {
@@ -174,14 +178,7 @@ namespace WindowsFormsApp1 {
             changeFormAppearance();
         }
 
-        private void resetKeyboard()
-        {
-            foreach (Label key in keyboard)
-            {
-                key.BackColor = Color.White;
-            }
-        }
-
+  
         private void createNewEx_Click(object sender, EventArgs e)
         {
             Form2 createEx = new Form2();
@@ -195,11 +192,13 @@ namespace WindowsFormsApp1 {
             {
                 this.skipErrorCheckbox.Text = "Upaljeno";
                 this.skipErrorCheckbox.BackColor = Color.LightBlue;
+                skipError = true;
             }
             else
             {
                 this.skipErrorCheckbox.Text = "Ugašeno";
                 this.skipErrorCheckbox.BackColor = Color.Silver;
+                skipError = false;
             }
         }
         
