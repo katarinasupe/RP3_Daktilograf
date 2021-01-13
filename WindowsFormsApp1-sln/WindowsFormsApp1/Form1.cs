@@ -147,8 +147,9 @@ namespace WindowsFormsApp1 {
 
             var fileName = level + "_" + exercise + ".txt";
             //cita iz Debug foldera 
-            string text = System.IO.File.ReadAllText(
-                System.IO.Path.Combine(Environment.CurrentDirectory, fileName));
+            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", fileName };
+            string fullPath = System.IO.Path.Combine(paths);
+            string text = System.IO.File.ReadAllText(fullPath);
             Console.WriteLine(text);
             this.textToType.Text = text;
 
