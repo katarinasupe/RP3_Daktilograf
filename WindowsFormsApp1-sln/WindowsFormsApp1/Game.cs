@@ -10,6 +10,7 @@ namespace WindowsFormsApp1
 {
     class Game {
         private char[] lettersInText;
+        private char[] typedLetters;
         private int currentLetter; //pamtimo na kojem se slovu nalazimo
         private char wrongCharacter;
         private bool skipErrors;
@@ -31,6 +32,12 @@ namespace WindowsFormsApp1
         public void setLettersInText(char[] value) {
             this.lettersInText = value;
         }
+        public char[] getTypedLetters() {
+            return this.typedLetters;
+        }
+        public void setTypedLetters(char[] value) {
+            this.typedLetters = value;
+        }
         public void setCurrentLetter(int value) {
             this.currentLetter = value;
         }
@@ -42,6 +49,7 @@ namespace WindowsFormsApp1
             this.currentLetter = 0;
             this.wrongCharacter = '0';
             isGameOver = false;
+            
         }
 
         public void startGame(Control.ControlCollection keyboard, char[] text, bool skipErrors) {
@@ -59,37 +67,28 @@ namespace WindowsFormsApp1
 
             char currentLetterInText = lettersInText[currentLetter];
 
-            if (typedChar == '?') {
+            if ((typedChar == Char.ToUpper(currentLetterInText)) || (typedChar == '-' && currentLetterInText == ' ')) {
 
-                //todo
-
-            } else if (typedChar == Char.ToUpper(currentLetterInText)) {
-
-                if (currentLetter < lettersInText.Length - 1 ) {
+                if (currentLetter < lettersInText.Length - 1) {
 
                     removeCurrentLetterFromKeyboard();
                     showNextLetterOnKeyboard();
                     currentLetter += 1;
-                
+
                 } else {
 
                     isGameOver = true;
 
                 }
 
-            } else if (typedChar == '-' && currentLetterInText == ' ') {
-
-                removeCurrentLetterFromKeyboard();
-                showNextLetterOnKeyboard();
-                currentLetter += 1;
-
             } else {
 
-                wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(""+currentLetterInText); 
+                if (typedChar != '?') {
 
+                    wrongCharacter = typedChar;
+                    showWrongLetterOnKeyboard("" + currentLetterInText);
+                }
             }
-        
         }
 
         public void showNextLetterOnKeyboard()
