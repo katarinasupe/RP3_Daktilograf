@@ -13,10 +13,7 @@ namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
       
         private Control.ControlCollection keyboard;
-        private String letter;
-
         private Game newGame;
-        private bool skipError;
         private bool isGameOn;
 
         Stopwatch timer = new Stopwatch();
@@ -41,7 +38,7 @@ namespace WindowsFormsApp1 {
             keyboard = this.panel1.Controls;
             newGame = new Game();
             isGameOn = false;
-            skipError = true; //nije nuzno vracanje nakon greske
+           // skipError = true; //nije nuzno vracanje nakon greske
         }
 
         private void startBtn_Click(object sender, EventArgs e) {
@@ -94,7 +91,7 @@ namespace WindowsFormsApp1 {
             var text = this.textToType.Text.ToCharArray();
 
             if (text.Length > 0) {
-                newGame.startGame(keyboard, text, skipError);
+                newGame.startGame(keyboard, text, this.skipErrorCheckbox.Enabled);
             } else {
                 stopTyping();
             }
@@ -175,13 +172,11 @@ namespace WindowsFormsApp1 {
             {
                 this.skipErrorCheckbox.Text = "Upaljeno";
                 this.skipErrorCheckbox.BackColor = Color.LightBlue;
-                skipError = true;
             }
             else
             {
                 this.skipErrorCheckbox.Text = "Ugašeno";
                 this.skipErrorCheckbox.BackColor = Color.Silver;
-                skipError = false;
             }
         }
         
