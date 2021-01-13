@@ -8,56 +8,99 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    class Game
-    { 
+    class Game {
         private char[] lettersInText;
         private int currentLetter; //pamtimo na kojem se slovu nalazimo
         private char wrongCharacter;
+        private bool skipErrors;
+        private bool isGameOver;
+        Control.ControlCollection keyboard;
 
-
-        public char getWrongCharacter()
-        {
+        public bool getIsGameOver() {
+            return isGameOver;
+        }
+        public char getWrongCharacter() {
             return this.wrongCharacter;
         }
-        public int getCurrentLetter()
-        {
+        public int getCurrentLetter() {
             return this.currentLetter;
         }
-        public char[] getLettersInText()
-        {
+        public char[] getLettersInText() {
             return this.lettersInText;
         }
-        public void setLettersInText(char[] value)
-        {
+        public void setLettersInText(char[] value) {
             this.lettersInText = value;
         }
-        public void setCurrentLetter(int value)
-        {
+        public void setCurrentLetter(int value) {
             this.currentLetter = value;
         }
-        public void setWrongCharacter(char value)
-        {
+        public void setWrongCharacter(char value) {
             this.wrongCharacter = value;
         }
 
-        public Game()
-        {
+        public Game() {
             this.currentLetter = 0;
             this.wrongCharacter = '0';
+            isGameOver = false;
         }
 
-        public void startGame(Control.ControlCollection keyboard, char[] text)
-        {
+        public void startGame(Control.ControlCollection keyboard, char[] text, bool skipErrors) {
             this.lettersInText = text;
-            this.currentLetter = 0;
             this.wrongCharacter = '0';
-            string firstLetter = "" + Char.ToUpper(lettersInText[0]) + "";
-            this.showNextLetterOnKeyboard(keyboard, firstLetter);
+            this.skipErrors = skipErrors;
+            this.keyboard = keyboard;
+            this.currentLetter = -1; //ovo samo da bi dobro radilo showNextLetter
+            this.showNextLetterOnKeyboard();
+            this.currentLetter = 0;
+            isGameOver = false;
         }
 
+        public void handleInput(char typedChar) {
 
-        public void showNextLetterOnKeyboard(Control.ControlCollection keyboard, String letter)
-        {          
+            char currentLetterInText = lettersInText[currentLetter];
+
+            if (typedChar == '?') {
+
+                //todo
+
+            } else if (typedChar == Char.ToUpper(currentLetterInText)) {
+
+                if (currentLetter < lettersInText.Length - 1 ) {
+
+                    removeCurrentLetterFromKeyboard();
+                    showNextLetterOnKeyboard();
+                    currentLetter += 1;
+                
+                } else {
+
+                    isGameOver = true;
+
+                }
+
+            } else if (typedChar == '-' && currentLetterInText == ' ') {
+
+                removeCurrentLetterFromKeyboard();
+                showNextLetterOnKeyboard();
+                currentLetter += 1;
+
+            } else {
+
+                wrongCharacter = typedChar;
+                showWrongLetterOnKeyboard(""+currentLetterInText); //sto ovdje treba biti?
+
+            }
+        
+        }
+
+        public void showNextLetterOnKeyboard()
+        {
+            char nextLetter = lettersInText[currentLetter + 1];
+            string letter = "" + Char.ToUpper(nextLetter);
+
+            if (nextLetter == ' ') {
+                letter = "SPACE";
+            }
+             
             try
             {
                 var nextKey = keyboard.Find(letter, true);
@@ -70,8 +113,11 @@ namespace WindowsFormsApp1
             }  
         }
 
-        public void showWrongLetterOnKeyboard(Control.ControlCollection keyboard, String letter)
+        public void showWrongLetterOnKeyboard(String letter)
         {
+            if (letter == " ") {
+                letter = "SPACE";
+            }
             try
             {
                 var key = keyboard.Find(letter, true);
@@ -85,8 +131,15 @@ namespace WindowsFormsApp1
 
         }
 
-        public void removeCurrentLetterFromKeyboard(Control.ControlCollection keyboard, String letter)
+        public void removeCurrentLetterFromKeyboard()
         {
+            char current = lettersInText[currentLetter];
+            string letter = "" + Char.ToUpper(current); 
+
+            if(current == ' ') {
+                letter = "SPACE"; 
+            }
+
             try
             {
                 var currentKey = keyboard.Find(letter, true);

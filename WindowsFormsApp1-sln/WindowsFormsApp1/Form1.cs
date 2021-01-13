@@ -69,11 +69,14 @@ namespace WindowsFormsApp1 {
                 this.typedText.Focus();
                 this.skipErrorCheckbox.Enabled = false;
             } else {
+
+                resetKeyboard();
                 this.startBtn.Enabled = true;
                 this.restartBtn.Enabled = true;
                 this.typedText.Enabled = false;
                 this.typedText.Text = ""; //ispraznimo textbox ako je igra gotova
                 this.skipErrorCheckbox.Enabled = true;
+                
             }
         }
 
@@ -91,7 +94,7 @@ namespace WindowsFormsApp1 {
             var text = this.textToType.Text.ToCharArray();
 
             if (text.Length > 0) {
-                newGame.startGame(keyboard, text);
+                newGame.startGame(keyboard, text, skipError);
             } else {
                 stopTyping();
             }
@@ -108,34 +111,14 @@ namespace WindowsFormsApp1 {
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
 
             int code = (int)e.KeyCode;
-            char typedChar = Char.ToUpper(typedCharacter(code)); //typedChar je u uppercase-u            
-            if (typedChar == '?') {
-               
-                //todo - handlanje greske
+            char typedChar = Char.ToUpper(typedCharacter(code)); //typedChar je u uppercase-u      
 
-            } else if (typedChar == Char.ToUpper(newGame.getLettersInText()[newGame.getCurrentLetter()])) {
-                newGame.removeCurrentLetterFromKeyboard(keyboard, letter);
-                if (newGame.getWrongCharacter() != '0') {
-                    //todo
-                    // removeWrongLetterFromKeyboard();
-                    //wrongCharacter = '0';
-                }
-                newGame.setCurrentLetter(newGame.getCurrentLetter() + 1);
-                if(newGame.getCurrentLetter() < newGame.getLettersInText().Length) 
-                {
-                    letter = "" + Char.ToUpper(newGame.getLettersInText()[newGame.getCurrentLetter()]) + "";
-                    newGame.showNextLetterOnKeyboard(keyboard, letter);
-                }
-                else
-                {
-                    stopTyping();
-                }
-             
-            } else {
-                newGame.setWrongCharacter(typedChar);
-                newGame.showWrongLetterOnKeyboard(keyboard, letter);
+            newGame.handleInput(typedChar);
+
+            if(newGame.getIsGameOver()) {
+                stopTyping();
             }
-            //todo - slucaj kad je pritisnut backspace (srediti wrongCharacter)
+
         }
 
 
@@ -149,8 +132,8 @@ namespace WindowsFormsApp1 {
             else if (code == 222) letter = 'Ć';
             else if (code >= 65 && code <= 90) letter = (char)code;
             else if (code == 32) letter = '-'; //razmak
-            else if (code == 8) letter = '.'; //todo backspace
-            else letter = '?'; // mozda neki drugi znak????
+            else if (code == 8) letter = '\b'; //backspace
+            else letter = '?'; // neki znak koji nije slovo
 
             return letter;
         }
