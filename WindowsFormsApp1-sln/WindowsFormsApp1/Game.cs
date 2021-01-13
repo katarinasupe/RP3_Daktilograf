@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
-                //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
+                isGameOver = true;
             }  
         }
 
@@ -127,6 +127,7 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
+                isGameOver = true;
             }
 
         }
@@ -149,7 +150,7 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 Console.WriteLine("Nije nađeno slovo.");
-                //DODATI NEKI PREKID IGRE (ZAUSTAVITI VRIJEME I BLOKIRATI UNOS)
+                isGameOver = true;
             }
 
         }
