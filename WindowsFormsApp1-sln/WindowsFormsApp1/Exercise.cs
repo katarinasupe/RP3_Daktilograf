@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             string word="";
             var rand = new Random();
             int mIndex;
+            bool first = true;
             for (int j = 0; j < mlenOfExercise; j++)
 			{
                 word="";
@@ -40,8 +41,14 @@ namespace WindowsFormsApp1
                     mIndex = rand.Next(mlettersToExercise.Length);
                     word+=mlettersToExercise[mIndex];
 			    }
-                ex = ex + word + ' ';
-			}
+                if (first)
+                {
+                    ex = word;
+                    first = false;
+                }
+                else
+                    ex = ex + ' ' + word;
+            }
 
             
             System.Diagnostics.Debug.WriteLine(mname);
