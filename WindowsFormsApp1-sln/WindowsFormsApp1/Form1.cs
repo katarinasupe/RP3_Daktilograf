@@ -33,10 +33,19 @@ namespace WindowsFormsApp1 {
             this.textToType.Text = value;
         }
         public Form1() {
-
             InitializeComponent();
+            //za pocetnu vjezbu postavi prvu laku vjezbu
+            setFirstExercise();
             initializeGame();
        }
+
+        void setFirstExercise()
+        {
+            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", "easy_ex_1.txt" };
+            string fullPath = System.IO.Path.Combine(paths);
+            string text = System.IO.File.ReadAllText(fullPath);
+            this.textToType.Text = text;
+        }
 
         void initializeGame()
         {

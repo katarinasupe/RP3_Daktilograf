@@ -1122,17 +1122,20 @@
   <data name="textToType.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="textToType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.8pt</value>
+  </data>
   <data name="textToType.Location" type="System.Drawing.Point, System.Drawing">
     <value>227, 95</value>
   </data>
   <data name="textToType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 19</value>
+    <value>459, 22</value>
   </data>
   <data name="textToType.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="textToType.Text" xml:space="preserve">
-    <value>Pokusaj</value>
+    <value>OVDJE CE PISATI TEKST PRVE VJEZBE NA POCETKU</value>
   </data>
   <data name="&gt;&gt;textToType.Name" xml:space="preserve">
     <value>textToType</value>
