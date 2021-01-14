@@ -24,10 +24,6 @@ namespace WindowsFormsApp1
         }
         public string generateExercise()
         {
-            //TODO
-            //generiranje nove vjezbe string newEx nekim algoritmom na temelju danih parametara
-            //this.mlettersToExercise itd. su parametri
-            //spremanje te vjezbe
             
             string word="";
             var rand = new Random();
@@ -60,9 +56,6 @@ namespace WindowsFormsApp1
 
         private void saveExercise()
         {
-            //TODO
-            //sto zapravo znaci spremati i ponovno ucitavati za stalno?
-
             string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex", mname + ".txt"};
             string fullPath = System.IO.Path.Combine(paths);
             System.IO.File.WriteAllText(fullPath, ex);
