@@ -12,11 +12,9 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        Form1 mainform;
-        public Form2(Form1 form1)
+        public Form2()
         {
             InitializeComponent();
-            mainform = form1;
         }
 
         private void generateExButton_Click(object sender, EventArgs e)
@@ -41,9 +39,9 @@ namespace WindowsFormsApp1
             radioButton.Width = 100;
             radioButton.Height = 20;
 
-            mainform.exPanel.Controls.Add(radioButton);
+            ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
             
-        ((Form1)this.Owner).setTextToType(newEx);
+            ((Form1)this.Owner).setTextToType(newEx);
             this.Close();
         }
     }

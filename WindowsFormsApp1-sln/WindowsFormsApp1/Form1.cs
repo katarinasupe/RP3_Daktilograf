@@ -39,24 +39,25 @@ namespace WindowsFormsApp1 {
             setFirstExercise();
             initializeGame();
 
-            initializeUserExercises();
-   
-                
+            initializeUserExercises();        
         }
 
+        //ispisivanje korisnikovih vježbi
         void initializeUserExercises()
         {
             bool first = true;
+            //put do foldera
             string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex" };
             string fullPath = System.IO.Path.Combine(paths);
-
+            //svi file-ovi u folderu
             string[] fileEntries = Directory.GetFiles(fullPath);
             foreach (string fileName in fileEntries)
             {
                 string name;
                 name = Path.GetFileName(fileName);
-                name = name.Remove(name.Length - 4);
+                name = name.Remove(name.Length - 4); //mičemo .txt
                 System.Diagnostics.Debug.WriteLine(name);
+                //stvaramo novi radiobutton
                 RadioButton radioButton = new RadioButton();
                 radioButton.Text = name;
                 radioButton.Width = 100;
@@ -66,6 +67,7 @@ namespace WindowsFormsApp1 {
                     radioButton.Checked = true;
                     first = false;
                 }
+                //dodajemo ga u odgovarajući container
                 exPanel.Controls.Add(radioButton);
             }
         }
@@ -226,7 +228,7 @@ namespace WindowsFormsApp1 {
   
         private void createNewEx_Click(object sender, EventArgs e)
         {
-            Form2 createEx = new Form2(this);
+            Form2 createEx = new Form2(); 
             //samo .Show() dozvoljava rad na Form1, a mi zelimo samo na Form2 pa koristimo ShowDialog()
             createEx.ShowDialog(this);
         }
@@ -245,6 +247,7 @@ namespace WindowsFormsApp1 {
             }
         }
 
+        //učitavanje korisnikove vježbe na klik
         private void loadUserEx_Click(object sender, EventArgs e)
         {
 
