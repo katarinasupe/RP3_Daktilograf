@@ -38,7 +38,9 @@ namespace WindowsFormsApp1
             string newEx = ex.generateExercise();
             RadioButton radioButton = new RadioButton();
             radioButton.Text = name;
-            
+            radioButton.Width = 100;
+            radioButton.Height = 20;
+
             mainform.exPanel.Controls.Add(radioButton);
             
         ((Form1)this.Owner).setTextToType(newEx);

@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             //this.mlettersToExercise itd. su parametri
             //spremanje te vjezbe
             
-                        string word="";
+            string word="";
             var rand = new Random();
             int mIndex;
             for (int j = 0; j < mlenOfExercise; j++)
