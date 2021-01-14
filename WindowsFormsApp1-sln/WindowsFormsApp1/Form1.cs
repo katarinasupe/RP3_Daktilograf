@@ -15,6 +15,11 @@ namespace WindowsFormsApp1 {
         private Control.ControlCollection keyboard;
         private Game newGame;
         private bool isGameOn;
+        string[] words; //polje rijeci u tekstu koji trebamo pretipkati
+        int spaceCtr;
+
+        bool flag;
+
 
         Stopwatch timer = new Stopwatch();
 
@@ -50,10 +55,9 @@ namespace WindowsFormsApp1 {
 
         private void restartBtn_Click(object sender, EventArgs e) {
 
-            isGameOn = true;
+            isGameOn = false;
             resetKeyboard();
             changeFormAppearance();
-            startNewGame();
         }
 
         void changeFormAppearance() {
@@ -69,7 +73,7 @@ namespace WindowsFormsApp1 {
 
                 resetKeyboard();
                 this.startBtn.Enabled = true;
-                this.restartBtn.Enabled = true;
+                this.restartBtn.Enabled = false;
                 this.typedText.Enabled = false;
                 this.typedText.Text = ""; //ispraznimo textbox ako je igra gotova
                 this.skipErrorCheckbox.Enabled = true;
@@ -86,12 +90,15 @@ namespace WindowsFormsApp1 {
         private void startNewGame() {
 
             isGameOn = true;
+            var text = this.textToType.Text.ToUpper().ToCharArray();
+            string str = this.textToType.Text.ToUpper();
+            words = str.Split(' ');
+            spaceCtr = 0;
+
             timer.Restart();
 
-            var text = this.textToType.Text.ToCharArray();
-
             if (text.Length > 0) {
-                newGame.startGame(keyboard, text, this.skipErrorCheckbox.Enabled);
+                newGame.startGame(keyboard, text, words);
             } else {
                 stopTyping();
             }
@@ -104,18 +111,36 @@ namespace WindowsFormsApp1 {
             MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed);
             changeFormAppearance();
         }
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
 
             int code = (int)e.KeyCode;
             char typedChar = Char.ToUpper(typedCharacter(code)); //typedChar je u uppercase-u      
-
-            newGame.handleInput(typedChar);
-
-            if(newGame.getIsGameOver()) {
-                stopTyping();
+            if (flag) {
+                this.typedText.Text = "";
             }
 
+            if (this.skipErrorCheckbox.Checked) {
+                //u ovom slucaju ne zahtjevamo ispravljanje gresaka tj. mozemo ih preskociti
+
+                string typedText = this.typedText.Text.ToUpper() + typedChar;
+                newGame.handleInputSkipErrorsOn(typedChar, typedText);
+                if (typedChar == ' ') {
+                    this.typedText.Text = "";
+                    flag = true;
+                } else {
+                    flag = false;
+                }
+         
+
+            } else { 
+                // ovdje zahtjevamo da se greske isprave
+                newGame.handleInput(typedChar);
+            }
+
+            if (newGame.getIsGameOver()) {
+                stopTyping();
+            }
+     
         }
 
 
@@ -128,7 +153,7 @@ namespace WindowsFormsApp1 {
             else if (code == 221) letter = 'Đ';
             else if (code == 222) letter = 'Ć';
             else if (code >= 65 && code <= 90) letter = (char)code;
-            else if (code == 32) letter = '-'; //razmak
+            else if (code == 32) letter = ' '; //razmak
             else if (code == 8) letter = '\b'; //backspace
             else letter = '?'; // neki znak koji nije slovo
 
