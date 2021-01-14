@@ -12,9 +12,11 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        Form1 mainform;
+        public Form2(Form1 form1)
         {
             InitializeComponent();
+            mainform = form1;
         }
 
         private void generateExButton_Click(object sender, EventArgs e)
@@ -28,11 +30,18 @@ namespace WindowsFormsApp1
             }
             var lengthOfExercise = this.lenOfEx.Value;
             var lengthOfWords = this.lenOfWords.Value;
+            var name = this.exNameTextBox.Text;
+            
             Console.WriteLine(lengthOfExercise);
             Console.WriteLine(lengthOfWords); 
-            Exercise ex = new Exercise(letters, lengthOfExercise, lengthOfWords);
+            Exercise ex = new Exercise(letters, lengthOfExercise, lengthOfWords, name);
             string newEx = ex.generateExercise();
-            ((Form1)this.Owner).setTextToType(newEx);
+            RadioButton radioButton = new RadioButton();
+            radioButton.Text = name;
+            
+            mainform.exPanel.Controls.Add(radioButton);
+            
+        ((Form1)this.Owner).setTextToType(newEx);
             this.Close();
         }
     }

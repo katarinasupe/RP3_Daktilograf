@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics; //stopwatch
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
@@ -31,8 +32,35 @@ namespace WindowsFormsApp1 {
 
             InitializeComponent();
             initializeGame();
-       }
 
+            initializeUserExercises();
+   
+                
+        }
+
+        void initializeUserExercises()
+        {
+            bool first = true;
+            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex" };
+            string fullPath = System.IO.Path.Combine(paths);
+
+            string[] fileEntries = Directory.GetFiles(fullPath);
+            foreach (string fileName in fileEntries)
+            {
+                string name;
+                name = Path.GetFileName(fileName);
+                name = name.Remove(name.Length - 4);
+                System.Diagnostics.Debug.WriteLine(name);
+                RadioButton radioButton = new RadioButton();
+                radioButton.Text = name;
+                if (first)
+                {
+                    radioButton.Checked = true;
+                    first = false;
+                }
+                exPanel.Controls.Add(radioButton);
+            }
+        }
         void initializeGame()
         {
             keyboard = this.panel1.Controls;
@@ -162,7 +190,7 @@ namespace WindowsFormsApp1 {
   
         private void createNewEx_Click(object sender, EventArgs e)
         {
-            Form2 createEx = new Form2();
+            Form2 createEx = new Form2(this);
             //samo .Show() dozvoljava rad na Form1, a mi zelimo samo na Form2 pa koristimo ShowDialog()
             createEx.ShowDialog(this);
         }
@@ -180,7 +208,28 @@ namespace WindowsFormsApp1 {
                 this.skipErrorCheckbox.BackColor = Color.Silver;
             }
         }
-        
+
+        private void loadUserEx_Click(object sender, EventArgs e)
+        {
+
+            this.skipErrorCheckbox.Enabled = true;
+            this.restartBtn.Enabled = false;
+            var nameex = exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+            System.Diagnostics.Debug.WriteLine(nameex);
+            nameex = nameex + ".txt";
+
+            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex\", nameex };
+            string fullPath = System.IO.Path.Combine(paths);
+            string text = System.IO.File.ReadAllText(fullPath);
+            this.textToType.Text = text;
+
+
+            isGameOn = false;
+            resetKeyboard();
+            changeFormAppearance();
+
+        }
+
 
 
 
