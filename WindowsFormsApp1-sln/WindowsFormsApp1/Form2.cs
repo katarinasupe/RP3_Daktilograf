@@ -43,7 +43,8 @@ namespace WindowsFormsApp1
 
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
             
-            ((Form1)this.Owner).setTextToType(newEx);
+            //((Form1)this.Owner).setTextToType(newEx);
+            ((Form1)this.Owner).loadUserEx.PerformClick();
             this.Close();
         }
     }

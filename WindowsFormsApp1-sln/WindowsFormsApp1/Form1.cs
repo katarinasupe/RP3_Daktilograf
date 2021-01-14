@@ -18,6 +18,8 @@ namespace WindowsFormsApp1 {
         private Game newGame;
         private bool isGameOn;
         string[] words; //polje rijeci u tekstu koji trebamo pretipkati
+        string[] wordsToDisplay;
+        string text="";
         int spaceCtr;
 
         bool flag;
@@ -32,7 +34,8 @@ namespace WindowsFormsApp1 {
         }
         public void setTextToType(string value)
         {
-            this.textToType.Text = value;
+            text = value;
+            createAndDisplayWords(text);
         }
         public Form1() {
             InitializeComponent();
@@ -76,8 +79,9 @@ namespace WindowsFormsApp1 {
         {
             string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", "easy_ex_1.txt" };
             string fullPath = System.IO.Path.Combine(paths);
-            string text = System.IO.File.ReadAllText(fullPath);
-            this.textToType.Text = text;
+            text = System.IO.File.ReadAllText(fullPath);
+            //this.textToType.Text = text;
+            createAndDisplayWords(text);
         }
 
         void initializeGame()
@@ -120,7 +124,8 @@ namespace WindowsFormsApp1 {
                 this.typedText.Enabled = false;
                 this.typedText.Text = ""; //ispraznimo textbox ako je igra gotova
                 this.skipErrorCheckbox.Enabled = true;
-                
+                this.textToType.Controls.Clear();
+                createAndDisplayWords(text);
             }
         }
 
@@ -133,15 +138,15 @@ namespace WindowsFormsApp1 {
         private void startNewGame() {
 
             isGameOn = true;
-            var text = this.textToType.Text.ToUpper().ToCharArray();
-            string str = this.textToType.Text.ToUpper();
+            var textArray = text.ToUpper().ToCharArray();
+            string str = text.ToUpper();
             words = str.Split(' ');
             spaceCtr = 0;
 
             timer.Restart();
-
-            if (text.Length > 0) {
-                newGame.startGame(textBox, keyboard, text, words);
+            System.Diagnostics.Debug.WriteLine(text);
+            if (textArray.Length > 0) {
+                newGame.startGame(textBox, keyboard, textArray, words);
             } else {
                 stopTyping();
             }
@@ -164,9 +169,11 @@ namespace WindowsFormsApp1 {
                 //u ovom slucaju ne zahtjevamo ispravljanje gresaka tj. mozemo ih preskociti
 
                 //string typedText = this.typedText.Text.ToUpper() + typedChar;
-                newGame.handleInputSkipErrorsOn(typedChar, typedText);
+                newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
                 if (typedChar == ' ')
                 {
+                    spaceCtr++;
+                    nextWord();
                     this.typedText.Text = "";
                     e.SuppressKeyPress = true;
                 }
@@ -176,11 +183,14 @@ namespace WindowsFormsApp1 {
             {
                 // ovdje zahtjevamo da se greske isprave
                 System.Diagnostics.Debug.WriteLine(typedText);
-                newGame.handleInputSkipErrorsOff(e, typedChar);
+                newGame.handleInputSkipErrorsOff(e, typedChar, typedText);
                 if (typedChar == ' ')
                 {
+                    spaceCtr++;
+                    nextWord();
                     this.typedText.Text = "";
                     e.SuppressKeyPress = true;
+
                 }
 
             }
@@ -224,9 +234,10 @@ namespace WindowsFormsApp1 {
             //cita iz Debug foldera 
             string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", fileName };
             string fullPath = System.IO.Path.Combine(paths);
-            string text = System.IO.File.ReadAllText(fullPath);
+            text = System.IO.File.ReadAllText(fullPath);
             Console.WriteLine(text);
-            this.textToType.Text = text;
+            //this.textToType.Text = text;
+            createAndDisplayWords(text);
 
             //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
             isGameOn = false;
@@ -268,8 +279,9 @@ namespace WindowsFormsApp1 {
 
             string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
-            string text = System.IO.File.ReadAllText(fullPath);
-            this.textToType.Text = text;
+            text = System.IO.File.ReadAllText(fullPath);
+            //this.textToType.Text = text;
+            createAndDisplayWords(text);
 
 
             isGameOn = false;
@@ -278,7 +290,36 @@ namespace WindowsFormsApp1 {
 
         }
 
+        private void createAndDisplayWords(string text)
+        {
+            bool first = true;
+            wordsToDisplay = text.Split(' ');
+            for (int i = 0; i < wordsToDisplay.Length; i++)
+            { 
+                Label label = new Label();
+                label.Text = wordsToDisplay[i];
+                //label.Width = 30;
+                label.AutoSize = true;
+                //label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            
+                if (first == true)
+                {
+                    label.BackColor = Color.LightBlue;
+                    first = false;
+                }
+                this.textToType.Controls.Add(label);
+            }
+        }
 
+        private void nextWord()
+        {
+            if (spaceCtr < words.Length)
+            {
+                var lbls = textToType.Controls.OfType<Label>().ToArray();
+                lbls[1].BackColor = Color.LightBlue;
+                textToType.Controls.Remove(lbls[0]);
+            }
+        }
 
 
 

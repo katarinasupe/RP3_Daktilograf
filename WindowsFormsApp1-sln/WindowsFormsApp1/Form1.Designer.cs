@@ -58,7 +58,6 @@
             this.O = new System.Windows.Forms.Label();
             this.Đ = new System.Windows.Forms.Label();
             this.typedText = new System.Windows.Forms.TextBox();
-            this.textToType = new System.Windows.Forms.Label();
             this.startBtn = new System.Windows.Forms.Button();
             this.chooseLevel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxLevel = new System.Windows.Forms.GroupBox();
@@ -79,6 +78,7 @@
             this.skipErrorCheckbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.restartBtn = new System.Windows.Forms.Button();
+            this.textToType = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
@@ -355,11 +355,6 @@
             this.typedText.Name = "typedText";
             this.typedText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // textToType
-            // 
-            resources.ApplyResources(this.textToType, "textToType");
-            this.textToType.Name = "textToType";
-            // 
             // startBtn
             // 
             this.startBtn.BackColor = System.Drawing.Color.LightBlue;
@@ -510,16 +505,21 @@
             this.restartBtn.UseVisualStyleBackColor = false;
             this.restartBtn.Click += new System.EventHandler(this.restartBtn_Click);
             // 
+            // textToType
+            // 
+            resources.ApplyResources(this.textToType, "textToType");
+            this.textToType.Name = "textToType";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textToType);
             this.Controls.Add(this.restartBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.skipErrorCheckbox);
             this.Controls.Add(this.chooseLevel);
             this.Controls.Add(this.startBtn);
-            this.Controls.Add(this.textToType);
             this.Controls.Add(this.typedText);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
@@ -574,7 +574,6 @@
         private System.Windows.Forms.Label O;
         private System.Windows.Forms.Label Đ;
         private System.Windows.Forms.TextBox typedText;
-        private System.Windows.Forms.Label textToType;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.FlowLayoutPanel chooseLevel;
         private System.Windows.Forms.GroupBox groupBoxLevel;
@@ -592,9 +591,10 @@
         private System.Windows.Forms.CheckBox skipErrorCheckbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button restartBtn;
-        private System.Windows.Forms.Button loadUserEx;
+        public System.Windows.Forms.Button loadUserEx;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.FlowLayoutPanel exPanel;
+        private System.Windows.Forms.FlowLayoutPanel textToType;
     }
 }
 
