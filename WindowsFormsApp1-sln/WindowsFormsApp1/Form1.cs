@@ -14,6 +14,7 @@ namespace WindowsFormsApp1 {
     public partial class Form1 : Form {
       
         private Control.ControlCollection keyboard;
+        private Control textBox;
         private Game newGame;
         private bool isGameOn;
         string[] words; //polje rijeci u tekstu koji trebamo pretipkati
@@ -81,6 +82,7 @@ namespace WindowsFormsApp1 {
 
         void initializeGame()
         {
+            textBox = this.typedText;
             keyboard = this.panel1.Controls;
             newGame = new Game();
             isGameOn = false;
@@ -139,7 +141,7 @@ namespace WindowsFormsApp1 {
             timer.Restart();
 
             if (text.Length > 0) {
-                newGame.startGame(keyboard, text, words);
+                newGame.startGame(textBox, keyboard, text, words);
             } else {
                 stopTyping();
             }
@@ -153,35 +155,42 @@ namespace WindowsFormsApp1 {
             changeFormAppearance();
         }
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
-
+            
             int code = (int)e.KeyCode;
             char typedChar = Char.ToUpper(typedCharacter(code)); //typedChar je u uppercase-u      
-            if (flag) {
-                this.typedText.Text = "";
-            }
-
-            if (this.skipErrorCheckbox.Checked) {
+            string typedText = this.typedText.Text.ToUpper() + typedChar;
+            if (this.skipErrorCheckbox.Checked)
+            {
                 //u ovom slucaju ne zahtjevamo ispravljanje gresaka tj. mozemo ih preskociti
 
-                string typedText = this.typedText.Text.ToUpper() + typedChar;
+                //string typedText = this.typedText.Text.ToUpper() + typedChar;
                 newGame.handleInputSkipErrorsOn(typedChar, typedText);
-                if (typedChar == ' ') {
+                if (typedChar == ' ')
+                {
                     this.typedText.Text = "";
-                    flag = true;
-                } else {
-                    flag = false;
+                    e.SuppressKeyPress = true;
                 }
-         
 
-            } else { 
+            }
+            else
+            {
                 // ovdje zahtjevamo da se greske isprave
-                newGame.handleInput(typedChar);
+                System.Diagnostics.Debug.WriteLine(typedText);
+                newGame.handleInputSkipErrorsOff(e, typedChar);
+                if (typedChar == ' ')
+                {
+                    this.typedText.Text = "";
+                    e.SuppressKeyPress = true;
+                }
+
             }
 
-            if (newGame.getIsGameOver()) {
+            if (newGame.getIsGameOver())
+            {
                 stopTyping();
             }
-     
+
+
         }
 
 
@@ -268,6 +277,8 @@ namespace WindowsFormsApp1 {
             changeFormAppearance();
 
         }
+
+
 
 
 

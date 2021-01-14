@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         private bool isGameOver;
         private int spaceCtr;
         Control.ControlCollection keyboard;
+        Control textBox;
 
         public bool getIsGameOver() {
             return isGameOver;
@@ -53,11 +54,12 @@ namespace WindowsFormsApp1
             
         }
 
-        public void startGame(Control.ControlCollection keyboard, char[] text, string[] words) {
+        public void startGame(Control textBox, Control.ControlCollection keyboard, char[] text, string[] words) {
             this.lettersInText = text;
             this.wordsInText = words;
             this.spaceCtr = 0;
             this.wrongCharacter = '0';
+            this.textBox = textBox;
             this.keyboard = keyboard;
             this.expectedLetterIndex = -1; //ovo samo da bi dobro radilo showNextLetter
             this.showNextLetterOnKeyboard();
@@ -148,32 +150,29 @@ namespace WindowsFormsApp1
             
         }
 
-        public void handleInput(char typedChar) {
-            //ovo sluzi samo dok se ne implementira skipErrors = off;
+        public void handleInputSkipErrorsOff(KeyEventArgs e, char typedChar) {
             char expectedLetterIndexInText = lettersInText[expectedLetterIndex];
 
-            if ((typedChar == Char.ToUpper(expectedLetterIndexInText)) || (typedChar == '-' && expectedLetterIndexInText == ' ')) {
-
+            if ((typedChar == Char.ToUpper(expectedLetterIndexInText)) || (typedChar == '-' && expectedLetterIndexInText == ' ')) {             
                 if (expectedLetterIndex < lettersInText.Length - 1) {
+                    if (wrongCharacter!='0')
+                        removeWrongLetterFromKeyboard();
 
                     removeExpectedLetterFromKeyboard();
                     showNextLetterOnKeyboard();
                     expectedLetterIndex += 1;
-
-                } else {
-
-                    isGameOver = true;
-
-                }
-
-            } else {
-
-                if (typedChar != '?') {
-
-                    wrongCharacter = typedChar;
-                    showWrongLetterOnKeyboard();
-                }
+                } 
+                else 
+                    isGameOver = true;  
             }
+            else if (typedChar != '?') {
+                e.SuppressKeyPress = true;
+                if (wrongCharacter!='0')
+                    removeWrongLetterFromKeyboard();
+                wrongCharacter = typedChar;
+                showWrongLetterOnKeyboard();   
+            }
+            
         }
 
         //ovo treba srediti - vec postoji fja showExpected koja se koristi pa bi ovu bilo dobro maknuti
@@ -270,5 +269,9 @@ namespace WindowsFormsApp1
             }
 
         }
+
+
+        //public void handleInputSkipErrorsOff(char typedChar, string typedText)
+
     }
 }

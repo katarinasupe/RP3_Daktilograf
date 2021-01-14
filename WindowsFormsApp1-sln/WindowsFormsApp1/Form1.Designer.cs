@@ -73,12 +73,12 @@
             this.ex_1 = new System.Windows.Forms.RadioButton();
             this.loadNewEx = new System.Windows.Forms.Button();
             this.createNewEx = new System.Windows.Forms.Button();
-            this.loadUserEx = new System.Windows.Forms.Button();
+            this.exPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.loadUserEx = new System.Windows.Forms.Button();
             this.skipErrorCheckbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.restartBtn = new System.Windows.Forms.Button();
-            this.exPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
@@ -467,6 +467,18 @@
             this.createNewEx.UseVisualStyleBackColor = false;
             this.createNewEx.Click += new System.EventHandler(this.createNewEx_Click);
             // 
+            // exPanel
+            // 
+            resources.ApplyResources(this.exPanel, "exPanel");
+            this.exPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.exPanel.Controls.Add(this.label3);
+            this.exPanel.Name = "exPanel";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // loadUserEx
             // 
             this.loadUserEx.BackColor = System.Drawing.Color.LightBlue;
@@ -474,11 +486,6 @@
             this.loadUserEx.Name = "loadUserEx";
             this.loadUserEx.UseVisualStyleBackColor = false;
             this.loadUserEx.Click += new System.EventHandler(this.loadUserEx_Click);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // skipErrorCheckbox
             // 
@@ -502,13 +509,6 @@
             this.restartBtn.Name = "restartBtn";
             this.restartBtn.UseVisualStyleBackColor = false;
             this.restartBtn.Click += new System.EventHandler(this.restartBtn_Click);
-            // 
-            // exPanel
-            // 
-            resources.ApplyResources(this.exPanel, "exPanel");
-            this.exPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.exPanel.Controls.Add(this.label3);
-            this.exPanel.Name = "exPanel";
             // 
             // Form1
             // 

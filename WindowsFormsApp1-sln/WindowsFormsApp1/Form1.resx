@@ -1572,6 +1572,102 @@
   <data name="chooseLevel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="&gt;&gt;groupBoxLevel.Name" xml:space="preserve">
+    <value>groupBoxLevel</value>
+  </data>
+  <data name="&gt;&gt;groupBoxLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxLevel.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;groupBoxLevel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Name" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Name" xml:space="preserve">
+    <value>loadNewEx</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Name" xml:space="preserve">
+    <value>createNewEx</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Name" xml:space="preserve">
+    <value>exPanel</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;exPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Name" xml:space="preserve">
+    <value>loadUserEx</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chooseLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 7</value>
+  </data>
+  <data name="chooseLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="chooseLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 476</value>
+  </data>
+  <data name="chooseLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chooseLevel.Name" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;chooseLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseLevel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chooseLevel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;hard.Name" xml:space="preserve">
     <value>hard</value>
   </data>
@@ -1637,258 +1733,6 @@
   </data>
   <data name="&gt;&gt;groupBoxLevel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;ex_5.Name" xml:space="preserve">
-    <value>ex_5</value>
-  </data>
-  <data name="&gt;&gt;ex_5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ex_5.Parent" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;ex_5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ex_4.Name" xml:space="preserve">
-    <value>ex_4</value>
-  </data>
-  <data name="&gt;&gt;ex_4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ex_4.Parent" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;ex_4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ex_3.Name" xml:space="preserve">
-    <value>ex_3</value>
-  </data>
-  <data name="&gt;&gt;ex_3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ex_3.Parent" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;ex_3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ex_2.Name" xml:space="preserve">
-    <value>ex_2</value>
-  </data>
-  <data name="&gt;&gt;ex_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ex_2.Parent" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;ex_2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ex_1.Name" xml:space="preserve">
-    <value>ex_1</value>
-  </data>
-  <data name="&gt;&gt;ex_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ex_1.Parent" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;ex_1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="groupBoxEx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 110</value>
-  </data>
-  <data name="groupBoxEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="groupBoxEx.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="groupBoxEx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 151</value>
-  </data>
-  <data name="groupBoxEx.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBoxEx.Text" xml:space="preserve">
-    <value>Odabir vježbe:</value>
-  </data>
-  <data name="&gt;&gt;groupBoxEx.Name" xml:space="preserve">
-    <value>groupBoxEx</value>
-  </data>
-  <data name="&gt;&gt;groupBoxEx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxEx.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;groupBoxEx.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="loadNewEx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 267</value>
-  </data>
-  <data name="loadNewEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="loadNewEx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 32</value>
-  </data>
-  <data name="loadNewEx.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="loadNewEx.Text" xml:space="preserve">
-    <value>Učitaj vježbu</value>
-  </data>
-  <data name="&gt;&gt;loadNewEx.Name" xml:space="preserve">
-    <value>loadNewEx</value>
-  </data>
-  <data name="&gt;&gt;loadNewEx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loadNewEx.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;loadNewEx.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="createNewEx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 305</value>
-  </data>
-  <data name="createNewEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="createNewEx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 32</value>
-  </data>
-  <data name="createNewEx.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="createNewEx.Text" xml:space="preserve">
-    <value>Kreiraj svoju vježbu</value>
-  </data>
-  <data name="&gt;&gt;createNewEx.Name" xml:space="preserve">
-    <value>createNewEx</value>
-  </data>
-  <data name="&gt;&gt;createNewEx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;createNewEx.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;createNewEx.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="exPanel.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 16</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Vaše vježbe:</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>exPanel</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="exPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
-    <value>TopDown</value>
-  </data>
-  <data name="exPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 343</value>
-  </data>
-  <data name="exPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 95</value>
-  </data>
-  <data name="exPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="exPanel.WrapContents" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;exPanel.Name" xml:space="preserve">
-    <value>exPanel</value>
-  </data>
-  <data name="&gt;&gt;exPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exPanel.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;exPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="loadUserEx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 444</value>
-  </data>
-  <data name="loadUserEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="loadUserEx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 32</value>
-  </data>
-  <data name="loadUserEx.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="loadUserEx.Text" xml:space="preserve">
-    <value>Učitaj svoju vježbu</value>
-  </data>
-  <data name="&gt;&gt;loadUserEx.Name" xml:space="preserve">
-    <value>loadUserEx</value>
-  </data>
-  <data name="&gt;&gt;loadUserEx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;loadUserEx.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;loadUserEx.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chooseLevel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 7</value>
-  </data>
-  <data name="chooseLevel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 3, 2, 3</value>
-  </data>
-  <data name="chooseLevel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 476</value>
-  </data>
-  <data name="chooseLevel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;chooseLevel.Name" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;chooseLevel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chooseLevel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chooseLevel.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="hard.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1979,6 +1823,96 @@
   </data>
   <data name="&gt;&gt;easy.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;ex_5.Name" xml:space="preserve">
+    <value>ex_5</value>
+  </data>
+  <data name="&gt;&gt;ex_5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ex_5.Parent" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;ex_5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ex_4.Name" xml:space="preserve">
+    <value>ex_4</value>
+  </data>
+  <data name="&gt;&gt;ex_4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ex_4.Parent" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;ex_4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ex_3.Name" xml:space="preserve">
+    <value>ex_3</value>
+  </data>
+  <data name="&gt;&gt;ex_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ex_3.Parent" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;ex_3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ex_2.Name" xml:space="preserve">
+    <value>ex_2</value>
+  </data>
+  <data name="&gt;&gt;ex_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ex_2.Parent" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;ex_2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;ex_1.Name" xml:space="preserve">
+    <value>ex_1</value>
+  </data>
+  <data name="&gt;&gt;ex_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ex_1.Parent" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;ex_1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBoxEx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 110</value>
+  </data>
+  <data name="groupBoxEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="groupBoxEx.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="groupBoxEx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 151</value>
+  </data>
+  <data name="groupBoxEx.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="groupBoxEx.Text" xml:space="preserve">
+    <value>Odabir vježbe:</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Name" xml:space="preserve">
+    <value>groupBoxEx</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;groupBoxEx.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="ex_5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2129,6 +2063,156 @@
   </data>
   <data name="&gt;&gt;ex_1.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="loadNewEx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 267</value>
+  </data>
+  <data name="loadNewEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="loadNewEx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 32</value>
+  </data>
+  <data name="loadNewEx.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="loadNewEx.Text" xml:space="preserve">
+    <value>Učitaj vježbu</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Name" xml:space="preserve">
+    <value>loadNewEx</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;loadNewEx.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="createNewEx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 305</value>
+  </data>
+  <data name="createNewEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="createNewEx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 32</value>
+  </data>
+  <data name="createNewEx.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="createNewEx.Text" xml:space="preserve">
+    <value>Kreiraj svoju vježbu</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Name" xml:space="preserve">
+    <value>createNewEx</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;createNewEx.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="exPanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>exPanel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="exPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="exPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 343</value>
+  </data>
+  <data name="exPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 95</value>
+  </data>
+  <data name="exPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="exPanel.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Name" xml:space="preserve">
+    <value>exPanel</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exPanel.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;exPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 16</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Vaše vježbe:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>exPanel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="loadUserEx.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 444</value>
+  </data>
+  <data name="loadUserEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 3, 2, 3</value>
+  </data>
+  <data name="loadUserEx.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 32</value>
+  </data>
+  <data name="loadUserEx.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="loadUserEx.Text" xml:space="preserve">
+    <value>Učitaj svoju vježbu</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Name" xml:space="preserve">
+    <value>loadUserEx</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;loadUserEx.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="skipErrorCheckbox.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
