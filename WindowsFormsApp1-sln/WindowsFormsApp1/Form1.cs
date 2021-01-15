@@ -170,7 +170,7 @@ namespace WindowsFormsApp1 {
                 //u ovom slucaju ne zahtjevamo ispravljanje gresaka tj. mozemo ih preskociti
 
                 //string typedText = this.typedText.Text.ToUpper() + typedChar;
-                newGame.handleInputSkipErrorsOn1(e,typedChar, typedText);
+                newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
                 if (typedChar == ' ')
                 {
                     spaceCtr++;
