@@ -11,45 +11,45 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /*---Klasa koja predstavlja dijalog za kreiranje nove vježbe.---*/
     public partial class Form2 : Form
     {
+        /*---Konstruktor klase Form2.---*/
         public Form2()
         {
             InitializeComponent();
         }
 
+        /*---Event pritiska gumba 'Generiraj i spremi'.---*/
         private void generateExButton_Click(object sender, EventArgs e)
         {
-            //char[] delimiterChars = {','};
-            //string[] letters = this.practiceLetters.Text.Split(delimiterChars);
             //array slova za generiranje vjezbe
             string[] letters = this.practiceLetters.Text.Select(c => c.ToString()).ToArray();
-            foreach (var letter in letters)
-            {
-                Console.WriteLine(letter.ToString());
-            }
+
+            //kreiraj novu vjezbu s danim parametrima
             var lengthOfExercise = this.lenOfEx.Value;
             var lengthOfWords = this.lenOfWords.Value;
             var name = this.exNameTextBox.Text;
-
-            Console.WriteLine(lengthOfExercise);
-            Console.WriteLine(lengthOfWords);
             Exercise ex = new Exercise(letters, lengthOfExercise, lengthOfWords, name);
-            string newEx = ex.generateExercise();
+
+            //generiranje i spremanje vjezbe
+            string newEx = ex.generateExercise(); 
+
+            //kreiranje radio buttona za novu vjezbu
             RadioButton radioButton = new RadioButton();
             radioButton.Text = name;
             radioButton.Width = 100;
             radioButton.Height = 25;
             ((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Checked = false;
             radioButton.Checked = true;
-
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
 
             //((Form1)this.Owner).setTextToType(newEx);
-            ((Form1)this.Owner).loadUserEx.PerformClick();
-            this.Close();
+            ((Form1)this.Owner).loadUserEx.PerformClick(); //ucitaj generiranu vjezbu
+            this.Close(); //zatvori dijalog
         }
 
+        /*---Metoda koja provjerava korektnost unosa slova za vjezbanje.---*/
         private bool checkPracticeLetters()
         {
             //dopustamo samo unos slova
@@ -57,6 +57,7 @@ namespace WindowsFormsApp1
             //neovisno o caseu
             Match m = Regex.Match(this.practiceLetters.Text, pattern, RegexOptions.IgnoreCase);
             bool isRegexOk = m.Success;
+            //provjera da su sva unesena slova razlicita
             bool areLettersDistinct = this.practiceLetters.Text.Distinct().Count() == this.practiceLetters.Text.Length;
             
             if (isRegexOk && areLettersDistinct)
@@ -65,6 +66,7 @@ namespace WindowsFormsApp1
                 return false;
         }
 
+        /*---Metoda koja provjerava korektnost unosa naziva nove vjezbe.---*/
         private bool checkExName()
         {
             //dozvoljavamo slova, brojke, underscore i dash u imenu vjezbe (ne moze biti prazno)
@@ -83,8 +85,10 @@ namespace WindowsFormsApp1
                 return false;
         }
 
+        /*---Event promjene teksta u tektualnom okviru za unos slova za vjezbu.---*/
         private void practiceLetters_TextChanged(object sender, EventArgs e)
         {
+            //gumb 'Generiraj i spremi' je omogucen ako su oba tekstualna okvira korektna
             if (checkExName() && checkPracticeLetters())
             {
                 this.generateExButton.Enabled = true; 
@@ -95,8 +99,10 @@ namespace WindowsFormsApp1
             }
         }
 
+        /*---Event promjene teksta u tektualnom okviru za unos naziva nove vjezbe.---*/
         private void exNameTextBox_TextChanged(object sender, EventArgs e)
         {
+            //gumb 'Generiraj i spremi' je omogucen ako su oba tekstualna okvira korektna
             if (checkExName() && checkPracticeLetters())
             {
                 this.generateExButton.Enabled = true;

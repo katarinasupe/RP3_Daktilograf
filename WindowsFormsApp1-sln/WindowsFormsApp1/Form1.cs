@@ -21,13 +21,19 @@ namespace WindowsFormsApp1 {
         string[] wordsToDisplay;
         string text="";
         int spaceCtr;
-
         bool flag;
-
-
         Stopwatch timer = new Stopwatch();
 
-        //getters, setters
+        /*---Konstruktor klase Form1.---*/
+        public Form1()
+        {
+            InitializeComponent();
+            setFirstExercise();
+            initializeGame();
+            initializeUserExercises();
+        }
+
+        /*------------getteri i setteri------------*/
         public string getTextToType()
         {
             return this.textToType.Text;
@@ -37,16 +43,10 @@ namespace WindowsFormsApp1 {
             text = value;
             createAndDisplayWords(text);
         }
-        public Form1() {
-            InitializeComponent();
-            //za pocetnu vjezbu postavi prvu laku vjezbu
-            setFirstExercise();
-            initializeGame();
+        //----------------------------------------
 
-            initializeUserExercises();        
-        }
 
-        //ispisivanje korisnikovih vježbi
+        /*---Metoda za ispisivanje korisnikovih vjezbi.---*/
         void initializeUserExercises()
         {
             bool first = true;
@@ -76,15 +76,24 @@ namespace WindowsFormsApp1 {
                 exPanel.Controls.Add(radioButton);
             }
         }
+
+        /*---Postavi prvu učitanu vježbu na prvu laganu vježbu.---*/
         void setFirstExercise()
         {
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", "easy_ex_1.txt" };
             string fullPath = System.IO.Path.Combine(paths);
-            text = System.IO.File.ReadAllText(fullPath);
-            //this.textToType.Text = text;
-            createAndDisplayWords(text);
+            if(System.IO.File.Exists(fullPath))
+            {
+                text = System.IO.File.ReadAllText(fullPath);
+                createAndDisplayWords(text);
+            }
+            else
+            {
+                throw new Exception("Prva lagana vježba nije pronađena!");
+            }  
         }
 
+        /*---Incijaliziraj igru, tj. postavi textBox, keyboard te kreiraj igru.---*/
         void initializeGame()
         {
             textBox = this.typedText;
@@ -94,6 +103,7 @@ namespace WindowsFormsApp1 {
            // skipError = true; //nije nuzno vracanje nakon greske
         }
 
+        /*---Pritisak gumba 'Započni igru'.---*/
         private void startBtn_Click(object sender, EventArgs e) {
 
             isGameOn = true;
@@ -101,6 +111,7 @@ namespace WindowsFormsApp1 {
             startNewGame(); 
         }
 
+        /*---Pritisak gumba 'Ponovno pokreni'.---*/
         private void restartBtn_Click(object sender, EventArgs e) {
 
             isGameOn = false;
@@ -108,6 +119,7 @@ namespace WindowsFormsApp1 {
             changeFormAppearance();
         }
 
+        /*---Promjena izgleda forme s obzirom na to je li igra trenutno traje ili ne.---*/
         void changeFormAppearance() {
 
             if (isGameOn) {
@@ -130,12 +142,14 @@ namespace WindowsFormsApp1 {
             }
         }
 
+        /*---Resetiranje tipkovnice - promjena pozadine tipki u bijelo.---*/
         private void resetKeyboard() {
             foreach (Label key in keyboard) {
                 key.BackColor = Color.White;
             }
         }
 
+        /*---Metoda koja započinje trenutno učitanu vježbu.---*/
         private void startNewGame() {
 
             isGameOn = true;
@@ -153,6 +167,7 @@ namespace WindowsFormsApp1 {
             }
         }
 
+        /*---Metoda koja završava započetu vježbu.---*/
         private void stopTyping() {
             
             isGameOn = false;
@@ -160,15 +175,17 @@ namespace WindowsFormsApp1 {
             MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed + "\n Broj greški: " + newGame.getWrongLettersCounter());
             changeFormAppearance();
         }
+
+        /*---Event pritiska tipke na tipkovnici.---*/
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
             
-            int code = (int)e.KeyCode;
-            char typedChar = Char.ToUpper(typedCharacter(code)); //typedChar je u uppercase-u      
+            int code = (int)e.KeyCode; //citamo kod pritisnute tipke
+            char typedChar = Char.ToUpper(typedCharacter(code));     
             string typedText = this.typedText.Text.ToUpper() + typedChar;
+
+            //ukoliko je opcija preskakanja greški upaljena
             if (this.skipErrorCheckbox.Checked)
             {
-                //u ovom slucaju ne zahtjevamo ispravljanje gresaka tj. mozemo ih preskociti
-
                 //string typedText = this.typedText.Text.ToUpper() + typedChar;
                 newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
                 if (typedChar == ' ')
@@ -180,6 +197,7 @@ namespace WindowsFormsApp1 {
                 }
 
             }
+            //ukoliko je opcija preskakanja greški ugašena
             else
             {
                 // ovdje zahtjevamo da se greske isprave
@@ -196,15 +214,15 @@ namespace WindowsFormsApp1 {
 
             }
 
+            //svaki pritiskom tipke provjeravaj je li kraj igre, ako je, završi s tipkanjem
             if (newGame.getIsGameOver())
             {
                 stopTyping();
             }
-
-
         }
 
 
+        /*---Metoda za raspoznavanje hrvatskih dijakritičkih znakova.---*/
         private char typedCharacter(int code) {
 
             char letter;
@@ -221,46 +239,58 @@ namespace WindowsFormsApp1 {
             return letter;
         }
 
+        /*---Event pritiska gumba 'Učitaj vježbu'.---*/
         private void loadNewEx_Click(object sender, EventArgs e)
         {
+            //omoguci odabir opcije preskakanja greske i onemoguci ponovno pokretanje
             this.skipErrorCheckbox.Enabled = true;
             this.restartBtn.Enabled = false;
+
+            //dohvati odabrani nivo i vjezbu iz radio buttona
             var level = groupBoxLevel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
             var exercise = groupBoxEx.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Name;
 
-            Console.WriteLine(level);
-            Console.WriteLine(exercise);
-
+            //dohvacamo putanju vjezbe koju ucitavamo
             var fileName = level + "_" + exercise + ".txt";
-            //cita iz Debug foldera 
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", fileName };
             string fullPath = System.IO.Path.Combine(paths);
-            text = System.IO.File.ReadAllText(fullPath);
-            Console.WriteLine(text);
-            //this.textToType.Text = text;
-            createAndDisplayWords(text);
 
-            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
-            isGameOn = false;
-            resetKeyboard();
-            changeFormAppearance();
+            //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace baci iznimku
+            if (System.IO.File.Exists(fullPath))
+            {
+                text = System.IO.File.ReadAllText(fullPath);
+                //this.textToType.Text = text;
+                createAndDisplayWords(text);
+
+                //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
+                isGameOn = false;
+                resetKeyboard();
+                changeFormAppearance();
+            }
+            else
+            {
+                throw new Exception("Odabrana vježba nije pronađena!");
+            }
         }
 
-  
+
+        /*---Event pritiska gumba 'Kreiraj svoju vježbu'.---*/
         private void createNewEx_Click(object sender, EventArgs e)
         {
             Form2 createEx = new Form2(); 
-            //samo .Show() dozvoljava rad na Form1, a mi zelimo samo na Form2 pa koristimo ShowDialog()
-            createEx.ShowDialog(this);
+            createEx.ShowDialog(this); //tako da ne mozemo raditi na Form1
         }
 
+        /*---Event promjene opcije preskakanja greške.---*/
         private void skipError_CheckedChanged(object sender, EventArgs e)
         {
+            //opcija preskakanja greške je upaljena
             if(this.skipErrorCheckbox.Checked)
             {
                 this.skipErrorCheckbox.Text = "Upaljeno";
                 this.skipErrorCheckbox.BackColor = Color.LightBlue;
             }
+            //opcija preskakanja greške je ugašena
             else
             {
                 this.skipErrorCheckbox.Text = "Ugašeno";
@@ -268,29 +298,35 @@ namespace WindowsFormsApp1 {
             }
         }
 
-        //učitavanje korisnikove vježbe na klik
+        /*---Event pritiska gumba 'Učitaj svoju vježbu'.---*/
         private void loadUserEx_Click(object sender, EventArgs e)
-        {
-
+        { 
             this.skipErrorCheckbox.Enabled = true;
             this.restartBtn.Enabled = false;
+            //dohvacamo ime vjezbe iz odabranog radio buttona
             var nameex = exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             System.Diagnostics.Debug.WriteLine(nameex);
             nameex = nameex + ".txt";
-
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
-            text = System.IO.File.ReadAllText(fullPath);
-            //this.textToType.Text = text;
-            createAndDisplayWords(text);
 
-
-            isGameOn = false;
-            resetKeyboard();
-            changeFormAppearance();
-
+            //provjera postoji li datoteka s danom putanjom
+            if (System.IO.File.Exists(fullPath))
+            {
+                text = System.IO.File.ReadAllText(fullPath);
+                //this.textToType.Text = text;
+                createAndDisplayWords(text);
+                isGameOn = false;
+                resetKeyboard();
+                changeFormAppearance();
+            }
+            else
+            {
+                throw new Exception("Kreirana vježba nije pronađena!");
+            }
         }
 
+        /*---Metoda koja ucitanu vjezbu dijeli na rijeci te kreira labele za svaku rijec.---*/
         private void createAndDisplayWords(string text)
         {
             bool first = true;
@@ -322,8 +358,10 @@ namespace WindowsFormsApp1 {
             }
         }
 
+        /*---Event promjene opcije svijetleće tipkovnice.---*/
         private void keyboardCheckbox_CheckedChanged(object sender, EventArgs e)
         {
+            //opcija svijetleće tipkovnice je upaljena
             if(this.keyboardCheckbox.Checked)
             {
                 this.keyboardCheckbox.Text = "Upaljena";
@@ -334,6 +372,7 @@ namespace WindowsFormsApp1 {
                     key.Visible = true;
                 }
             }
+            //opcija svijetleće tipkovnice je ugašena
             else
             {
                 this.keyboardCheckbox.Text = "Ugašena";

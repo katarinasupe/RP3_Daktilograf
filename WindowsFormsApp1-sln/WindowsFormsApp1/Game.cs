@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    /*---Klasa koja predstavlja jednu igru za neku učitanu vježbu u daktilografu.---*/
     class Game {
         private char[] lettersInText;
         private char[] typedLetters;
@@ -26,6 +27,16 @@ namespace WindowsFormsApp1
         private int allLettersCounter;
         private int correctWordsCounter;
 
+        /*---Konstruktor klase Game.---*/
+        public Game(Form1 form1)
+        {
+            this.expectedLetterIndex = 0;
+            this.wrongCharacter = '0';
+            isGameOver = false;
+            form = form1;
+        }
+
+        /*------------getteri i setteri------------*/
         public int getWrongLettersCounter()
         {
             return this.wrongLettersCounter;
@@ -57,14 +68,10 @@ namespace WindowsFormsApp1
         public void setWrongCharacter(char value) {
             this.wrongCharacter = value;
         }
+        //----------------------------------------
 
-        public Game(Form1 form1) {
-            this.expectedLetterIndex = 0;
-            this.wrongCharacter = '0';
-            isGameOver = false;
-            form = form1;
-        }
 
+        /*---Metoda za početak igre - odgovara na pritisak gumba 'Započni vježbu'.---*/
         public void startGame(Control textBox, Control.ControlCollection keyboard, char[] text, string[] words) {
             this.lettersInText = text;
             this.wordsInText = words;
@@ -83,7 +90,7 @@ namespace WindowsFormsApp1
             this.correctWordsCounter = 0;
     }
 
-        
+        /*---Metoda za igru kada je opcija preskakanja greški upaljena.---*/
         public void handleInputSkipErrorsOn(KeyEventArgs e,char typedChar, string typedText)
         {
 
@@ -200,9 +207,10 @@ namespace WindowsFormsApp1
             
         }
 
- 
+
 
         //sa stopiranjem unosa
+        /*---Metoda za igru kada je opcija preskakanja greški ugašena.---*/
         public void handleInputSkipErrorsOff(KeyEventArgs e, char typedChar, string typedText)
         {
             if (expectedLetterIndex < lettersInText.Length)

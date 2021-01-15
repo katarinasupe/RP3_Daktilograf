@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /*---Klasa koja predstavlja jednu vježbu u daktilografu.---*/
     class Exercise
     {
         private string[] mlettersToExercise;
@@ -14,6 +15,7 @@ namespace WindowsFormsApp1
         private string mname;
         private string ex;
 
+        /*---Konstruktor klase Exercise.---*/
         public Exercise(string[] lettersToExercise, decimal lenOfExercise, decimal lenOfWords, string name)
         {
             this.mlettersToExercise = lettersToExercise;
@@ -22,6 +24,8 @@ namespace WindowsFormsApp1
             this.mname = name;
             this.ex = "";
         }
+
+        /*---Metoda za generiranje nove vježbe na temelju korisnikovog unosa.---*/
         public string generateExercise()
         {
             
@@ -53,6 +57,7 @@ namespace WindowsFormsApp1
 
         }
 
+        /*---Metoda za spremanje nove vježbe.---*/
         private void saveExercise()
         {
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex", mname + ".txt"};
