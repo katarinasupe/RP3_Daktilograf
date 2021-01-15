@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.createExPanel = new System.Windows.Forms.Panel();
             this.exNameTextBox = new System.Windows.Forms.TextBox();
             this.exNameLabel = new System.Windows.Forms.Label();
@@ -39,6 +40,8 @@ namespace WindowsFormsApp1
             this.lenOfExLabel = new System.Windows.Forms.Label();
             this.practiceLetters = new System.Windows.Forms.TextBox();
             this.practiceLettersLabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.createExPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lenOfWords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lenOfEx)).BeginInit();
@@ -200,5 +203,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button generateExButton;
         private System.Windows.Forms.TextBox exNameTextBox;
         private System.Windows.Forms.Label exNameLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

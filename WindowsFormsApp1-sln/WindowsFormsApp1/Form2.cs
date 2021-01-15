@@ -18,6 +18,11 @@ namespace WindowsFormsApp1
         public Form2()
         {
             InitializeComponent();
+            toolTip1.SetToolTip(practiceLetters, "Upišite slova bez razmaka i bez ponavljanja.");
+            toolTip1.SetToolTip(practiceLettersLabel, "Upišite slova bez razmaka i bez ponavljanja.");
+            toolTip2.SetToolTip(exNameLabel, "Ime vježbe mora biti različito od postojećih vježbi.");
+            toolTip2.SetToolTip(exNameTextBox, "Ime vježbe mora biti različito od postojećih vježbi.");
+
         }
 
         /*---Event pritiska gumba 'Generiraj i spremi'.---*/
