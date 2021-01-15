@@ -21,8 +21,8 @@ namespace WindowsFormsApp1 {
         string[] wordsToDisplay;
         string text="";
         int spaceCtr;
-        bool flag;
         Stopwatch timer = new Stopwatch();
+        DateTime today;
 
         /*---Konstruktor klase Form1.---*/
         public Form1()
@@ -108,7 +108,8 @@ namespace WindowsFormsApp1 {
 
             isGameOn = true;
             changeFormAppearance();
-            startNewGame(); 
+            startNewGame();
+            today = DateTime.Today;
         }
 
         /*---Pritisak gumba 'Ponovno pokreni'.---*/
@@ -172,13 +173,30 @@ namespace WindowsFormsApp1 {
             
             isGameOn = false;
             timer.Stop();
+            TimeSpan ts = timer.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
             long time = timer.ElapsedMilliseconds;
             int wrong = newGame.getWrongLettersCounter();
+            int skipped = newGame.getSkippedLettersCounter();
             int correct = newGame.getCorrectLettersCounter();
             //System.Diagnostics.Debug.WriteLine((float)time / 1000 /60 + " ");
             int grossWPM = (int)((wrong + correct) / 5 / ((float)time / 1000 / 60));
-            MessageBox.Show("Vrijeme" + timer.Elapsed + "\nBroj pogrešno unesenih znakova: " + wrong 
-                + "\nBroj točno unesenih znakova: " + correct + "\nWPM: " + grossWPM);
+            int accuracy = 0;
+            if (wrong + correct != 0)
+                accuracy = (int)((float)correct / (wrong + correct) * 100);
+            MessageBox.Show("Vrijeme " + elapsedTime + "\nBroj pogrešno unesenih znakova: " + (wrong+skipped) 
+                + "\nBroj točno unesenih znakova: " + correct + "\nWPM: " + grossWPM + "\nTočnost: " + accuracy +"%");
+
+            string[] paths = { Environment.CurrentDirectory, @"..\..\scores.txt"};
+            string fullPath = System.IO.Path.Combine(paths);
+            Console.WriteLine(today.ToString("dd/MM/yyyy"));
+
+            using (StreamWriter sw = File.AppendText(fullPath))
+            {
+                sw.WriteLine(today.ToString("dd/MM/yyyy") + "-" + grossWPM + "-" + accuracy + "%");
+            }
             changeFormAppearance();
         }
 
@@ -390,23 +408,6 @@ namespace WindowsFormsApp1 {
                 }
             }
         }
-
-
-
-
-
-
-
-
-        /* 
-         * PRIMJER FOREACH
-             foreach (Label tipka  in this.panel1.Controls.OfType<Label>()) {
-                 String label = "label" + tipka.Text;
-                 tipka.Name = label;
-             }
-             
-         */
-
 
     }
 }

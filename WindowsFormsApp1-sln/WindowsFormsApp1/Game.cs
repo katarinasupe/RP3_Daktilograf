@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         private int expectedLetterIndexFirstMistake;
         private int wrongLettersCounter;
         private int correctLettersCounter;
-        private int allLettersCounter;
+        private int skippedLettersCounter;
         private int correctWordsCounter;
 
         /*---Konstruktor klase Game.---*/
@@ -44,6 +44,10 @@ namespace WindowsFormsApp1
         public int getCorrectLettersCounter()
         {
             return this.correctLettersCounter;
+        }
+        public int getSkippedLettersCounter()
+        {
+            return this.skippedLettersCounter;
         }
         public bool getIsGameOver() {
             return isGameOver;
@@ -90,9 +94,9 @@ namespace WindowsFormsApp1
             this.expectedLetterIndexFirstMistake = -1;
             this.wrongLettersCounter = 0;
             this.correctLettersCounter = 0;
-            this.allLettersCounter = 0;
             this.correctWordsCounter = 0;
-    }
+            this.skippedLettersCounter = 0;
+        }
 
         /*---Metoda za igru kada je opcija preskakanja greški upaljena.---*/
         public void handleInputSkipErrorsOn(KeyEventArgs e,char typedChar, string typedText)
@@ -143,7 +147,7 @@ namespace WindowsFormsApp1
                 }
                  else if(typedText.Length <= wordsInText[spaceCtr].Length)
                 {
-                    wrongLettersCounter += (wordsInText[spaceCtr].Length - typedText.Length + 1);
+                    skippedLettersCounter += (wordsInText[spaceCtr].Length - typedText.Length + 1);
                 }
                 spaceCtr += 1;
                 //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci

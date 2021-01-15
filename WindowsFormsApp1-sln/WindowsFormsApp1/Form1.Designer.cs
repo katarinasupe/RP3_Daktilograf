@@ -81,11 +81,14 @@
             this.textToType = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.keyboardCheckbox = new System.Windows.Forms.CheckBox();
+            this.scoresPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
             this.groupBoxEx.SuspendLayout();
             this.exPanel.SuspendLayout();
+            this.scoresPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Q
@@ -527,10 +530,23 @@
             this.keyboardCheckbox.UseVisualStyleBackColor = false;
             this.keyboardCheckbox.CheckedChanged += new System.EventHandler(this.keyboardCheckbox_CheckedChanged);
             // 
+            // scoresPanel
+            // 
+            this.scoresPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scoresPanel.Controls.Add(this.scoreLabel);
+            resources.ApplyResources(this.scoresPanel, "scoresPanel");
+            this.scoresPanel.Name = "scoresPanel";
+            // 
+            // scoreLabel
+            // 
+            resources.ApplyResources(this.scoreLabel, "scoreLabel");
+            this.scoreLabel.Name = "scoreLabel";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.scoresPanel);
             this.Controls.Add(this.keyboardCheckbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textToType);
@@ -542,6 +558,8 @@
             this.Controls.Add(this.typedText);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
@@ -552,6 +570,8 @@
             this.groupBoxEx.PerformLayout();
             this.exPanel.ResumeLayout(false);
             this.exPanel.PerformLayout();
+            this.scoresPanel.ResumeLayout(false);
+            this.scoresPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,6 +636,8 @@
         public System.Windows.Forms.FlowLayoutPanel textToType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox keyboardCheckbox;
+        private System.Windows.Forms.FlowLayoutPanel scoresPanel;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }
 
