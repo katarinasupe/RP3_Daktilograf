@@ -183,7 +183,7 @@ namespace WindowsFormsApp1 {
             else
             {
                 // ovdje zahtjevamo da se greske isprave
-                System.Diagnostics.Debug.WriteLine(typedText);
+                //System.Diagnostics.Debug.WriteLine(typedText);
                 newGame.handleInputSkipErrorsOff1(e, typedChar, typedText);
                 if (typedChar == ' ')
                 {
