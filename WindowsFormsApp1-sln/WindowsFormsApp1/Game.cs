@@ -64,9 +64,8 @@ namespace WindowsFormsApp1
             this.wrongCharacter = '0';
             this.textBox = textBox;
             this.keyboard = keyboard;
-            this.expectedLetterIndex = -1; //ovo samo da bi dobro radilo showNextLetter
-            this.showNextLetterOnKeyboard();
             this.expectedLetterIndex = 0;
+            this.showExpectedLetterOnKeyboard();
             isGameOver = false;
         }
 
@@ -377,26 +376,6 @@ namespace WindowsFormsApp1
                 showExpectedLetterOnKeyboard();
             else
                 isGameOver = true;
-        }
-
-        //ovo treba srediti - vec postoji fja showExpected koja se koristi pa bi ovu bilo dobro maknuti
-        //nakon implementacije skipErrors = false;
-        public void showNextLetterOnKeyboard()
-        {
-            char nextLetter = lettersInText[expectedLetterIndex + 1];
-            string letter = "" + Char.ToUpper(nextLetter);
-
-            if (nextLetter == ' ') {
-                letter = "SPACE";
-            }
-             
-            try {
-                var nextKey = keyboard.Find(letter, true);
-                nextKey[0].BackColor = Color.LightGreen;
-            } catch (Exception ex) {
-                Console.WriteLine("Nije nađeno slovo.");
-                isGameOver = true;
-            }  
         }
 
         public void showWrongLetterOnKeyboard()
