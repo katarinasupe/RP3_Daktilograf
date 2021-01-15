@@ -88,7 +88,7 @@ namespace WindowsFormsApp1 {
         {
             textBox = this.typedText;
             keyboard = this.panel1.Controls;
-            newGame = new Game();
+            newGame = new Game(this);
             isGameOn = false;
            // skipError = true; //nije nuzno vracanje nakon greske
         }

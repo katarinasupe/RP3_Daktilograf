@@ -16,8 +16,11 @@ namespace WindowsFormsApp1
         private char wrongCharacter;
         private bool isGameOver;
         private int spaceCtr;
+        private Form1 form;
         Control.ControlCollection keyboard;
         Control textBox;
+        bool bl = true;
+        private int expectedLetterIndexFirstMistake=-1;
 
         public bool getIsGameOver() {
             return isGameOver;
@@ -47,11 +50,11 @@ namespace WindowsFormsApp1
             this.wrongCharacter = value;
         }
 
-        public Game() {
+        public Game(Form1 form1) {
             this.expectedLetterIndex = 0;
             this.wrongCharacter = '0';
             isGameOver = false;
-            
+            form = form1;
         }
 
         public void startGame(Control textBox, Control.ControlCollection keyboard, char[] text, string[] words) {
@@ -72,12 +75,12 @@ namespace WindowsFormsApp1
 
             removeExpectedLetterFromKeyboard();
             if(wrongCharacter != '0')
-                removeWrongLetterFromKeyboard(e);
+                removeWrongLetterFromKeyboard();
 
             if(typedChar != lettersInText[expectedLetterIndex] && typedChar != '\b' && typedChar != ' ') {
 
                 wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(e);
+                showWrongLetterOnKeyboard();
             }
 
             if (typedChar == ' ') {
@@ -150,59 +153,50 @@ namespace WindowsFormsApp1
             }
             
         }
-        //sa stopiranjem unosa
-        public void handleInputSkipErrorsOff1(KeyEventArgs e, char typedChar, string typedText) {
-            char expectedLetterIndexInText = lettersInText[expectedLetterIndex];
-
-            if ((typedChar == Char.ToUpper(expectedLetterIndexInText)) || (typedChar == '-' && expectedLetterIndexInText == ' ')) {             
-                if (expectedLetterIndex < lettersInText.Length - 1) {
-                    if (wrongCharacter!='0')
-                        removeWrongLetterFromKeyboard(e);
-
-                    removeExpectedLetterFromKeyboard();
-                    showNextLetterOnKeyboard();
-                    expectedLetterIndex += 1;
-                } 
-                else 
-                    isGameOver = true;  
-            }
-            else {
-                e.SuppressKeyPress = true;
-                if (wrongCharacter!='0')
-                    removeWrongLetterFromKeyboard(e);
-                wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(e);   
-            }
-            
-        }
-
+        
         public void handleInputSkipErrorsOn(KeyEventArgs e,char typedChar, string typedText)
         {
+
             if (expectedLetterIndex < lettersInText.Length)
                 removeExpectedLetterFromKeyboard();
             if (wrongCharacter != '0')
-                removeWrongLetterFromKeyboard(e);
-
-            if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]) && typedChar != '\b' && typedChar != ' ')
+                removeWrongLetterFromKeyboard();
+            if (typedChar == '?')
             {
+                e.SuppressKeyPress = true;
+                if(expectedLetterIndex < lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
+                return;
+            }
+            else if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]) && typedChar != '\b' && typedChar != ' ')
+            {              
+                
                 wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(e);
+                showWrongLetterOnKeyboard();
+                if (bl == true)
+                {
+                    var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                    lbls[0].BackColor = Color.Red;
+                    bl = false;
+                    expectedLetterIndexFirstMistake = expectedLetterIndex;
+                }
             }
 
             if (typedChar == ' ')
             {
                 spaceCtr += 1;
-
                 //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci
                 expectedLetterIndex = spaceCtr; //jer moramo ubrojiti i razmake
                 handleNextExpectedLetter();
+                bl = true;
+                expectedLetterIndexFirstMistake = -1;
             }
 
-            else
+            else 
             {
+
                 if (typedChar == '\b')
-                {
-                    
+                {  
                     //treba rucno maknuti char '\b' i zadnji znak koji ne obrise
                     if (typedText.Length >= 2)
                         typedText = typedText.Substring(0, typedText.Length - 2);
@@ -222,38 +216,64 @@ namespace WindowsFormsApp1
                     longer = false;
                 }
 
-
                 if (wordSubstr == typedText && !longer)
                 {
                     //prelazimo na sljedece slovo
                     expectedLetterIndex = spaceCtr + wordSubstr.Length;
                     handleNextExpectedLetter();
+                    if (expectedLetterIndexFirstMistake == expectedLetterIndex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(expectedLetterIndexFirstMistake + " ");
+                        System.Diagnostics.Debug.WriteLine(expectedLetterIndex);
+                        var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                        lbls[0].BackColor = Color.LightBlue;
+                        bl = true;
+                        expectedLetterIndexFirstMistake = -1;
+                    }
                 }
                 else if((wordSubstr != typedText && lengthOfTypedText == wordsInText[spaceCtr].Length) || !longer)
                 {
                     if (typedChar != '\b')
                         expectedLetterIndex++;
-                    else if(typedChar == '\b' && lengthOfTypedText < wordsInText[spaceCtr].Length)
+
+                    else if (typedChar == '\b' && lengthOfTypedText < wordsInText[spaceCtr].Length)
+                    {
                         expectedLetterIndex--;
-                    System.Diagnostics.Debug.WriteLine(expectedLetterIndex);
+
+                    }
+                    
                     if (expectedLetterIndex < lettersInText.Length)
                         showExpectedLetterOnKeyboard();
 
-                }             
+
+                }
+                else if(expectedLetterIndex<lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
             }
         }
+
         public void handleInputSkipErrorsOff(KeyEventArgs e, char typedChar, string typedText)
         {
             if (expectedLetterIndex < lettersInText.Length)
                 removeExpectedLetterFromKeyboard();
             if (wrongCharacter != '0')
-                removeWrongLetterFromKeyboard(e);
-
-            if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]) && typedChar != '\b' && typedChar != ' ')
+                removeWrongLetterFromKeyboard();
+            if (typedChar == '?')
             {
+                e.SuppressKeyPress = true;
+                if (expectedLetterIndex < lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
+                return;
+            }
+            else if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]) && typedChar != '\b' && typedChar != ' ')
+            {
+                //donju liniju uključiti za ne prikazivanje pogrešnih znakova
+                //e.SuppressKeyPress = true;
                 wrongCharacter = typedChar;
-                showWrongLetterOnKeyboard(e);
+                showWrongLetterOnKeyboard();
                 showExpectedLetterOnKeyboard();
+                var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                lbls[0].BackColor = Color.Red;
             }
 
             if (typedChar == ' ')
@@ -267,6 +287,11 @@ namespace WindowsFormsApp1
 
             else
             {
+                if (typedChar == lettersInText[expectedLetterIndex])
+                {
+                    var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                    lbls[0].BackColor = Color.LightBlue;
+                }
                 
                 if (typedChar == '\b')
                 {
@@ -276,17 +301,71 @@ namespace WindowsFormsApp1
                         typedText = typedText.Substring(0, typedText.Length - 2);
                     else
                         typedText = "";
+                    if (expectedLetterIndex < lettersInText.Length)
+                        showExpectedLetterOnKeyboard();
 
-                    showExpectedLetterOnKeyboard();
-
-
-                }
-
-                if(typedChar == lettersInText[expectedLetterIndex])
+                }                
+                if (typedChar == lettersInText[expectedLetterIndex] )
                 {
                     expectedLetterIndex++;
-                    showExpectedLetterOnKeyboard();
+                    if (expectedLetterIndex < lettersInText.Length)
+                        showExpectedLetterOnKeyboard();
+                    else
+                        isGameOver = true;
                 }
+                else if (expectedLetterIndex < lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
+            }
+        }
+
+        //sa stopiranjem unosa
+        public void handleInputSkipErrorsOff1(KeyEventArgs e, char typedChar, string typedText)
+        {
+            if (expectedLetterIndex < lettersInText.Length)
+                removeExpectedLetterFromKeyboard();
+            if (wrongCharacter != '0')
+                removeWrongLetterFromKeyboard();
+            if (typedChar == '?')
+            {
+                e.SuppressKeyPress = true;
+                if (expectedLetterIndex < lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
+                return;
+            }
+            else if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]) && typedChar != ' ')
+            {
+                e.SuppressKeyPress = true;
+                wrongCharacter = typedChar;
+                showWrongLetterOnKeyboard();
+                showExpectedLetterOnKeyboard();
+                var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                lbls[0].BackColor = Color.Red;
+            }
+
+            if (typedChar == ' ')
+            {
+                spaceCtr += 1;
+
+                //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci
+                expectedLetterIndex = spaceCtr; //jer moramo ubrojiti i razmake
+                handleNextExpectedLetter();
+            }
+
+            else
+            {
+
+                if (typedChar == lettersInText[expectedLetterIndex] && expectedLetterIndex < lettersInText.Length)
+                {
+                    var lbls = form.textToType.Controls.OfType<Label>().ToArray();
+                    lbls[0].BackColor = Color.LightBlue;
+                    expectedLetterIndex++;
+                    if (expectedLetterIndex < lettersInText.Length)
+                        showExpectedLetterOnKeyboard();
+                    else
+                        isGameOver = true;
+                }
+                else if (expectedLetterIndex < lettersInText.Length)
+                    showExpectedLetterOnKeyboard();
             }
         }
 
@@ -320,7 +399,7 @@ namespace WindowsFormsApp1
             }  
         }
 
-        public void showWrongLetterOnKeyboard(KeyEventArgs e)
+        public void showWrongLetterOnKeyboard()
         {
             string letter = wrongCharacter.ToString();
 
@@ -334,13 +413,12 @@ namespace WindowsFormsApp1
             } catch (Exception ex) {
                 Console.WriteLine("Nije nađeno slovo.");
                 //isGameOver = true;
-                //e.SuppressKeyPress = true;
 
             }
 
         }
 
-        public void removeWrongLetterFromKeyboard(KeyEventArgs e) {
+        public void removeWrongLetterFromKeyboard() {
 
             string letter = wrongCharacter.ToString();
 
@@ -355,12 +433,9 @@ namespace WindowsFormsApp1
             } catch (Exception ex) {
                 Console.WriteLine("Nije nađeno slovo.");
                 //isGameOver = true;
-                //e.SuppressKeyPress = true;
             }
 
         }
-
-
 
         public void showExpectedLetterOnKeyboard() {
             char expectedLetter = lettersInText[expectedLetterIndex];

@@ -594,7 +594,7 @@
         public System.Windows.Forms.Button loadUserEx;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.FlowLayoutPanel exPanel;
-        private System.Windows.Forms.FlowLayoutPanel textToType;
+        public System.Windows.Forms.FlowLayoutPanel textToType;
     }
 }
 
