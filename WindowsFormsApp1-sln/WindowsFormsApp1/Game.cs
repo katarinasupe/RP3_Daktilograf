@@ -124,11 +124,10 @@ namespace WindowsFormsApp1
                     correctWordsCounter++;
                     System.Diagnostics.Debug.WriteLine("Točna rič: " + correctWordsCounter);
                 }
-                /*ako zelimo da se preskocena slova broje kao pogresna - Katarina
-                else
+                 else
                 {
-                    wrongLettersCounter += wordsInText[spaceCtr].Length;
-                }*/
+                    wrongLettersCounter += (wordsInText[spaceCtr].Length - typedText.Length + 1);
+                }
                 spaceCtr += 1;
                 //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci
                 expectedLetterIndex = spaceCtr; //jer moramo ubrojiti i razmake
