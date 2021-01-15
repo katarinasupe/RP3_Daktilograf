@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,9 +20,10 @@ namespace WindowsFormsApp1
 
         private void generateExButton_Click(object sender, EventArgs e)
         {
-            char[] delimiterChars = {','};
+            //char[] delimiterChars = {','};
+            //string[] letters = this.practiceLetters.Text.Split(delimiterChars);
             //array slova za generiranje vjezbe
-            string[] letters = this.practiceLetters.Text.Split(delimiterChars);
+            string[] letters = this.practiceLetters.Text.Select(c => c.ToString()).ToArray();
             foreach (var letter in letters)
             {
                 Console.WriteLine(letter.ToString());
@@ -40,12 +42,47 @@ namespace WindowsFormsApp1
             radioButton.Height = 20;
             ((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Checked=false;
             radioButton.Checked = true;
+           // radioButton.Height = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Height + 50;
 
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
             
             //((Form1)this.Owner).setTextToType(newEx);
             ((Form1)this.Owner).loadUserEx.PerformClick();
             this.Close();
+        }
+
+        private void practiceLetters_TextChanged(object sender, EventArgs e)
+        {
+            //dopustamo samo unos slova
+            string pattern = @"^[a-z]+$";
+            //neovisno o caseu
+            Match m = Regex.Match(this.practiceLetters.Text, pattern, RegexOptions.IgnoreCase);
+            //ako su unesena sva razlicita slova
+            if (m.Success && (this.practiceLetters.Text.Distinct().Count() == this.practiceLetters.Text.Length))
+            {
+                this.generateExButton.Enabled = true; 
+            }
+            else
+            {
+                this.generateExButton.Enabled = false;
+            }
+        }
+
+        private void exNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            /*
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex", this.Text + ".txt" };
+            string fullPath = System.IO.Path.Combine(paths);
+            string[] fileNames = System.IO.Directory.GetFiles(fullPath);
+
+            if (fileNames == null || fileNames.Length == 0)
+            {
+                this.generateExButton.Enabled = true;
+            }
+            else
+            {
+                this.generateExButton.Enabled = false;
+            }*/
         }
     }
 }

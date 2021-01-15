@@ -48,7 +48,6 @@ namespace WindowsFormsApp1
 
             
             System.Diagnostics.Debug.WriteLine(mname);
-
             saveExercise();
             return ex;
 
@@ -56,7 +55,7 @@ namespace WindowsFormsApp1
 
         private void saveExercise()
         {
-            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex", mname + ".txt"};
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex", mname + ".txt"};
             string fullPath = System.IO.Path.Combine(paths);
             System.IO.File.WriteAllText(fullPath, ex);
         }

@@ -79,6 +79,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.restartBtn = new System.Windows.Forms.Button();
             this.textToType = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.keyboardCheckbox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
@@ -510,10 +512,27 @@
             resources.ApplyResources(this.textToType, "textToType");
             this.textToType.Name = "textToType";
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // keyboardCheckbox
+            // 
+            resources.ApplyResources(this.keyboardCheckbox, "keyboardCheckbox");
+            this.keyboardCheckbox.BackColor = System.Drawing.Color.LightBlue;
+            this.keyboardCheckbox.Checked = true;
+            this.keyboardCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.keyboardCheckbox.Name = "keyboardCheckbox";
+            this.keyboardCheckbox.UseVisualStyleBackColor = false;
+            this.keyboardCheckbox.CheckedChanged += new System.EventHandler(this.keyboardCheckbox_CheckedChanged);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.keyboardCheckbox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textToType);
             this.Controls.Add(this.restartBtn);
             this.Controls.Add(this.label1);
@@ -595,6 +614,8 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.FlowLayoutPanel exPanel;
         public System.Windows.Forms.FlowLayoutPanel textToType;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox keyboardCheckbox;
     }
 }
 

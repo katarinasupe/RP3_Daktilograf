@@ -51,7 +51,7 @@ namespace WindowsFormsApp1 {
         {
             bool first = true;
             //put do foldera
-            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex" };
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex" };
             string fullPath = System.IO.Path.Combine(paths);
             //svi file-ovi u folderu
             string[] fileEntries = Directory.GetFiles(fullPath);
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1 {
         }
         void setFirstExercise()
         {
-            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", "easy_ex_1.txt" };
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", "easy_ex_1.txt" };
             string fullPath = System.IO.Path.Combine(paths);
             text = System.IO.File.ReadAllText(fullPath);
             //this.textToType.Text = text;
@@ -232,7 +232,7 @@ namespace WindowsFormsApp1 {
 
             var fileName = level + "_" + exercise + ".txt";
             //cita iz Debug foldera 
-            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\", fileName };
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", fileName };
             string fullPath = System.IO.Path.Combine(paths);
             text = System.IO.File.ReadAllText(fullPath);
             Console.WriteLine(text);
@@ -277,7 +277,7 @@ namespace WindowsFormsApp1 {
             System.Diagnostics.Debug.WriteLine(nameex);
             nameex = nameex + ".txt";
 
-            string[] paths = { Environment.CurrentDirectory, @"..\..\vjezbe\user_ex\", nameex };
+            string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
             text = System.IO.File.ReadAllText(fullPath);
             //this.textToType.Text = text;
@@ -320,6 +320,32 @@ namespace WindowsFormsApp1 {
                 textToType.Controls.Remove(lbls[0]);
             }
         }
+
+        private void keyboardCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.keyboardCheckbox.Checked)
+            {
+                this.keyboardCheckbox.Text = "Upaljena";
+                this.keyboardCheckbox.BackColor = Color.LightBlue;
+                this.panel1.Visible = true;
+                foreach (Label key in this.panel1.Controls.OfType<Label>())
+                {
+                    key.Visible = true;
+                }
+            }
+            else
+            {
+                this.keyboardCheckbox.Text = "Ugašena";
+                this.keyboardCheckbox.BackColor = Color.Silver;
+                this.panel1.Visible = false;
+                foreach (Label key in this.panel1.Controls.OfType<Label>())
+                {
+                    key.Visible = false;
+                }
+            }
+        }
+
+
 
 
 
