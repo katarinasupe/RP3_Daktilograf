@@ -20,12 +20,16 @@ namespace WindowsFormsApp1
         Control.ControlCollection keyboard;
         Control textBox;
         bool bl = true;
-        private int expectedLetterIndexFirstMistake=-1;
-        private int wrongLettersCounter = 0;
-        private int correctLettersCounter = 0;
-        private int allLettersCounter = 0;
-        private int correctWordsCounter = 0;
+        private int expectedLetterIndexFirstMistake;
+        private int wrongLettersCounter;
+        private int correctLettersCounter;
+        private int allLettersCounter;
+        private int correctWordsCounter;
 
+        public int getWrongLettersCounter()
+        {
+            return this.wrongLettersCounter;
+        }
         public bool getIsGameOver() {
             return isGameOver;
         }
@@ -71,7 +75,13 @@ namespace WindowsFormsApp1
             this.expectedLetterIndex = 0;
             this.showExpectedLetterOnKeyboard();
             isGameOver = false;
-        }
+
+            this.expectedLetterIndexFirstMistake = -1;
+            this.wrongLettersCounter = 0;
+            this.correctLettersCounter = 0;
+            this.allLettersCounter = 0;
+            this.correctWordsCounter = 0;
+    }
 
         
         public void handleInputSkipErrorsOn(KeyEventArgs e,char typedChar, string typedText)
@@ -114,6 +124,11 @@ namespace WindowsFormsApp1
                     correctWordsCounter++;
                     System.Diagnostics.Debug.WriteLine("Točna rič: " + correctWordsCounter);
                 }
+                /*ako zelimo da se preskocena slova broje kao pogresna - Katarina
+                else
+                {
+                    wrongLettersCounter += wordsInText[spaceCtr].Length;
+                }*/
                 spaceCtr += 1;
                 //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci
                 expectedLetterIndex = spaceCtr; //jer moramo ubrojiti i razmake

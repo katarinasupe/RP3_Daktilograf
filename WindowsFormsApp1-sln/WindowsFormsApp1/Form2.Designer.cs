@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             // exNameTextBox
             // 
             this.exNameTextBox.Location = new System.Drawing.Point(16, 201);
-            this.exNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.exNameTextBox.Name = "exNameTextBox";
             this.exNameTextBox.Size = new System.Drawing.Size(217, 22);
             this.exNameTextBox.TabIndex = 8;
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
             this.generateExButton.Name = "generateExButton";
             this.generateExButton.Size = new System.Drawing.Size(139, 30);
             this.generateExButton.TabIndex = 6;
-            this.generateExButton.Text = "Generiraj vježbu";
+            this.generateExButton.Text = "Generiraj i spremi";
             this.generateExButton.UseVisualStyleBackColor = true;
             this.generateExButton.Click += new System.EventHandler(this.generateExButton_Click);
             // 

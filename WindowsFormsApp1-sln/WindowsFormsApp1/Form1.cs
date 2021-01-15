@@ -157,7 +157,7 @@ namespace WindowsFormsApp1 {
             
             isGameOn = false;
             timer.Stop();
-            MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed);
+            MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed + "\n Broj greški: " + newGame.getWrongLettersCounter());
             changeFormAppearance();
         }
         private void textBox1_KeyDown(object sender, KeyEventArgs e) {
