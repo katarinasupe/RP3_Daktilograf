@@ -222,8 +222,9 @@ namespace WindowsFormsApp1
 
         //sa stopiranjem unosa
         /*---Metoda za igru kada je opcija preskakanja greški ugašena.---*/
-        public void handleInputSkipErrorsOff(KeyEventArgs e, char typedChar, string typedText)
+        public bool handleInputSkipErrorsOff(KeyEventArgs e, char typedChar, string typedText)
         {
+            bool skip = false;
             if (expectedLetterIndex < lettersInText.Length)
                 removeExpectedLetterFromKeyboard();
             if (wrongCharacter != '0')
@@ -233,7 +234,7 @@ namespace WindowsFormsApp1
                 e.SuppressKeyPress = true;
                 if (expectedLetterIndex < lettersInText.Length)
                     showExpectedLetterOnKeyboard();
-                return;
+                return false;
             }
             else if ((expectedLetterIndex >= lettersInText.Length || typedChar != lettersInText[expectedLetterIndex]))
             {
@@ -251,6 +252,8 @@ namespace WindowsFormsApp1
             }
             else
             {
+                if (typedChar == ' ')
+                    skip = true;
                 correctLettersCounter++;
                 System.Diagnostics.Debug.WriteLine("točnih: " + correctLettersCounter);
             }
@@ -267,6 +270,8 @@ namespace WindowsFormsApp1
             }
             else if (expectedLetterIndex < lettersInText.Length)
                 showExpectedLetterOnKeyboard();
+
+            return skip;
             
         }
 

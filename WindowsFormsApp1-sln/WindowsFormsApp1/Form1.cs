@@ -60,7 +60,6 @@ namespace WindowsFormsApp1 {
                 string name;
                 name = Path.GetFileName(fileName);
                 name = name.Remove(name.Length - 4); //mičemo .txt
-                //System.Diagnostics.Debug.WriteLine(name);
                 //stvaramo novi radiobutton
                 RadioButton radioButton = new RadioButton();
                 radioButton.Text = name;
@@ -160,7 +159,6 @@ namespace WindowsFormsApp1 {
             spaceCtr = 0;
 
             timer.Restart();
-            //System.Diagnostics.Debug.WriteLine(text);
             if (textArray.Length > 0) {
                 newGame.startGame(textBox, keyboard, textArray, words);
             } else {
@@ -181,7 +179,6 @@ namespace WindowsFormsApp1 {
             int wrong = newGame.getWrongLettersCounter();
             int skipped = newGame.getSkippedLettersCounter();
             int correct = newGame.getCorrectLettersCounter();
-            //System.Diagnostics.Debug.WriteLine((float)time / 1000 /60 + " ");
             int grossWPM = (int)((wrong + correct) / 5 / ((float)time / 1000 / 60));
             int accuracy = 0;
             if (wrong + correct != 0)
@@ -210,7 +207,6 @@ namespace WindowsFormsApp1 {
             //ukoliko je opcija preskakanja greški upaljena
             if (this.skipErrorCheckbox.Checked)
             {
-                //string typedText = this.typedText.Text.ToUpper() + typedChar;
                 newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
                 if (typedChar == ' ')
                 {
@@ -225,9 +221,7 @@ namespace WindowsFormsApp1 {
             else
             {
                 // ovdje zahtjevamo da se greske isprave
-                //System.Diagnostics.Debug.WriteLine(typedText);
-                newGame.handleInputSkipErrorsOff(e, typedChar, typedText);
-                if (typedChar == ' ')
+                if (newGame.handleInputSkipErrorsOff(e, typedChar, typedText) == true)
                 {
                     spaceCtr++;
                     nextWord();
@@ -283,7 +277,6 @@ namespace WindowsFormsApp1 {
             if (System.IO.File.Exists(fullPath))
             {
                 text = System.IO.File.ReadAllText(fullPath);
-                //this.textToType.Text = text;
                 createAndDisplayWords(text);
 
                 //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
@@ -329,7 +322,6 @@ namespace WindowsFormsApp1 {
             this.restartBtn.Enabled = false;
             //dohvacamo ime vjezbe iz odabranog radio buttona
             var nameex = exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-            //System.Diagnostics.Debug.WriteLine(nameex);
             nameex = nameex + ".txt";
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
@@ -359,10 +351,7 @@ namespace WindowsFormsApp1 {
             { 
                 Label label = new Label();
                 label.Text = wordsToDisplay[i];
-                //label.Width = 30;
                 label.AutoSize = true;
-                //label.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            
                 if (first == true)
                 {
                     label.BackColor = Color.LightBlue;
