@@ -41,6 +41,10 @@ namespace WindowsFormsApp1
         {
             return this.wrongLettersCounter;
         }
+        public int getCorrectLettersCounter()
+        {
+            return this.correctLettersCounter;
+        }
         public bool getIsGameOver() {
             return isGameOver;
         }
@@ -124,6 +128,12 @@ namespace WindowsFormsApp1
 
             else if (typedChar == ' ')
             {
+                if (expectedLetterIndex<lettersInText.Length && typedChar == lettersInText[expectedLetterIndex])
+                {
+                    correctLettersCounter++;
+                    System.Diagnostics.Debug.WriteLine("točnih: " + correctLettersCounter);
+                }
+
                 System.Diagnostics.Debug.WriteLine("Typed text: " + typedText);
                 System.Diagnostics.Debug.WriteLine("Word in text: " + wordsInText[spaceCtr]);
                 if (typedText.Substring(0, typedText.Length - 1) == wordsInText[spaceCtr])
@@ -131,7 +141,7 @@ namespace WindowsFormsApp1
                     correctWordsCounter++;
                     System.Diagnostics.Debug.WriteLine("Točna rič: " + correctWordsCounter);
                 }
-                 else
+                 else if(typedText.Length <= wordsInText[spaceCtr].Length)
                 {
                     wrongLettersCounter += (wordsInText[spaceCtr].Length - typedText.Length + 1);
                 }
@@ -178,8 +188,6 @@ namespace WindowsFormsApp1
                 handleNextExpectedLetter();
                 if (expectedLetterIndexFirstMistake == expectedLetterIndex)
                 {
-                    System.Diagnostics.Debug.WriteLine(expectedLetterIndexFirstMistake + " ");
-                    System.Diagnostics.Debug.WriteLine(expectedLetterIndex);
                     var lbls = form.textToType.Controls.OfType<Label>().ToArray();
                     lbls[0].BackColor = Color.LightBlue;
                     bl = true;
@@ -206,7 +214,6 @@ namespace WindowsFormsApp1
                 showExpectedLetterOnKeyboard();
             
         }
-
 
 
         //sa stopiranjem unosa

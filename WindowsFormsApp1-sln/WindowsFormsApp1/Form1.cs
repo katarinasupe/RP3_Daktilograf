@@ -60,7 +60,7 @@ namespace WindowsFormsApp1 {
                 string name;
                 name = Path.GetFileName(fileName);
                 name = name.Remove(name.Length - 4); //mičemo .txt
-                System.Diagnostics.Debug.WriteLine(name);
+                //System.Diagnostics.Debug.WriteLine(name);
                 //stvaramo novi radiobutton
                 RadioButton radioButton = new RadioButton();
                 radioButton.Text = name;
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1 {
             spaceCtr = 0;
 
             timer.Restart();
-            System.Diagnostics.Debug.WriteLine(text);
+            //System.Diagnostics.Debug.WriteLine(text);
             if (textArray.Length > 0) {
                 newGame.startGame(textBox, keyboard, textArray, words);
             } else {
@@ -172,7 +172,13 @@ namespace WindowsFormsApp1 {
             
             isGameOn = false;
             timer.Stop();
-            MessageBox.Show("Ovdje mozemo ispisati rezultat! :)\n" + timer.Elapsed + "\n Broj greški: " + newGame.getWrongLettersCounter());
+            long time = timer.ElapsedMilliseconds;
+            int wrong = newGame.getWrongLettersCounter();
+            int correct = newGame.getCorrectLettersCounter();
+            //System.Diagnostics.Debug.WriteLine((float)time / 1000 /60 + " ");
+            int grossWPM = (int)((wrong + correct) / 5 / ((float)time / 1000 / 60));
+            MessageBox.Show("Vrijeme" + timer.Elapsed + "\nBroj pogrešno unesenih znakova: " + wrong 
+                + "\nBroj točno unesenih znakova: " + correct + "\nWPM: " + grossWPM);
             changeFormAppearance();
         }
 
@@ -305,7 +311,7 @@ namespace WindowsFormsApp1 {
             this.restartBtn.Enabled = false;
             //dohvacamo ime vjezbe iz odabranog radio buttona
             var nameex = exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-            System.Diagnostics.Debug.WriteLine(nameex);
+            //System.Diagnostics.Debug.WriteLine(nameex);
             nameex = nameex + ".txt";
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
