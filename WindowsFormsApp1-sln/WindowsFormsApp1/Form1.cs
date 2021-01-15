@@ -65,7 +65,8 @@ namespace WindowsFormsApp1 {
                 RadioButton radioButton = new RadioButton();
                 radioButton.Text = name;
                 radioButton.Width = 100;
-                radioButton.Height = 20;
+                radioButton.Height = 25;
+                //radioButton.Height = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Height + 30;
                 if (first)
                 {
                     radioButton.Checked = true;
