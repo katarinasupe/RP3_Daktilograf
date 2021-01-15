@@ -184,7 +184,7 @@ namespace WindowsFormsApp1 {
             {
                 // ovdje zahtjevamo da se greske isprave
                 //System.Diagnostics.Debug.WriteLine(typedText);
-                newGame.handleInputSkipErrorsOff1(e, typedChar, typedText);
+                newGame.handleInputSkipErrorsOff(e, typedChar, typedText);
                 if (typedChar == ' ')
                 {
                     spaceCtr++;
