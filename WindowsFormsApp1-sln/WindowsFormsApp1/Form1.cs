@@ -82,15 +82,15 @@ namespace WindowsFormsApp1 {
         {
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", "easy_ex_1.txt" };
             string fullPath = System.IO.Path.Combine(paths);
-            if(System.IO.File.Exists(fullPath))
+            try
             {
                 text = System.IO.File.ReadAllText(fullPath);
-                createAndDisplayWords(text);
             }
-            else
+            catch 
             {
-                throw new Exception("Prva lagana vježba nije pronađena!");
-            }  
+                Console.WriteLine("Prva lagana vježba nije pronađena!");
+            }
+            createAndDisplayWords(text);
         }
         /*---Metoda koji služi za ispis korisnikovih rezultata---*/
         void printScores() {
