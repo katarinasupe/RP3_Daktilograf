@@ -73,9 +73,9 @@
             this.loadNewEx = new System.Windows.Forms.Button();
             this.createNewEx = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.exPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.loadUserEx = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.skipErrorCheckbox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.restartBtn = new System.Windows.Forms.Button();
@@ -473,6 +473,11 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // exPanel
             // 
             resources.ApplyResources(this.exPanel, "exPanel");
@@ -486,11 +491,6 @@
             this.loadUserEx.Name = "loadUserEx";
             this.loadUserEx.UseVisualStyleBackColor = false;
             this.loadUserEx.Click += new System.EventHandler(this.loadUserEx_Click);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
             // 
             // skipErrorCheckbox
             // 

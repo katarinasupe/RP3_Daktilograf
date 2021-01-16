@@ -397,10 +397,10 @@ namespace WindowsFormsApp1 {
             }
         }
 
-        /*---Event promjene opcije svijetleće tipkovnice.---*/
+        /*---Event promjene opcije svjetleće tipkovnice.---*/
         private void keyboardCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            //opcija svijetleće tipkovnice je upaljena
+            //opcija svjetleće tipkovnice je upaljena
             if(this.keyboardCheckbox.Checked)
             {
                 this.keyboardCheckbox.Text = "Upaljena";
@@ -411,7 +411,7 @@ namespace WindowsFormsApp1 {
                     key.Visible = true;
                 }
             }
-            //opcija svijetleće tipkovnice je ugašena
+            //opcija svjetleće tipkovnice je ugašena
             else
             {
                 this.keyboardCheckbox.Text = "Ugašena";
