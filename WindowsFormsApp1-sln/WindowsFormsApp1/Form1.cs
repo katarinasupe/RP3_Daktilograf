@@ -32,6 +32,7 @@ namespace WindowsFormsApp1 {
             initializeGame();
             initializeUserExercises();
             printScores();
+            changeFormAppearance();
         }
 
         /*------------getteri i setteri------------*/
@@ -165,6 +166,12 @@ namespace WindowsFormsApp1 {
                 this.skipErrorCheckbox.Enabled = true;
                 this.textToType.Controls.Clear();
                 createAndDisplayWords(text);
+            }
+
+            //ako je došlo do pogreške kod učitavanja teksta, ne želimo korisniku dopustiti da pokrene igru
+            if (text == "") {
+                this.startBtn.Enabled = false;
+                this.restartBtn.Enabled = false;
             }
         }
 
