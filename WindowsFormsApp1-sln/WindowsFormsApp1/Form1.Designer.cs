@@ -88,7 +88,6 @@
             this.groupBoxLevel.SuspendLayout();
             this.groupBoxEx.SuspendLayout();
             this.exPanel.SuspendLayout();
-            this.scoresPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Q
@@ -532,9 +531,8 @@
             // 
             // scoresPanel
             // 
-            this.scoresPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.scoresPanel.Controls.Add(this.scoreLabel);
             resources.ApplyResources(this.scoresPanel, "scoresPanel");
+            this.scoresPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.scoresPanel.Name = "scoresPanel";
             // 
             // scoreLabel
@@ -546,6 +544,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.scoresPanel);
             this.Controls.Add(this.keyboardCheckbox);
             this.Controls.Add(this.label2);
@@ -570,8 +569,6 @@
             this.groupBoxEx.PerformLayout();
             this.exPanel.ResumeLayout(false);
             this.exPanel.PerformLayout();
-            this.scoresPanel.ResumeLayout(false);
-            this.scoresPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

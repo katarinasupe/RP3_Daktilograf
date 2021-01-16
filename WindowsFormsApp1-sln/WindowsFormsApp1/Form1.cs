@@ -31,6 +31,7 @@ namespace WindowsFormsApp1 {
             setFirstExercise();
             initializeGame();
             initializeUserExercises();
+            printScores();
         }
 
         /*------------getteri i setteri------------*/
@@ -90,6 +91,31 @@ namespace WindowsFormsApp1 {
             {
                 throw new Exception("Prva lagana vježba nije pronađena!");
             }  
+        }
+        /*---Metoda koji služi za ispis korisnikovih rezultata---*/
+        void printScores() {
+            string[] paths = { Environment.CurrentDirectory, @"..\..\scores.txt" };
+            string fullPath = System.IO.Path.Combine(paths);
+   
+            try {
+                string[] lines = System.IO.File.ReadAllLines(fullPath);
+                foreach (string line in lines) {
+
+                    Label label = new Label();
+                    label.Text = line;
+                    label.AutoSize = true;
+
+                    this.scoresPanel.Controls.Add(label); 
+
+                }
+            } catch {
+                Console.WriteLine("Greška kod čitanja scores.txt");
+            }
+
+            this.scoresPanel.AutoScroll = false;
+            this.scoresPanel.HorizontalScroll.Enabled = false;
+            this.scoresPanel.HorizontalScroll.Visible = false;
+            this.scoresPanel.AutoScroll = true;
         }
 
         /*---Incijaliziraj igru, tj. postavi textBox, keyboard te kreiraj igru.---*/
@@ -189,10 +215,16 @@ namespace WindowsFormsApp1 {
             string[] paths = { Environment.CurrentDirectory, @"..\..\scores.txt"};
             string fullPath = System.IO.Path.Combine(paths);
             Console.WriteLine(today.ToString("dd/MM/yyyy"));
+           
 
             using (StreamWriter sw = File.AppendText(fullPath))
             {
-                sw.WriteLine(today.ToString("dd/MM/yyyy") + "-" + grossWPM + "-" + accuracy + "%");
+                string score = today.ToString("dd.MM.yyyy") + " - " + grossWPM + " - " + accuracy + "%";
+                sw.WriteLine(score);
+                Label label = new Label();
+                label.Text = score;
+                label.AutoSize = true;
+                this.scoresPanel.Controls.Add(label);
             }
             changeFormAppearance();
         }
@@ -397,6 +429,5 @@ namespace WindowsFormsApp1 {
                 }
             }
         }
-
     }
 }
