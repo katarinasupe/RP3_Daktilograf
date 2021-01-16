@@ -306,20 +306,23 @@ namespace WindowsFormsApp1 {
             string fullPath = System.IO.Path.Combine(paths);
 
             //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace baci iznimku
-            if (System.IO.File.Exists(fullPath))
+            try
             {
                 text = System.IO.File.ReadAllText(fullPath);
-                createAndDisplayWords(text);
-
-                //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
-                isGameOn = false;
-                resetKeyboard();
-                changeFormAppearance();
             }
-            else
+            catch
             {
-                throw new Exception("Odabrana vježba nije pronađena!");
+                Console.WriteLine("Odabrana vježba nije pronađena!");
+                text = "";
+                MessageBox.Show("Dogodila se pogreška - odabrana vježba ne postoji. Molimo odaberite drugu vježbu.");
             }
+            createAndDisplayWords(text);
+
+            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
+            isGameOn = false;
+            resetKeyboard();
+            changeFormAppearance();
+
         }
 
 
