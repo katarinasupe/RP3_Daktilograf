@@ -50,25 +50,7 @@ namespace WindowsFormsApp1
         public bool getIsGameOver() {
             return isGameOver;
         }
-        public char getWrongCharacter() {
-            return this.wrongCharacter;
-        }
-        public int getExpectedLetterIndex() {
-            return this.expectedLetterIndex;
-        }
-        public char[] getLettersInText() {
-            return this.lettersInText;
-        }
-        public void setLettersInText(char[] value) {
-            this.lettersInText = value;
-        }
 
-        public void setExpectedLetterIndex(int value) {
-            this.expectedLetterIndex = value;
-        }
-        public void setWrongCharacter(char value) {
-            this.wrongCharacter = value;
-        }
         //----------------------------------------
 
 
@@ -223,7 +205,7 @@ namespace WindowsFormsApp1
             if (wrongCharacter != '0')
                 removeWrongLetterFromKeyboard();
             //ako je pritisnut nedopušteni znak
-            if (typedChar == '?')
+            if (typedChar == '?' || typedChar == '\b')
             {
                 e.SuppressKeyPress = true;
                 if (expectedLetterIndex < lettersInText.Length)
@@ -271,7 +253,7 @@ namespace WindowsFormsApp1
             }
             try  {
                 var key = keyboard.Find(letter, true);
-                key[0].BackColor = Color.Red;
+                key[0].BackColor = Color.PaleVioletRed;
 
             } catch (Exception ex) {
                 Console.WriteLine("Nije nađeno slovo.");

@@ -670,7 +670,7 @@
     <value>23</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 257</value>
+    <value>178, 270</value>
   </data>
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -691,7 +691,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="SPACE.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 120</value>
@@ -1507,7 +1507,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;typedText.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="startBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 159</value>
@@ -1534,7 +1534,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;startBtn.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="chooseLevel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
@@ -1599,6 +1599,18 @@
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;exPanel.Name" xml:space="preserve">
     <value>exPanel</value>
   </data>
@@ -1609,7 +1621,7 @@
     <value>chooseLevel</value>
   </data>
   <data name="&gt;&gt;exPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;loadUserEx.Name" xml:space="preserve">
     <value>loadUserEx</value>
@@ -1621,7 +1633,7 @@
     <value>chooseLevel</value>
   </data>
   <data name="&gt;&gt;loadUserEx.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="chooseLevel.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 7</value>
@@ -1630,7 +1642,7 @@
     <value>2, 3, 2, 3</value>
   </data>
   <data name="chooseLevel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 497</value>
+    <value>136, 510</value>
   </data>
   <data name="chooseLevel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1645,7 +1657,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chooseLevel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;hard.Name" xml:space="preserve">
     <value>hard</value>
@@ -2097,6 +2109,27 @@
   <data name="&gt;&gt;createNewEx.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 343</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 1</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="exPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2104,7 +2137,7 @@
     <value>TopDown</value>
   </data>
   <data name="exPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 350</value>
+    <value>3, 366</value>
   </data>
   <data name="exPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 101</value>
@@ -2125,40 +2158,13 @@
     <value>chooseLevel</value>
   </data>
   <data name="&gt;&gt;exPanel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 348</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 16</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Vaše vježbe:</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="loadUserEx.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="loadUserEx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 457</value>
+    <value>2, 473</value>
   </data>
   <data name="loadUserEx.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 3, 2, 3</value>
@@ -2182,7 +2188,34 @@
     <value>chooseLevel</value>
   </data>
   <data name="&gt;&gt;loadUserEx.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 347</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 16</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Vaše vježbe:</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>chooseLevel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="skipErrorCheckbox.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
@@ -2215,7 +2248,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;skipErrorCheckbox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2248,7 +2281,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="restartBtn.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2281,7 +2314,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;restartBtn.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="textToType.Location" type="System.Drawing.Point, System.Drawing">
     <value>178, 84</value>
@@ -2305,7 +2338,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textToType.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2335,7 +2368,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="keyboardCheckbox.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
@@ -2371,22 +2404,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;keyboardCheckbox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="scoresPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="scoresPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
   <data name="scoresPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 166</value>
+    <value>561, 178</value>
   </data>
   <data name="scoresPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 6, 0, 0</value>
+    <value>0, 5, 0, 0</value>
   </data>
   <data name="scoresPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 313</value>
   </data>
   <data name="scoresPanel.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="scoresPanel.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;scoresPanel.Name" xml:space="preserve">
     <value>scoresPanel</value>
@@ -2398,13 +2437,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scoresPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="scoreLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="scoreLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>575, 159</value>
+    <value>612, 159</value>
   </data>
   <data name="scoreLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 16</value>
@@ -2425,28 +2464,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scoreLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 343</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 1</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>chooseLevel</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2455,7 +2473,7 @@
     <value>6, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>734, 503</value>
+    <value>734, 516</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 7.8pt</value>
@@ -2464,10 +2482,10 @@
     <value>2, 3, 2, 3</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>750, 545</value>
+    <value>750, 555</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>750, 542</value>
+    <value>750, 555</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Daktilograf</value>

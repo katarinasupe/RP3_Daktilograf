@@ -47,7 +47,6 @@ namespace WindowsFormsApp1
             radioButton.Checked = true;
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
 
-            //((Form1)this.Owner).setTextToType(newEx);
             ((Form1)this.Owner).loadUserEx.PerformClick(); //ucitaj generiranu vjezbu
             this.Close(); //zatvori dijalog
         }

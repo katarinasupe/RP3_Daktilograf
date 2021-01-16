@@ -30,26 +30,14 @@ namespace WindowsFormsApp1 {
             InitializeComponent();
             setFirstExercise();
             initializeGame();
-            initializeUserExercises();
+            loadUserExercises();
             printScores();
             changeFormAppearance();
         }
 
-        /*------------getteri i setteri------------*/
-        public string getTextToType()
-        {
-            return this.textToType.Text;
-        }
-        public void setTextToType(string value)
-        {
-            text = value;
-            createAndDisplayWords(text);
-        }
-        //----------------------------------------
-
 
         /*---Metoda za ispisivanje korisnikovih vjezbi.---*/
-        void initializeUserExercises()
+        void loadUserExercises()
         {
             bool first = true;
             //put do foldera
@@ -87,6 +75,7 @@ namespace WindowsFormsApp1 {
             }
             catch 
             {
+                text = "";
                 Console.WriteLine("Prva lagana vježba nije pronađena!");
             }
             createAndDisplayWords(text);
@@ -103,6 +92,7 @@ namespace WindowsFormsApp1 {
                     Label label = new Label();
                     label.Text = line;
                     label.AutoSize = true;
+                    label.Margin = new Padding(0, 0, 0, 4);
 
                     this.scoresPanel.Controls.Add(label); 
 
