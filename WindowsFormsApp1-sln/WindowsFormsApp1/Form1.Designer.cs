@@ -92,58 +92,58 @@
             // 
             // Q
             // 
+            resources.ApplyResources(this.Q, "Q");
             this.Q.BackColor = System.Drawing.Color.White;
             this.Q.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Q, "Q");
             this.Q.Name = "Q";
             // 
             // I
             // 
+            resources.ApplyResources(this.I, "I");
             this.I.BackColor = System.Drawing.Color.White;
             this.I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.I, "I");
             this.I.Name = "I";
             // 
             // U
             // 
+            resources.ApplyResources(this.U, "U");
             this.U.BackColor = System.Drawing.Color.White;
             this.U.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.U, "U");
             this.U.Name = "U";
             // 
             // Z
             // 
+            resources.ApplyResources(this.Z, "Z");
             this.Z.BackColor = System.Drawing.Color.White;
             this.Z.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Z, "Z");
             this.Z.Name = "Z";
             // 
             // T
             // 
+            resources.ApplyResources(this.T, "T");
             this.T.BackColor = System.Drawing.Color.White;
             this.T.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.T, "T");
             this.T.Name = "T";
             // 
             // R
             // 
+            resources.ApplyResources(this.R, "R");
             this.R.BackColor = System.Drawing.Color.White;
             this.R.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.R, "R");
             this.R.Name = "R";
             // 
             // E
             // 
+            resources.ApplyResources(this.E, "E");
             this.E.BackColor = System.Drawing.Color.White;
             this.E.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.E, "E");
             this.E.Name = "E";
             // 
             // W
             // 
+            resources.ApplyResources(this.W, "W");
             this.W.BackColor = System.Drawing.Color.White;
             this.W.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.W, "W");
             this.W.Name = "W";
             // 
             // panel1
@@ -194,163 +194,163 @@
             // 
             // X
             // 
+            resources.ApplyResources(this.X, "X");
             this.X.BackColor = System.Drawing.Color.White;
             this.X.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.X, "X");
             this.X.Name = "X";
             // 
             // C
             // 
+            resources.ApplyResources(this.C, "C");
             this.C.BackColor = System.Drawing.Color.White;
             this.C.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.C, "C");
             this.C.Name = "C";
             // 
             // V
             // 
+            resources.ApplyResources(this.V, "V");
             this.V.BackColor = System.Drawing.Color.White;
             this.V.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.V, "V");
             this.V.Name = "V";
             // 
             // B
             // 
+            resources.ApplyResources(this.B, "B");
             this.B.BackColor = System.Drawing.Color.White;
             this.B.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.B, "B");
             this.B.Name = "B";
             // 
             // N
             // 
+            resources.ApplyResources(this.N, "N");
             this.N.BackColor = System.Drawing.Color.White;
             this.N.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.N, "N");
             this.N.Name = "N";
             // 
             // M
             // 
+            resources.ApplyResources(this.M, "M");
             this.M.BackColor = System.Drawing.Color.White;
             this.M.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.M, "M");
             this.M.Name = "M";
             // 
             // Y
             // 
+            resources.ApplyResources(this.Y, "Y");
             this.Y.BackColor = System.Drawing.Color.White;
             this.Y.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Y, "Y");
             this.Y.Name = "Y";
             // 
             // Č
             // 
+            resources.ApplyResources(this.Č, "Č");
             this.Č.BackColor = System.Drawing.Color.White;
             this.Č.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Č, "Č");
             this.Č.Name = "Č";
             // 
             // Ć
             // 
+            resources.ApplyResources(this.Ć, "Ć");
             this.Ć.BackColor = System.Drawing.Color.White;
             this.Ć.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Ć, "Ć");
             this.Ć.Name = "Ć";
             // 
             // L
             // 
+            resources.ApplyResources(this.L, "L");
             this.L.BackColor = System.Drawing.Color.White;
             this.L.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.L, "L");
             this.L.Name = "L";
             // 
             // Ž
             // 
+            resources.ApplyResources(this.Ž, "Ž");
             this.Ž.BackColor = System.Drawing.Color.White;
             this.Ž.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Ž, "Ž");
             this.Ž.Name = "Ž";
             // 
             // S
             // 
+            resources.ApplyResources(this.S, "S");
             this.S.BackColor = System.Drawing.Color.White;
             this.S.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.S, "S");
             this.S.Name = "S";
             // 
             // D
             // 
+            resources.ApplyResources(this.D, "D");
             this.D.BackColor = System.Drawing.Color.White;
             this.D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.D, "D");
             this.D.Name = "D";
             // 
             // F
             // 
+            resources.ApplyResources(this.F, "F");
             this.F.BackColor = System.Drawing.Color.White;
             this.F.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.F, "F");
             this.F.Name = "F";
             // 
             // G
             // 
+            resources.ApplyResources(this.G, "G");
             this.G.BackColor = System.Drawing.Color.White;
             this.G.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.G, "G");
             this.G.Name = "G";
             // 
             // H
             // 
+            resources.ApplyResources(this.H, "H");
             this.H.BackColor = System.Drawing.Color.White;
             this.H.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.H, "H");
             this.H.Name = "H";
             // 
             // J
             // 
+            resources.ApplyResources(this.J, "J");
             this.J.BackColor = System.Drawing.Color.White;
             this.J.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.J, "J");
             this.J.Name = "J";
             // 
             // K
             // 
+            resources.ApplyResources(this.K, "K");
             this.K.BackColor = System.Drawing.Color.White;
             this.K.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.K, "K");
             this.K.Name = "K";
             // 
             // A
             // 
+            resources.ApplyResources(this.A, "A");
             this.A.BackColor = System.Drawing.Color.White;
             this.A.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.A, "A");
             this.A.Name = "A";
             // 
             // P
             // 
+            resources.ApplyResources(this.P, "P");
             this.P.BackColor = System.Drawing.Color.White;
             this.P.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.P, "P");
             this.P.Name = "P";
             // 
             // Š
             // 
+            resources.ApplyResources(this.Š, "Š");
             this.Š.BackColor = System.Drawing.Color.White;
             this.Š.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Š, "Š");
             this.Š.Name = "Š";
             // 
             // O
             // 
+            resources.ApplyResources(this.O, "O");
             this.O.BackColor = System.Drawing.Color.White;
             this.O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.O, "O");
             this.O.Name = "O";
             // 
             // Đ
             // 
+            resources.ApplyResources(this.Đ, "Đ");
             this.Đ.BackColor = System.Drawing.Color.White;
             this.Đ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.Đ, "Đ");
             this.Đ.Name = "Đ";
             // 
             // typedText
@@ -568,6 +568,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.chooseLevel.ResumeLayout(false);
             this.chooseLevel.PerformLayout();
             this.groupBoxLevel.ResumeLayout(false);
