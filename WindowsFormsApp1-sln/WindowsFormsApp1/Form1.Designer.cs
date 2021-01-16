@@ -83,11 +83,11 @@
             this.keyboardCheckbox = new System.Windows.Forms.CheckBox();
             this.scoresPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.scoreLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.chooseLevel.SuspendLayout();
             this.groupBoxLevel.SuspendLayout();
             this.groupBoxEx.SuspendLayout();
-            this.exPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Q
@@ -374,6 +374,7 @@
             this.chooseLevel.Controls.Add(this.groupBoxEx);
             this.chooseLevel.Controls.Add(this.loadNewEx);
             this.chooseLevel.Controls.Add(this.createNewEx);
+            this.chooseLevel.Controls.Add(this.panel2);
             this.chooseLevel.Controls.Add(this.exPanel);
             this.chooseLevel.Controls.Add(this.loadUserEx);
             this.chooseLevel.Name = "chooseLevel";
@@ -470,7 +471,6 @@
             // 
             resources.ApplyResources(this.exPanel, "exPanel");
             this.exPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.exPanel.Controls.Add(this.label3);
             this.exPanel.Name = "exPanel";
             // 
             // label3
@@ -540,10 +540,16 @@
             resources.ApplyResources(this.scoreLabel, "scoreLabel");
             this.scoreLabel.Name = "scoreLabel";
             // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.scoresPanel);
             this.Controls.Add(this.keyboardCheckbox);
@@ -567,8 +573,6 @@
             this.groupBoxLevel.PerformLayout();
             this.groupBoxEx.ResumeLayout(false);
             this.groupBoxEx.PerformLayout();
-            this.exPanel.ResumeLayout(false);
-            this.exPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,6 +639,7 @@
         private System.Windows.Forms.CheckBox keyboardCheckbox;
         private System.Windows.Forms.FlowLayoutPanel scoresPanel;
         private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

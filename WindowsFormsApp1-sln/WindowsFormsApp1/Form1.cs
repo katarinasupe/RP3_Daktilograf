@@ -65,9 +65,7 @@ namespace WindowsFormsApp1 {
                 //stvaramo novi radiobutton
                 RadioButton radioButton = new RadioButton();
                 radioButton.Text = name;
-                radioButton.Width = 100;
-                radioButton.Height = 25;
-                //radioButton.Height = (TextRenderer.MeasureText(radioButton.Text, radioButton.Font)).Height + 30;
+                radioButton.AutoSize = true;
                 if (first)
                 {
                     radioButton.Checked = true;
@@ -113,9 +111,6 @@ namespace WindowsFormsApp1 {
                 Console.WriteLine("Greška kod čitanja scores.txt");
             }
 
-            this.scoresPanel.AutoScroll = false;
-            this.scoresPanel.HorizontalScroll.Enabled = false;
-            this.scoresPanel.HorizontalScroll.Visible = false;
             this.scoresPanel.AutoScroll = true;
         }
 
@@ -126,7 +121,6 @@ namespace WindowsFormsApp1 {
             keyboard = this.panel1.Controls;
             newGame = new Game(this);
             isGameOn = false;
-           // skipError = true; //nije nuzno vracanje nakon greske
         }
 
         /*---Pritisak gumba 'Započni igru'.---*/
@@ -193,7 +187,7 @@ namespace WindowsFormsApp1 {
 
             timer.Restart();
             if (textArray.Length > 0) {
-                newGame.startGame(textBox, keyboard, textArray, words);
+                newGame.startGame(keyboard, textArray, words);
             } else {
                 stopTyping();
             }
@@ -206,8 +200,7 @@ namespace WindowsFormsApp1 {
             timer.Stop();
             TimeSpan ts = timer.Elapsed;
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
-            ts.Milliseconds / 10);
+                ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
             long time = timer.ElapsedMilliseconds;
             int wrong = newGame.getWrongLettersCounter();
             int skipped = newGame.getSkippedLettersCounter();
@@ -216,6 +209,7 @@ namespace WindowsFormsApp1 {
             int accuracy = 0;
             if (wrong + correct != 0)
                 accuracy = (int)((float)correct / (wrong + correct) * 100);
+
             MessageBox.Show("Vrijeme " + elapsedTime + "\nBroj pogrešno unesenih znakova: " + (wrong+skipped) 
                 + "\nBroj točno unesenih znakova: " + correct + "\nWPM: " + grossWPM + "\nTočnost: " + accuracy +"%");
 
@@ -223,7 +217,6 @@ namespace WindowsFormsApp1 {
             string fullPath = System.IO.Path.Combine(paths);
             Console.WriteLine(today.ToString("dd/MM/yyyy"));
            
-
             using (StreamWriter sw = File.AppendText(fullPath))
             {
                 string score = today.ToString("dd.MM.yyyy") + " - " + grossWPM + " - " + accuracy + "%";
@@ -246,8 +239,8 @@ namespace WindowsFormsApp1 {
             //ukoliko je opcija preskakanja greški upaljena
             if (this.skipErrorCheckbox.Checked)
             {
-                newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
-                if (typedChar == ' ')
+                //newGame.handleInputSkipErrorsOn(e,typedChar, typedText);
+                if (newGame.handleInputSkipErrorsOn(e, typedChar, typedText, spaceCtr) == true)
                 {
                     spaceCtr++;
                     nextWord();
@@ -260,13 +253,12 @@ namespace WindowsFormsApp1 {
             else
             {
                 // ovdje zahtjevamo da se greske isprave
-                if (newGame.handleInputSkipErrorsOff(e, typedChar, typedText) == true)
+                if (newGame.handleInputSkipErrorsOff(e, typedChar) == true)
                 {
                     spaceCtr++;
                     nextWord();
                     this.typedText.Text = "";
                     e.SuppressKeyPress = true;
-
                 }
 
             }
@@ -277,7 +269,6 @@ namespace WindowsFormsApp1 {
                 stopTyping();
             }
         }
-
 
         /*---Metoda za raspoznavanje hrvatskih dijakritičkih znakova.---*/
         private char typedCharacter(int code) {
@@ -331,7 +322,6 @@ namespace WindowsFormsApp1 {
             changeFormAppearance();
 
         }
-
 
         /*---Event pritiska gumba 'Kreiraj svoju vježbu'.---*/
         private void createNewEx_Click(object sender, EventArgs e)

@@ -22,7 +22,6 @@ namespace WindowsFormsApp1
             toolTip1.SetToolTip(practiceLettersLabel, "Upišite slova bez razmaka i bez ponavljanja.");
             toolTip2.SetToolTip(exNameLabel, "Ime vježbe mora biti različito od postojećih vježbi.");
             toolTip2.SetToolTip(exNameTextBox, "Ime vježbe mora biti različito od postojećih vježbi.");
-
         }
 
         /*---Event pritiska gumba 'Generiraj i spremi'.---*/
@@ -43,8 +42,7 @@ namespace WindowsFormsApp1
             //kreiranje radio buttona za novu vjezbu
             RadioButton radioButton = new RadioButton();
             radioButton.Text = name;
-            radioButton.Width = 100;
-            radioButton.Height = 25;
+            radioButton.AutoSize = true;
             ((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Checked = false;
             radioButton.Checked = true;
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);

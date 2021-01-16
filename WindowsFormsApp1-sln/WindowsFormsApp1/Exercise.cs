@@ -50,8 +50,6 @@ namespace WindowsFormsApp1
                     ex = ex + ' ' + word;
             }
 
-            
-            System.Diagnostics.Debug.WriteLine(mname);
             saveExercise();
             return ex;
 
