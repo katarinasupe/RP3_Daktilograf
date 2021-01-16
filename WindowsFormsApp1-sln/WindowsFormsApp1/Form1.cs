@@ -312,7 +312,7 @@ namespace WindowsFormsApp1 {
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\", fileName };
             string fullPath = System.IO.Path.Combine(paths);
 
-            //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace baci iznimku
+            //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace ispisi poruku
             try
             {
                 text = System.IO.File.ReadAllText(fullPath);
@@ -368,20 +368,24 @@ namespace WindowsFormsApp1 {
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
 
-            //provjera postoji li datoteka s danom putanjom
-            if (System.IO.File.Exists(fullPath))
-            {
+            //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace ispisi poruku
+            try {
                 text = System.IO.File.ReadAllText(fullPath);
-                //this.textToType.Text = text;
-                createAndDisplayWords(text);
-                isGameOn = false;
-                resetKeyboard();
-                changeFormAppearance();
             }
-            else
+            catch
             {
-                throw new Exception("Kreirana vježba nije pronađena!");
+                Console.WriteLine("Odabrana vježba nije pronađena!");
+                text = "";
+                MessageBox.Show("Dogodila se pogreška - odabrana vježba ne postoji. Molimo odaberite drugu vježbu.");
             }
+
+            createAndDisplayWords(text);
+
+            //svaki put kad se ucita nova vjezba, resetiraj tipkovnicu i zaustavi igru ako traje
+            isGameOn = false;
+            resetKeyboard();
+            changeFormAppearance();
+
         }
 
         /*---Metoda koja ucitanu vjezbu dijeli na rijeci te kreira labele za svaku rijec.---*/
