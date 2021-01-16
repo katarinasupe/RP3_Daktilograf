@@ -568,7 +568,6 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.chooseLevel.ResumeLayout(false);
             this.chooseLevel.PerformLayout();
             this.groupBoxLevel.ResumeLayout(false);

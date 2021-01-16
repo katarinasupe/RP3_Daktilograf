@@ -112,14 +112,6 @@ namespace WindowsFormsApp1 {
             newGame = new Game(this);
             isGameOn = false;
 
-            foreach (Label key in keyboard)
-            {
-                if (key.Text != "SPACE")
-                {
-                    key.Width = 25;
-                    key.Height = 25;
-                }
-            }
         }
 
         /*---Pritisak gumba 'Započni igru'.---*/
