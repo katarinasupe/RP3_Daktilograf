@@ -187,9 +187,9 @@
             // 
             // SPACE
             // 
+            resources.ApplyResources(this.SPACE, "SPACE");
             this.SPACE.BackColor = System.Drawing.Color.White;
             this.SPACE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.SPACE, "SPACE");
             this.SPACE.Name = "SPACE";
             // 
             // X
@@ -361,8 +361,8 @@
             // 
             // startBtn
             // 
-            this.startBtn.BackColor = System.Drawing.Color.LightBlue;
             resources.ApplyResources(this.startBtn, "startBtn");
+            this.startBtn.BackColor = System.Drawing.Color.LightBlue;
             this.startBtn.Name = "startBtn";
             this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
@@ -509,8 +509,8 @@
             // 
             // restartBtn
             // 
-            this.restartBtn.BackColor = System.Drawing.Color.LightBlue;
             resources.ApplyResources(this.restartBtn, "restartBtn");
+            this.restartBtn.BackColor = System.Drawing.Color.LightBlue;
             this.restartBtn.Name = "restartBtn";
             this.restartBtn.UseVisualStyleBackColor = false;
             this.restartBtn.Click += new System.EventHandler(this.restartBtn_Click);
