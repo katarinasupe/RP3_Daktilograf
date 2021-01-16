@@ -1,1 +1,1 @@
-hard ex two
+računarstvo se bavi proučavanjem teoretskih osnova informacije i računanja te njihovim implementacijama i primjenama u računalnim sustavima

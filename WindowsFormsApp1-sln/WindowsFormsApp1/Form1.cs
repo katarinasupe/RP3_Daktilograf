@@ -45,6 +45,10 @@ namespace WindowsFormsApp1 {
             string fullPath = System.IO.Path.Combine(paths);
             //svi file-ovi u folderu
             string[] fileEntries = Directory.GetFiles(fullPath);
+            if(fileEntries.Length == 0 || fileEntries == null)
+            {
+                this.loadUserEx.Enabled = false;
+            }
             foreach (string fileName in fileEntries)
             {
                 string name;
@@ -340,14 +344,16 @@ namespace WindowsFormsApp1 {
 
         /*---Event pritiska gumba 'Učitaj svoju vježbu'.---*/
         private void loadUserEx_Click(object sender, EventArgs e)
-        { 
+        {
             this.skipErrorCheckbox.Enabled = true;
             this.restartBtn.Enabled = false;
+            
             //dohvacamo ime vjezbe iz odabranog radio buttona
             var nameex = exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
             nameex = nameex + ".txt";
             string[] paths = { Environment.CurrentDirectory, @"..\..\exercises\user_ex\", nameex };
             string fullPath = System.IO.Path.Combine(paths);
+
 
             //ukoliko datoteka s danom putanjom postoji, ucitaj je, inace ispisi poruku
             try {

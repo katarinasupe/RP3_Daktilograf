@@ -1,1 +1,1 @@
-hard ex five
+cilj kolegija rad s tehnologijama u mainstream programiranju pravila dizajniranja grafičkih sučelja rad s bazama podataka i data access idiomima te rad s distribuiranim objektima savladavanje organizacijskih tehnika timskog rada na većim i zahtjevnijim projektima

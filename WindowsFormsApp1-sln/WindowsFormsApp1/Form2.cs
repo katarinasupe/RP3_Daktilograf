@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
         /*---Event pritiska gumba 'Generiraj i spremi'.---*/
         private void generateExButton_Click(object sender, EventArgs e)
         {
+            ((Form1)this.Owner).loadUserEx.Enabled = true;
             //array slova za generiranje vjezbe
             string[] letters = this.practiceLetters.Text.Select(c => c.ToString()).ToArray();
 
@@ -37,13 +38,16 @@ namespace WindowsFormsApp1
             Exercise ex = new Exercise(letters, lengthOfExercise, lengthOfWords, name);
 
             //generiranje i spremanje vjezbe
-            string newEx = ex.generateExercise(); 
+            string newEx = ex.generateExercise();
 
             //kreiranje radio buttona za novu vjezbu
             RadioButton radioButton = new RadioButton();
             radioButton.Text = name;
             radioButton.AutoSize = true;
-            ((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Checked = false;
+            if (((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().Any())
+            {
+                ((Form1)this.Owner).exPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Checked = false;
+            }
             radioButton.Checked = true;
             ((Form1)this.Owner).exPanel.Controls.Add(radioButton);
 
