@@ -71,6 +71,7 @@ namespace WindowsFormsApp1
         }
 
         /*---Metoda za igru kada je opcija preskakanja greški upaljena.---*/
+        //funkcija vraća true ukoliko je unesen SPACE, odnosno ukoliko je potrebno prijeći na sljedeću riječ
         public bool handleInputSkipErrorsOn(KeyEventArgs e,char typedChar, string typedText, int spaceCtr)
         {
             int lengthOfTypedText = typedText.Length;
@@ -96,8 +97,7 @@ namespace WindowsFormsApp1
                 wrongCharacter = typedChar;
                 showWrongLetterOnKeyboard();
                 wrongLettersCounter++;
-                System.Diagnostics.Debug.WriteLine("krivih: " + wrongLettersCounter);
-
+                //pamti se pozicija prve greške u riječi i riječ se boja u crveno
                 if (firstError == true)
                 {
                     var lbls = form.textToType.Controls.OfType<Label>().ToArray();
@@ -109,19 +109,19 @@ namespace WindowsFormsApp1
                 if (lengthOfTypedText <= wordsInText[spaceCtr].Length)
                 {
                     expectedLetterIndex++; 
-                }
-                if(expectedLetterIndex < lettersInText.Length)
-                {
-                    showExpectedLetterOnKeyboard();
+                    if(expectedLetterIndex < lettersInText.Length)
+                    {
+                        showExpectedLetterOnKeyboard();
+                    }
                 }
             }
+
             //space
             else if (typedChar == ' ')
             {
                 if (typedText.Length-1 == wordsInText[spaceCtr].Length  && typedChar == lettersInText[expectedLetterIndex])
                 {
                     correctLettersCounter++;
-                    System.Diagnostics.Debug.WriteLine("točnih: " + correctLettersCounter);
                 }
 
                  if(typedText.Length <= wordsInText[spaceCtr].Length)
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
                     skippedLettersCounter += (wordsInText[spaceCtr].Length - typedText.Length + 1);
                 }
 
-                //expectedLetterIndex ovdje mora biti postavljen na prvo slovo iduce rijeci
+                //expectedLetterIndex postavljamo na prvo slovo iduce rijeci
                 expectedLetterIndex = spaceCtr+1; //jer moramo ubrojiti i razmake
                 for (int i = 0; i < wordsInText.Length && i < spaceCtr+1; i++)
                     expectedLetterIndex += wordsInText[i].Length;
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
                     typedText = "";
                     lengthOfTypedText = 0;
                 }
-
+                //ako smo došli do pozicije prve greške bojimo riječ u plavo
                 if (lengthOfTypedText <= wordsInText[spaceCtr].Length && expectedLetterIndexFirstMistake == expectedLetterIndex)
                 {
                     var lbls = form.textToType.Controls.OfType<Label>().ToArray();
@@ -169,9 +169,8 @@ namespace WindowsFormsApp1
                     expectedLetterIndexFirstMistake = -1;
                 }
 
-                if (expectedLetterIndex < lettersInText.Length)
+                if (expectedLetterIndex < lettersInText.Length && lengthOfTypedText <= wordsInText[spaceCtr].Length)
                 {
-                    if( lengthOfTypedText < wordsInText[spaceCtr].Length )
                         showExpectedLetterOnKeyboard();
                 }
             }
@@ -179,7 +178,6 @@ namespace WindowsFormsApp1
             else
             {
                 correctLettersCounter++;
-                System.Diagnostics.Debug.WriteLine("točnih: " + correctLettersCounter);
 
                 if (expectedLetterIndex < lettersInText.Length-1)
                 {
@@ -190,13 +188,13 @@ namespace WindowsFormsApp1
                     isGameOver = true;
             }
 
-
             return false;
         }
 
 
         //sa stopiranjem unosa
         /*---Metoda za igru kada je opcija preskakanja greški ugašena.---*/
+        //funkcija vraća true ukoliko je unesen SPACE, odnosno ukoliko je potrebno prijeći na sljedeću riječ
         public bool handleInputSkipErrorsOff(KeyEventArgs e, char typedChar)
         {
             
@@ -222,14 +220,12 @@ namespace WindowsFormsApp1
                 var lbls = form.textToType.Controls.OfType<Label>().ToArray();
                 lbls[0].BackColor = Color.PaleVioletRed;
                 wrongLettersCounter++;
-                System.Diagnostics.Debug.WriteLine("krivih: " + wrongLettersCounter);
                 return false;
             }
             //pritisnuto slovo je točno
             else
             {
                 correctLettersCounter++;
-                System.Diagnostics.Debug.WriteLine("točnih: " + correctLettersCounter);
 
                 var lbls = form.textToType.Controls.OfType<Label>().ToArray();
                 lbls[0].BackColor = Color.LightBlue;
